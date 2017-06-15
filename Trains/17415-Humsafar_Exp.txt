@@ -1,0 +1,27 @@
+Code  Arr.  Ht Station
+ADI  08:24  20 Ahmedabad Jn (RL)
+ND   09:50  2  Nadiad Jn
+ANND 13:55  2  Anand Jn
+BRC  10:19  5  Vadodara Jn
+BH   08:24  2  Bharuch Jn
+ST   00:14  5  Surat
+BSR  08:24  5  Vasai Road
+KYN  11:16  3  Kalyan Jn
+LNL  04:19  2  Lonavla
+PUNE 09:36  10 Pune Jn (RL)
+STR  12:28  3  Satara
+SLI  13:12  5  Sangli
+MRJ  12:00  10 Miraj Jn
+BGM  01:55  2  Belagavi
+DWR  04:19  2  Dharwad
+UBL  03:36  10 Hubballi Jn (RL)
+HRR  07:55  2  Harihar
+DVG  12:14  2  Davangere
+RRB  09:07  2  Birur Jn
+ASK  07:12  5  Arsikere Jn
+TK   05:31  2  Tumkur
+BAND 11:31  2  Banaswadi
+KJM  01:55  2  Krishnarajapuram (RL)
+BWT  01:55  15 Bangarapet Jn
+SA   13:12  10 Salem Jn
+

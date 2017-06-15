@@ -1,0 +1,30 @@
+Thu 2017-Mar-23 15:25:31.674 +05:30
+
+Windows - use UTC time
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation] 
+“RealTimeIsUniversal”=dword:00000001
+
+%APPDATA%
+change where all newly created user accounts will have their user profile folder created at in a default location of your choice instead of the old default C:\Users location. 
+
+regedit
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+ProfilesDirectory = <new location>
+[default =  %SystemDrive%\Users]
+
+What is tixati?
+tixati-2.53-1.portable.tar.bz2
+
+
+Re-Evaluate:
+Customizer-master.zip
+customizer-master.zip
+distroshare-ubuntu-imager-master.zip
+Install_Novo_Builder.bash.tar.gz
+LinuxRespin-master.zip
+Novo_Help.odt
+Pinguy-Builder-README.md
+pinguybuilder_4.3-8_all-beta.deb
+systemback_1.8.402_source.tar.xz
+Systemback_Install_Pack_v1.8.402.tar.xz
+

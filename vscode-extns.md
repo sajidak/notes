@@ -1,0 +1,335 @@
+# VSCode extensions
+`Fri 2017-May-26 17:25:20.046 +05:30`
+
+```bash
+#Patch markdown-pdf:
+rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/yzane.markdown-pdf-0.1.7 /home/sak/.vscode/extensions
+# backup extensions:
+rsync -vhr ~/.vscode/extensions/ /media/sak/70_Current/Work/buffer/vscode-xtns-bak/
+# restore extensions:
+rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensions/
+```
+
+# Installed
+## C#
+- `ms-vscode.csharp`
+- C# for Visual Studio Code (powered by OmniSharp)
+
+## Document This
+- `joelday.docthis`
+- automatically generates detailed JSDoc comments for both TypeScript and JavaScript files
+- @class, @description, @enum, @export, @function, @implements, @interface, @param, @private, @returns, @static, @template, @type and @memberOf
+
+## ESLint
+- `vscode-eslint`
+- Integrates ESLint into VS Code
+- Need to install ESLint seperately
+
+## Insert Date String
+- `jsynowiec.vscode-insertdatestring`
+- Insert DateTime, Insert Timestamp, Insert Formatted DateTime
+
+## Markdown Include
+- `Kevenin.markdowninclude`
+- merge Markdown files from various locations to one file.
+- !import`/path/from/root/import.md
+- can be anywhere in the file
+
+## Markdown table prettifier
+`darkriszty.markdown-table-prettify`
+- **Works**
+- Similar to 'Markdown writer' in atom
+- select the entire table, then right click to format
+- not live, need to invoke command
+
+## Markdown-TOC
+- `AlanWalk.markdown-toc`
+- outline numbered toc
+- similar to atom
+
+## Mono Debug
+- `ms-vscode.mono-debug`
+- sudo apt-get install mono-complete
+
+## mssql
+- `ms-mssql.mssql`
+
+
+## MarkdownConverter
+- `manuth.markdown-converter`
+- **Install and trail**
+- convert MarkDown-files to html, png, or pdf
+- DateTime-Formatting, configuring your own CSS-styles, setting Headers and Footers, FrontMatter
+- Detailed config, front page, odd/even page...
+    - https://github.com/manuth/MarkdownConverter/wiki/Config
+- Does it work offline?
+
+## Perl
+- `henriiik.vscode-perl`
+- code intelligence for the perl language to Visual Studio Code, mainly through the use of Exuberant Ctags.
+- Formatting is also supported with use of Perl::Tidy.
+- *Review, trail and remove if not needed for regular use*
+
+## Preview
+- `searKing.preview-vscode`
+- previewer of Markdown, ReStructured Text, HTML, Jade, Mermaid files, Image's URI or CSS properties
+
+## Reflow paragraph
+- `TroelsDamgaard.reflow-paragraph`
+- Format the current paragraph to have lines no longer than your preferred line length, using alt+q
+
+## Regex Previewer
+- `chrmarti.regex`
+- Shows the current regular expression's matches in a side-by-side document. This can be turned on/off
+
+
+# To Install
+
+
+***
+# Interesting - Test which is not already bundled
+
+## Markdown PDF [78MB]
+- `yzane.markdown-pdf`
+- **HOLD for now**, compare with `vscode-pdf`
+- convert Markdown file to pdf, html, png or jpeg file
+- Syntax highlighting
+- emoji
+- checkbox
+- markdown-pdf.convertOnSave
+
+
+## Markdown helper
+- `joshbax.mdhelper`
+- **Hold for now**
+- keyboard shortcuts, Format GFM table
+- context menu support is new with VS Code version 1.3.0; it seems to work only in folder view and only after switching to a Markdown file (i.e. opening VS Code to a Markdown file doesn't properly add the menu items)
+
+## FelschR.extbundles-csharp [See also]
+This extension pack contains useful extensions for C# and especially .NET Core development.
+- ms-vscode.csharp
+- `Version Lens` pflannery.vscode-versionlens
+	- Shows package version information for npm, jspm, bower, dub and dotnet core in the Visual Studio Code editor
+	- Replaces the version text but does not automatically install packages when clicking a code lens link
+- `C# XML Documentation Comments` k--kato.docomment
+	- Generate XML documentation comments for Visual Studio Code.
+- `NuGet Package Manager` jmrog.vscode-nuget-package-manager
+	- add or remove .NET Core 1.1+ package references to/from your project's .csproj or .fsproj files using Code's Command Palette.
+- `NuGet Reverse Package Search` jesschadwick.nuget-reverse-package-search
+	- Adds reverse .NET Core package lookup support like the "Add Package" context menu item in full Visual Studio
+
+## vscode-pdf
+- `tomoki1207.pdf`
+- Display pdf in VSCode
+- incorporates components from
+    - PDF.js (https://github.com/mozilla/pdf.js
+- Does not work on Linux, not tested on Windows
+
+## Other
+- `HTML Snippets` abusaidm.html-snippets
+- `IntelliSense for CSS class names` Zignd.html-css-class-completion
+	CSS class name completion for the HTML class attribute based on the CSS files in your workspace
+- `get` josephwoodward.vscodeilviewer
+	allows you to rapidly inspect the IL output of any given C# file.
+- `ASP.NET Helper` schneiderpat.aspnet-helper
+	- parses your project to enable IntelliSense for Razor pages within an ASP.NET MVC project
+- `Instant Markdown` dbankier.vscode-instant-markdown
+	- edit markdown documents in vscode and instantly preview it in your browser
+- `html tag wrapper` hwencc.html-tag-wrapper
+- `Knockout.js Snippets for VS Code` furstenberg.knockoutjs
+
+
+# Current Working
+## Perl 6 code snippets
+- `sergot.perl6snippets`
+
+## Perl Debug
+- `mortenhenriksen.perl-debug`
+
+## perltidy-more
+- `Kaktus.perltidy-more`
+
+
+## md2pdf
+- `qinjia.md2pdf`
+- convert markdown file to pdf 
+- Converts the Markdown language to PDF not the Markdown formatting to PDF
+
+## TODO
+- Python-vscode
+	- Python language pack for Visual Studio Code
+- tomoki1207.pdf
+	- Display pdf in VSCode
+
+## vscode-comment
+- https://github.com/Microsoft/vscode-comment
+
+
+# Other Evaluated
+- `Markdown checkbox` PKief.markdown-checkbox
+	- provides shortcuts and some workspace configurations so you can create a checkbox and mark it quickly and smoothly
+- `Markdown All in One` yzhang.markdown-all-in-one
+	- **Works mostly**
+	- Keyboard shortcuts, manual TOC, auto list items
+	- TOC, removes first header, toc can only be at first line
+	- can be only 1 h1, all other are ignored
+	- ordered list, all items are numbered 1 in text, but rendered in sequence
+- `Markdown Table Formatter` ~~josa.markdown-table-formatter~~
+- `markdown handy` ~~NaccOll.markdown-handy~~
+	- clone of ~~yzane.markdown-pdf~~ without options
+	- Export to html or pdf
+	- No dependencies
+- `MarkdownConverter` ~~manuth.markdown-converter~~
+	- **Does NOT work**
+	- export your Markdown-file as PDF-, HTML or Image-file
+	-  DateTime-Formatting, configuring your own CSS-styles, setting Headers and Footers, FrontMatter and much more
+- `Markdown-TOC` ~~joffreykern.markdown-toc~~
+	- generates a table of contents for your markdown file.
+	- modifies the heading text to make into a link
+- `Table Formatter` ~~shuworks.vscode-table-formatter~~
+	- **appears broken** try `darkriszty.markdown-table-prettify`
+	- manual invoke
+	- Only table at current cursor position, or All tables in file
+	- GitHub Flavored Markdow, Plain Text Table, G`rid Table, Simple Table
+
+# keybindings.json
+`~/.config/Code/User/keybindings.json`
+```js
+{ "key": "ctrl+alt+p",            "command": "markdownConverter.convert",
+                                     "when": "editorFocus" }
+```
+# settings.json
+`~/.config/Code/User/settings.json`
+```js
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+    "editor.insertSpaces": false,
+    "editor.wrappingIndent": "indent",
+    "editor.wordWrapColumn": 120,
+    "editor.dragAndDrop": true,
+    "files.insertFinalNewline": true,
+    "files.defaultLanguage": "md",
+    "html.format.wrapAttributes": "force-aligned",
+    "zenMode.hideTabs": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+	"insertDateString.format": "`DDD YYYY-MMM-DD hh:mm:ss.SS Z`\n",
+    //
+    // markdown
+    "markdown.styles": [],
+    "markdown.previewFrontMatter": "show",
+    "markdown.preview.fontFamily": "Calibri, Carlito, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "markdown.preview.fontSize": 14,
+    "markdown.enableExperimentalExtensionApi": true,
+    //
+    // markdown-toc
+    "markdown-toc.orderedList": true,
+    //
+    // // markdown-pdf
+    // // Output format: pdf, html, png, jpeg
+    // // "markdown-pdf.type": "html",
+    // "markdown-pdf.outputDirectory": "/media/sak/70_Current/_Notes/formatted-docs",
+    // // Page Option. Page size: A3, A4, A5, Legal, Letter, Tabloid
+    // "markdown-pdf.format": "Legal",
+    // "markdown-pdf.styles": [],
+    // // Set the style file name. for example: github.css, monokai.css ...
+    // // ~/.vscode/extensions/yzane.markdown-pdf-0.1.7/styles/*.css
+    // "markdown-pdf.highlightStyle": "github.css",
+    // "markdown-pdf.breaks": true,
+    // //
+    // "markdown-pdf.border.top": "1.0cm",
+    // "markdown-pdf.border.bottom": "1.0cm",
+    // "markdown-pdf.border.right": "1cm",
+    // "markdown-pdf.border.left": "1.5cm",
+    // //
+    // "markdown-pdf.header.contents": "<div style=\"text-align: right;\"><strong>Static Text, need to replace for each export</strong></div><hr/></br>",
+    // "markdown-pdf.header.height": "2.9cm",
+    // //
+    // "markdown-pdf.footer.height": "1.8cm",
+    // "markdown-pdf.footer.contents": "<hr/><div style=\"float:left;\">&copy;2017 oblak consulting</div><div style=\"float:right;\">Page {{page}} of {{pages}}</div>",
+    //
+    "reflow.preferredLineLength": 120,
+    "docthis.includeDescriptionTag": true,
+    //
+    // MARKDOWN CONVERTER SETTINGS:
+    // The path to save the converted files to.
+    // Note: The path may be relative to the markdown-file that is to be converted.
+    "markdownConverter.outDir": "/media/sak/70_Current/_Notes/formatted-docs",
+
+    // The path to the working-directory.
+    // 
+    // Note:
+    // Each file-path, like, for example, the template, stylesheets etc. are relative to this path.
+    // This path may be relative to the workspace-directory.
+    "markdownConverter.workDir": ".",
+
+    // true to convert the current file even if it's not written in Markdown; otherwise false.
+    "markdownConverter.ignoreLanguage": false,
+
+    // true to save the file automatically before the conversion-process; otherwise false.
+    "markdownConverter.autoSave": true,
+
+    // The quality of the rendered file.
+    "markdownConverter.document.quality": 90,
+
+    // Either a single or a set of types to convert the markdown-file to.
+    // "markdownConverter.conversionType": "PDF",
+    "markdownConverter.conversionType": [
+        "PDF",
+        "HTML"
+    ],
+
+    // Settings related to the document.
+    "markdownConverter.document": {
+    "emoji": "github",
+    "layout": {
+        "margin": {
+        "top": "1cm",
+        "right": "1cm",
+        "bottom": "1cm",
+        "left": "1cm"
+        },
+        "format": "A4",
+        "orientation": "portrait"
+    },
+    "header": {
+        "height": "15mm",
+        "content": "<table style=\"width: 100%; table-layout: fixed; \"><td style=\"text-align: left; \">{{ Author }}</td><td style=\"text-align: center\">{{ PageNumber }}/{{ PageCount }}</td><td style=\"text-align: right\">{{ Company.Name }}</td></table>"
+    },
+    "footer": {
+        "height": "1cm",
+        "content": "<table style=\"width: 100%; table-layout: fixed; \"><td style=\"text-align: left; \"></td><td style=\"text-align: center\">{{ CreationDate }}</td><td style=\"text-align: right\"></td></table>"
+    }
+    }
+    //
+
+```
+
+
+# TO PROCESS
+`Thu 2017-Jun-01`
+
+mssql
+ms-mssql.mssql
+developing Microsoft SQL Server, Azure SQL Database and SQL Data Warehouse everywhere with a rich set of functionalities, including:
+
+Connect to Microsoft SQL Server, Azure SQL Database and SQL Data Warehouses.
+Create and manage connection profiles and most recently used connections.
+Write T-SQL script with IntelliSense, Go to Definition, T-SQL snippets, syntax colorizations, T-SQL error validations and GO batch separator.
+Execute your scripts and view results in a simple to use grid.
+Save the result to json or csv file format and view in the editor.
+Customizable extension options including command shortcuts and more.
+
+
+markdownlint
+DavidAnson.vscode-markdownlint
+
+Markdown Theme Kit
+ms-vscode.theme-markdownkit
+
+## TO Update:
+C#
+Markdown Table Prettifier
+Markdown TOC
+
+

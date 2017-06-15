@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 26px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+body
+{
+    background-color: white;
+}
+.emoji
+{
+    height: 20px;
+}
+</style>
+    </head>
+    <body>
+        <article class="vscode-light markdown-body">
+            <h1 id="iis-hosts">IIS Hosts</h1>
+<p><code>Wed, 24-May-2017 09:05:05 +0530</code></p>
+<blockquote>
+<p>Evaluation for hosting ASP.NET MVC5 application using MS SQL 2012+</p>
+</blockquote>
+<p><strong>Table of Contents:</strong></p>
+<h1 id="quick-compare">Quick Compare</h1>
+<ul>
+<li><code>*</code> implies unlimited</li>
+<li><code>?</code> implies missing data</li>
+<li><code>Domain</code> is renewal cost per year</li>
+</ul>
+<h2 id="3-packs">$3 Packs</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Provider</th>
+<th>Disk</th>
+<th>DB</th>
+<th>Sites</th>
+<th>VD</th>
+<th>SubDom</th>
+<th>MSSQL DBs</th>
+<th>MySQL DBs</th>
+<th>Domain</th>
+<th>emails</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>myasp.net</td>
+<td>*</td>
+<td>*</td>
+<td>1</td>
+<td>*</td>
+<td>*</td>
+<td>1</td>
+<td>1</td>
+<td>$10</td>
+<td>*</td>
+<td>*mdb</td>
+</tr>
+<tr>
+<td>2</td>
+<td>host4asp.net</td>
+<td>10G</td>
+<td>?</td>
+<td>1</td>
+<td>?</td>
+<td>*</td>
+<td>10GB /db</td>
+<td>*</td>
+<td>$13</td>
+<td>10</td>
+<td>$4/1y $3/2y</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-packs">$5 Packs</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Provider</th>
+<th>Disk</th>
+<th>DB</th>
+<th>Sites</th>
+<th>VD</th>
+<th>SubDom</th>
+<th>MSSQL DBs</th>
+<th>MySQL DBs</th>
+<th>Domain</th>
+<th>emails</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>myasp.net</td>
+<td>*</td>
+<td>*</td>
+<td>6</td>
+<td>y</td>
+<td>?</td>
+<td>6</td>
+<td>6</td>
+<td>$10</td>
+<td>*</td>
+<td>*mdb, <code>URL Rewrite Module 2</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>arvixe.com</td>
+<td>*</td>
+<td>*</td>
+<td>1</td>
+<td>y</td>
+<td>*</td>
+<td>5</td>
+<td>5</td>
+<td>$10</td>
+<td>*</td>
+<td>*mdb</td>
+</tr>
+<tr>
+<td>4</td>
+<td>winhost.com</td>
+<td>3G</td>
+<td>1G</td>
+<td>?</td>
+<td>?</td>
+<td>*</td>
+<td>1 /500M</td>
+<td>1 /500m</td>
+<td>?</td>
+<td>250 / 500M</td>
+<td>EF, ReportViewer</td>
+</tr>
+<tr>
+<td>5</td>
+<td>host4asp.net</td>
+<td>*</td>
+<td>*</td>
+<td>6</td>
+<td>?</td>
+<td>*</td>
+<td>10GB /db</td>
+<td>*</td>
+<td>$13</td>
+<td>30</td>
+<td>$6/1y $5/2y $4/3y</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="preferred">Preferred</h1>
+<h2 id="myaspnet">myasp.net</h2>
+<ul>
+<li>ASP.NET Core 1.0 Hosting</li>
+<li>ASP.NET 4.5.1 / 4.6 / 4.6.1 Hosting</li>
+<li>MVC 6, 5, 4 Hosting</li>
+<li>PHP5 Hosting 5.x Hosting</li>
+<li>Internet Information Services 8.0</li>
+<li>SQL Server 2012, 2014, 2016 Hosting</li>
+<li>mySQL 5.x Hosting</li>
+<li>MS Access Database Hosting</li>
+<li>Attach MDF File Tool</li>
+<li>ASP.NET Control Panel</li>
+<li>URL Rewrite Module 2</li>
+<li>PHPMailer, JMail, ADO.NET, CDO, FSO, Aspemail, ASPUpload, ASPImage, ASPJpeg, ASPEncode</li>
+<li>Domain $10/y</li>
+</ul>
+<h3 id="free-trial-00m-w60-us">FREE TRIAL $0.0/m [W60-US]</h3>
+<ul>
+<li>1 GB Webspace</li>
+<li>1 Number of Site / IIS Entry</li>
+<li>1 FTP</li>
+<li>No Isolated Application Pool, No Virtual Directory Setup</li>
+<li>1 SQL Server</li>
+<li>1 MySQL</li>
+</ul>
+<h3 id="net-basic-295m-w500-us">.NET Basic $2.95/m [W500-US]</h3>
+<ul>
+<li>Unlimited
+<ul>
+<li>Webspace</li>
+<li>Domain Names Hosted</li>
+<li>FTP</li>
+</ul>
+</li>
+<li>1 Number of Site / IIS Entry, Virtual Directory Setup</li>
+<li>No Isolated Application Pool</li>
+<li>1 SQL Server</li>
+<li>1 MySQL</li>
+</ul>
+<h3 id="net-advance-495m-w1000-us">.NET Advance $4.95/m [W1000-US]</h3>
+<ul>
+<li>Unlimited
+<ul>
+<li>Webspace</li>
+<li>Domain Names Hosted</li>
+<li>FTP</li>
+</ul>
+</li>
+<li>6 Number of Site / IIS Entry</li>
+<li>Virtual Directory Setup</li>
+<li>Static IP $2/m</li>
+<li>Access to Raw Log Files</li>
+<li>IIS8 / IIS7 Manager Remote Access Allowed</li>
+<li>Isolated Application Pool</li>
+<li>6 SQL Server</li>
+<li>6 MySQL</li>
+<li>Mailing List Form Generator</li>
+<li>Mailing List Webservice API</li>
+</ul>
+<hr>
+<h2 id="arvixecom-5m">arvixe.com $5/m</h2>
+<ul>
+<li>Unlimited
+<ul>
+<li>Disk Space</li>
+<li>Monthly Data Transfer</li>
+<li>Domain Aliases</li>
+<li>Subdomains</li>
+<li>FTP Accounts</li>
+<li>Mail Boxes (POP3 or IMAP)</li>
+<li>MySQL 5 Databases</li>
+<li>Access Databases</li>
+</ul>
+</li>
+<li>1 Websites (Domains)</li>
+<li>5 MSSQL 2014 Databases</li>
+<li>Dedicated Application Pools</li>
+<li>File MIME Types</li>
+<li>IIS 8.5</li>
+<li>ASP .NET v2, v3.5 and v4.5</li>
+<li>ASP .NET MVC 5</li>
+<li>Domain renewal $10/y</li>
+</ul>
+<hr>
+<h2 id="host4aspnet">host4asp.net</h2>
+<ul>
+<li>Instant Account Activation</li>
+<li>IIS 8.5 - Full Trust</li>
+<li>.NET 1.1/2/3.5SP1/4.5/5</li>
+<li>ASP.NET MVC 3/4/5</li>
+<li>MSSQL 2012/2014 &amp; MySQL 5</li>
+</ul>
+<h3 id="295m">@ 2.95/m</h3>
+<ul>
+<li>1 Website</li>
+<li>? subdomains</li>
+<li>10GB Disk Space</li>
+<li>Unlimited Data Transfer</li>
+<li>15m Site Idle Timeout</li>
+<li>256MB Site Memory</li>
+<li>10 Email Accounts</li>
+</ul>
+<h3 id="395m">@ 3.95/m</h3>
+<ul>
+<li>6 Websites</li>
+<li>? subdomains</li>
+<li>Unlimited Disk Space</li>
+<li>Unlimited Data Transfer</li>
+<li>30m Site Idle Timeout</li>
+<li>512MB Site Memory</li>
+<li>30 Email Accounts</li>
+<li>Remote IIS Management</li>
+<li>Unlimited Concurrent Connections</li>
+<li>BetterSecurity Suite</li>
+</ul>
+<hr>
+<h2 id="winhostcom">winhost.com</h2>
+<ul>
+<li>Unlimited Domain Pointers Per Site</li>
+<li>Unlimited Subdomains (has Subdomain Manager)</li>
+<li>IIS 8 / IIS 7</li>
+<li>Full Trust and Medium Trust Supported</li>
+<li>SQL 2016, 2014, 2012, 2008 R2, 2008</li>
+<li>ASP.NET ReportViewer Control</li>
+<li>Unlimited Microsoft Access Database Hosting</li>
+<li>ASP.NET MVC 6 / 5 / 4 / 3 / 2 / 1</li>
+<li>Entity Framework</li>
+<li>HTTP Streaming</li>
+<li>ASP.NET ReportViewer Control</li>
+<li>Web Calendar</li>
+</ul>
+<h3 id="495-395m">@ $4.95 - $3.95/m</h3>
+<ul>
+<li>3 GB Disk Space</li>
+<li>50 GB Bandwidth</li>
+<li>500 MB Email Storage</li>
+<li>5 FTP Users</li>
+<li>1 MS SQL Databases, 500 MB</li>
+<li>1 MySQL Databases, 500 MB</li>
+<li>250 Email, 500 MB - POP3, IMAP, SMTP</li>
+</ul>
+<h3 id="995-795m">@ $9.95 - $7.95/m</h3>
+<ul>
+<li>Unlimited Disk Space</li>
+<li>Unlimited Bandwidth</li>
+<li>Unlimited Domain Pointers Per Site</li>
+<li>2 GB MS SQL &amp; MySQL, Unlimited DBs</li>
+<li>2 GB Email Storage</li>
+<li>10 FTP Users</li>
+<li>500 Email, 2GB MB - POP3, IMAP, SMTP</li>
+</ul>
+<hr>
+<h1 id="workable">Workable</h1>
+<hr>
+<h1 id="unclassified">Unclassified</h1>
+<h2 id="hostgatorin-445m">hostgator.in @ 445/m</h2>
+<ul>
+<li>https://www.hostgator.in/web-hosting/windows-hosting.php</li>
+<li>Unlimited Disk Space</li>
+<li>Flexible, Easy to Use Control Panel</li>
+<li>Unlimited Sub Domains, FTP Accounts, and Email Accounts</li>
+<li>99.9% Uptime Guarantee</li>
+<li>Unlimited MySQL, Microsoft SQL, and Access Databases</li>
+<li>Programming Language: ASP, ASP.NET 2.0, ASP.NET 3.5, ASP.NET 4.0, ASP.NET 4.5</li>
+<li>Programming Modules: Curl, GD Library, MVC 4.0, AJAX</li>
+<li>IMAP Support</li>
+</ul>
+<hr>
+<h2 id="bigrockin">bigrock.in</h2>
+<ul>
+<li>.NET Framework 2.0 / 3.0 / 3.5 / 4.0 / 4.5 ASP.NET MVC 4.0</li>
+<li>5 GB database 2.5 GB MYSQL and 2.5 GB MSSQL</li>
+<li>MySQL 5.1.68</li>
+</ul>
+<h3 id="199-99m-149-59m">@ 199-99/m / $149-59/m</h3>
+<ul>
+<li>500 MB Space</li>
+<li>2 GB Transfer</li>
+<li>5 Email(s)</li>
+<li>MSSQL Microsoft SQL Server 2012 (SP1) - 11.0.3000.0 (X64)</li>
+</ul>
+<hr>
+<h3 id="399-299m">@ 399-299/m</h3>
+<ul>
+<li>Unlimited Space</li>
+<li>Unlimited Transfer</li>
+<li>Unlimited Email(s)</li>
+</ul>
+<hr>
+<h2 id="smarteraspnet">smarterasp.net</h2>
+<p><em>Appears to be reseller/partner of myasp.net</em></p>
+<ul>
+<li>domain name $12/yr</li>
+<li>domain whois privacy $8/yr</li>
+<li>Unlimited domain name hosted</li>
+<li>FTP</li>
+<li>200 Concurrent Connections</li>
+<li>US/Europe Datacenter, FREE Activation!</li>
+<li>ASP.NET Core, ASP.NET 4.6.1 Hosting</li>
+<li>ASP.NET MVC 6, ASP.NET MVC 5 Hosting</li>
+<li>LINQ Hosting</li>
+<li>Web Services Supported</li>
+<li>Microsoft Access Database Hosting</li>
+<li>Unlimited Email Boxes, SMTP, POP3, IMAP</li>
+<li>Crystal Report</li>
+</ul>
+<h3 id="295m-w500-us">@ $2.95/m [W500-US]</h3>
+<ul>
+<li>1 Website, Unlimited Domain Pointers</li>
+<li>1GB webspace</li>
+<li>1, 1GB SQL Server 2016, 2014, 2012 Hosting</li>
+<li>1, 1GB MySQL 5 Hosting</li>
+<li>Shared Application Pool</li>
+<li>No Virtual Directory Setup</li>
+</ul>
+<h3 id="495m">@ $4.95/m [ ]</h3>
+<ul>
+<li>6 Website, Unlimited Domain Pointers</li>
+<li>Unlimited webspace</li>
+<li>Unlimited domain name hosted</li>
+<li>6, 3GB SQL Server 2016, 2014, 2012 Hosting</li>
+<li>6, 3GB MySQL 5 Hosting</li>
+<li>Isolated Application Pool</li>
+<li>Virtual Directory Setup</li>
+<li>IIS8 / IIS7 Manager Remote Access</li>
+<li>access to raw log files</li>
+</ul>
+<hr>
+<h2 id="wwwglobehostcomwindows-hosting">www.globehost.com/windows-hosting</h2>
+<ul>
+<li><strong>See also</strong>
+<ul>
+<li>LINUX plans</li>
+<li>SMS for Rs [5000 for 1,000, 50,000 for 7,500, 1,00,000 for 12,000], `</li>
+</ul>
+</li>
+<li>SQL 2012, MSSQL, MySQL databases</li>
+<li>ASP.NET 4.0, ASP.NET MVC3</li>
+<li>PHP5 Hositng</li>
+<li>External domains</li>
+<li>Unlimited External domains, websites, Subdomains</li>
+<li>SSL Cretificate(Restrictions Apply)</li>
+<li>Get upto 10% Discount on your First Order of Web Hosting. Use Promo Code: WELCOME</li>
+</ul>
+<h3 id="silver-rs-600y">Silver Rs 600/Y</h3>
+<ul>
+<li>1 Hosted Domains</li>
+<li>250 MB Storage</li>
+<li>5 Email Accounts, FTP users</li>
+</ul>
+<h3 id="gold-rs-1200y">Gold Rs 1200/Y</h3>
+<ul>
+<li>1 Hosted Domains</li>
+<li>2 GB Storage</li>
+<li>Unlimited Email Accounts, FTP users</li>
+</ul>
+<hr>
+<h1 id="notes">Notes:</h1>
+<ul>
+<li>
+<p>hosting.asp.net - azure rs 125/m</p>
+</li>
+<li>
+<p>https://webhostinggeeks.com/best-windows-hosting</p>
+</li>
+<li>
+<p>non-transactional MySQL 5.5 database</p>
+<ul>
+<li>What does it mean?</li>
+</ul>
+</li>
+</ul>
+<h2 id="url-rewrite">URL Rewrite</h2>
+<ul>
+<li>https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-global-and-distributed-rewrite-rules</li>
+<li><strong>URL Rewrite Module 2</strong></li>
+<li>HTTP Redirect</li>
+<li>https://host4asp.net/top-iis-rewrite-rules/
+<ul>
+<li>Specific Subdomain Redirection</li>
+<li>blog.mysite.com/someentry/ to mysite.com/blog/entry/</li>
+</ul>
+</li>
+<li>https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module
+<ul>
+<li>rewrite rules are stored either in the ApplicationHost.config file or in Web.config files</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">rewrite</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">rules</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">rule</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Rewrite to article.aspx"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">match</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"^article/([0-9]+)/([_0-9a-z-]+)"</span> /&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"Rewrite"</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"article.aspx?id={R:1}&amp;amp;title={R:2}"</span> /&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">rule</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">rules</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">rewrite</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>rewrite rule, redirect rule, access block rule</li>
+</ul>
+</li>
+<li>URL Rewrite Module 2
+<ul>
+<li>https://www.iis.net/downloads/microsoft/url-rewrite</li>
+<li><a href="http://download.microsoft.com/download/3/9/E/39E30671-7AD2-4902-B56B-C300D862595E/RewriteExtensibility.msi">Samples</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<!--
+## What is?
+- SQL DSN
+- SQL CE4
+- AspUpload
+- AspJpeg
+- AspEmail
+- AspEncrypt
+
+ -->
+
+        </article>
+    </body>
+</html>

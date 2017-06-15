@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 26px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+body
+{
+    background-color: white;
+}
+.emoji
+{
+    height: 20px;
+}
+</style>
+    </head>
+    <body>
+        <article class="vscode-light markdown-body">
+            <h1 id="vscode-extensions">VSCode extensions</h1>
+<p><code>Fri 2017-May-26 17:25:20.046 +05:30</code></p>
+<pre class="hljs"><code><div><span class="hljs-comment">#Patch markdown-pdf:</span>
+rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/yzane.markdown-pdf-0.1.7 /home/sak/.vscode/extensions
+<span class="hljs-comment"># backup extensions:</span>
+rsync -vhr ~/.vscode/extensions/ /media/sak/70_Current/Work/buffer/vscode-xtns-bak/
+<span class="hljs-comment"># restore extensions:</span>
+rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensions/
+</div></code></pre>
+<h1 id="installed">Installed</h1>
+<h2 id="c">C#</h2>
+<ul>
+<li><code>ms-vscode.csharp</code></li>
+<li>C# for Visual Studio Code (powered by OmniSharp)</li>
+</ul>
+<h2 id="document-this">Document This</h2>
+<ul>
+<li><code>joelday.docthis</code></li>
+<li>automatically generates detailed JSDoc comments for both TypeScript and JavaScript files</li>
+<li>@class, @description, @enum, @export, @function, @implements, @interface, @param, @private, @returns, @static, @template, @type and @memberOf</li>
+</ul>
+<h2 id="eslint">ESLint</h2>
+<ul>
+<li><code>vscode-eslint</code></li>
+<li>Integrates ESLint into VS Code</li>
+<li>Need to install ESLint seperately</li>
+</ul>
+<h2 id="insert-date-string">Insert Date String</h2>
+<ul>
+<li><code>jsynowiec.vscode-insertdatestring</code></li>
+<li>Insert DateTime, Insert Timestamp, Insert Formatted DateTime</li>
+</ul>
+<h2 id="markdown-include">Markdown Include</h2>
+<ul>
+<li><code>Kevenin.markdowninclude</code></li>
+<li>merge Markdown files from various locations to one file.</li>
+<li>!import`/path/from/root/import.md</li>
+<li>can be anywhere in the file</li>
+</ul>
+<h2 id="markdown-table-prettifier">Markdown table prettifier</h2>
+<p><code>darkriszty.markdown-table-prettify</code></p>
+<ul>
+<li><strong>Works</strong></li>
+<li>Similar to 'Markdown writer' in atom</li>
+<li>select the entire table, then right click to format</li>
+<li>not live, need to invoke command</li>
+</ul>
+<h2 id="markdown-toc">Markdown-TOC</h2>
+<ul>
+<li><code>AlanWalk.markdown-toc</code></li>
+<li>outline numbered toc</li>
+<li>similar to atom</li>
+</ul>
+<h2 id="markdownconverter">MarkdownConverter</h2>
+<ul>
+<li><code>manuth.markdown-converter</code></li>
+<li><strong>Install and trail</strong></li>
+<li>convert MarkDown-files to html, png, or pdf</li>
+<li>DateTime-Formatting, configuring your own CSS-styles, setting Headers and Footers, FrontMatter</li>
+<li>Detailed config, front page, odd/even page...
+<ul>
+<li>https://github.com/manuth/MarkdownConverter/wiki/Config</li>
+</ul>
+</li>
+<li>Does it work offline?</li>
+</ul>
+<h2 id="perl">Perl</h2>
+<ul>
+<li><code>henriiik.vscode-perl</code></li>
+<li>code intelligence for the perl language to Visual Studio Code, mainly through the use of Exuberant Ctags.</li>
+<li>Formatting is also supported with use of Perl::Tidy.</li>
+<li><em>Review, trail and remove if not needed for regular use</em></li>
+</ul>
+<h2 id="preview">Preview</h2>
+<ul>
+<li><code>searKing.preview-vscode</code></li>
+<li>previewer of Markdown, ReStructured Text, HTML, Jade, Mermaid files, Image's URI or CSS properties</li>
+</ul>
+<h2 id="reflow-paragraph">Reflow paragraph</h2>
+<ul>
+<li><code>TroelsDamgaard.reflow-paragraph</code></li>
+<li>Format the current paragraph to have lines no longer than your preferred line length, using alt+q</li>
+</ul>
+<h2 id="regex-previewer">Regex Previewer</h2>
+<ul>
+<li><code>chrmarti.regex</code></li>
+<li>Shows the current regular expression's matches in a side-by-side document. This can be turned on/off</li>
+</ul>
+<h1 id="to-install">To Install</h1>
+<hr>
+<h1 id="interesting-test-which-is-not-already-bundled">Interesting - Test which is not already bundled</h1>
+<h2 id="markdown-pdf-78mb">Markdown PDF [78MB]</h2>
+<ul>
+<li><code>yzane.markdown-pdf</code></li>
+<li><strong>HOLD for now</strong>, compare with <code>vscode-pdf</code></li>
+<li>convert Markdown file to pdf, html, png or jpeg file</li>
+<li>Syntax highlighting</li>
+<li>emoji</li>
+<li>checkbox</li>
+<li>markdown-pdf.convertOnSave</li>
+</ul>
+<h2 id="markdown-helper">Markdown helper</h2>
+<ul>
+<li><code>joshbax.mdhelper</code></li>
+<li><strong>Hold for now</strong></li>
+<li>keyboard shortcuts, Format GFM table</li>
+<li>context menu support is new with VS Code version 1.3.0; it seems to work only in folder view and only after switching to a Markdown file (i.e. opening VS Code to a Markdown file doesn't properly add the menu items)</li>
+</ul>
+<h2 id="felschrextbundles-csharp-see-also">FelschR.extbundles-csharp [See also]</h2>
+<p>This extension pack contains useful extensions for C# and especially .NET Core development.</p>
+<ul>
+<li>ms-vscode.csharp</li>
+<li><code>Version Lens</code> pflannery.vscode-versionlens
+<ul>
+<li>Shows package version information for npm, jspm, bower, dub and dotnet core in the Visual Studio Code editor</li>
+<li>Replaces the version text but does not automatically install packages when clicking a code lens link</li>
+</ul>
+</li>
+<li><code>C# XML Documentation Comments</code> k--kato.docomment
+<ul>
+<li>Generate XML documentation comments for Visual Studio Code.</li>
+</ul>
+</li>
+<li><code>NuGet Package Manager</code> jmrog.vscode-nuget-package-manager
+<ul>
+<li>add or remove .NET Core 1.1+ package references to/from your project's .csproj or .fsproj files using Code's Command Palette.</li>
+</ul>
+</li>
+<li><code>NuGet Reverse Package Search</code> jesschadwick.nuget-reverse-package-search
+<ul>
+<li>Adds reverse .NET Core package lookup support like the &quot;Add Package&quot; context menu item in full Visual Studio</li>
+</ul>
+</li>
+</ul>
+<h2 id="vscode-pdf">vscode-pdf</h2>
+<ul>
+<li><code>tomoki1207.pdf</code></li>
+<li>Display pdf in VSCode</li>
+<li>incorporates components from
+<ul>
+<li>PDF.js (https://github.com/mozilla/pdf.js</li>
+</ul>
+</li>
+<li>Does not work on Linux, not tested on Windows</li>
+</ul>
+<h2 id="other">Other</h2>
+<ul>
+<li><code>HTML Snippets</code> abusaidm.html-snippets</li>
+<li><code>IntelliSense for CSS class names</code> Zignd.html-css-class-completion
+CSS class name completion for the HTML class attribute based on the CSS files in your workspace</li>
+<li><code>get</code> josephwoodward.vscodeilviewer
+allows you to rapidly inspect the IL output of any given C# file.</li>
+<li><code>ASP.NET Helper</code> schneiderpat.aspnet-helper
+<ul>
+<li>parses your project to enable IntelliSense for Razor pages within an ASP.NET MVC project</li>
+</ul>
+</li>
+<li><code>Instant Markdown</code> dbankier.vscode-instant-markdown
+<ul>
+<li>edit markdown documents in vscode and instantly preview it in your browser</li>
+</ul>
+</li>
+<li><code>html tag wrapper</code> hwencc.html-tag-wrapper</li>
+<li><code>Knockout.js Snippets for VS Code</code> furstenberg.knockoutjs</li>
+</ul>
+<h1 id="current-working">Current Working</h1>
+<h2 id="perl-6-code-snippets">Perl 6 code snippets</h2>
+<ul>
+<li><code>sergot.perl6snippets</code></li>
+</ul>
+<h2 id="perl-debug">Perl Debug</h2>
+<ul>
+<li><code>mortenhenriksen.perl-debug</code></li>
+</ul>
+<h2 id="perltidy-more">perltidy-more</h2>
+<ul>
+<li><code>Kaktus.perltidy-more</code></li>
+</ul>
+<h2 id="md2pdf">md2pdf</h2>
+<ul>
+<li><code>qinjia.md2pdf</code></li>
+<li>convert markdown file to pdf</li>
+<li>Converts the Markdown language to PDF not the Markdown formatting to PDF</li>
+</ul>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>Python-vscode
+<ul>
+<li>Python language pack for Visual Studio Code</li>
+</ul>
+</li>
+<li>tomoki1207.pdf
+<ul>
+<li>Display pdf in VSCode</li>
+</ul>
+</li>
+</ul>
+<h2 id="vscode-comment">vscode-comment</h2>
+<ul>
+<li>https://github.com/Microsoft/vscode-comment</li>
+</ul>
+<h1 id="other-evaluated">Other Evaluated</h1>
+<ul>
+<li><code>Markdown checkbox</code> PKief.markdown-checkbox
+<ul>
+<li>provides shortcuts and some workspace configurations so you can create a checkbox and mark it quickly and smoothly</li>
+</ul>
+</li>
+<li><code>Markdown All in One</code> yzhang.markdown-all-in-one
+<ul>
+<li><strong>Works mostly</strong></li>
+<li>Keyboard shortcuts, manual TOC, auto list items</li>
+<li>TOC, removes first header, toc can only be at first line</li>
+<li>can be only 1 h1, all other are ignored</li>
+<li>ordered list, all items are numbered 1 in text, but rendered in sequence</li>
+</ul>
+</li>
+<li><code>Markdown Table Formatter</code> <s>josa.markdown-table-formatter</s></li>
+<li><code>markdown handy</code> <s>NaccOll.markdown-handy</s>
+<ul>
+<li>clone of <s>yzane.markdown-pdf</s> without options</li>
+<li>Export to html or pdf</li>
+<li>No dependencies</li>
+</ul>
+</li>
+<li><code>MarkdownConverter</code> <s>manuth.markdown-converter</s>
+<ul>
+<li><strong>Does NOT work</strong></li>
+<li>export your Markdown-file as PDF-, HTML or Image-file</li>
+<li>DateTime-Formatting, configuring your own CSS-styles, setting Headers and Footers, FrontMatter and much more</li>
+</ul>
+</li>
+<li><code>Markdown-TOC</code> <s>joffreykern.markdown-toc</s>
+<ul>
+<li>generates a table of contents for your markdown file.</li>
+<li>modifies the heading text to make into a link</li>
+</ul>
+</li>
+<li><code>Table Formatter</code> <s>shuworks.vscode-table-formatter</s>
+<ul>
+<li><strong>appears broken</strong> try <code>darkriszty.markdown-table-prettify</code></li>
+<li>manual invoke</li>
+<li>Only table at current cursor position, or All tables in file</li>
+<li>GitHub Flavored Markdow, Plain Text Table, G`rid Table, Simple Table</li>
+</ul>
+</li>
+</ul>
+<h1 id="keybindingsjson">keybindings.json</h1>
+<p><code>~/.config/Code/User/keybindings.json</code></p>
+<pre class="hljs"><code><div>{ <span class="hljs-string">"key"</span>: <span class="hljs-string">"ctrl+alt+p"</span>,            <span class="hljs-string">"command"</span>: <span class="hljs-string">"markdownConverter.convert"</span>,
+                                     <span class="hljs-string">"when"</span>: <span class="hljs-string">"editorFocus"</span> }
+</div></code></pre>
+<h1 id="settingsjson">settings.json</h1>
+<p><code>~/.config/Code/User/settings.json</code></p>
+<pre class="hljs"><code><div>    <span class="hljs-string">"editor.fontSize"</span>: <span class="hljs-number">14</span>,
+    <span class="hljs-string">"editor.fontFamily"</span>: <span class="hljs-string">"'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'"</span>,
+    <span class="hljs-string">"editor.insertSpaces"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"editor.wrappingIndent"</span>: <span class="hljs-string">"indent"</span>,
+    <span class="hljs-string">"editor.wordWrapColumn"</span>: <span class="hljs-number">120</span>,
+    <span class="hljs-string">"editor.dragAndDrop"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"files.insertFinalNewline"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"files.defaultLanguage"</span>: <span class="hljs-string">"md"</span>,
+    <span class="hljs-string">"html.format.wrapAttributes"</span>: <span class="hljs-string">"force-aligned"</span>,
+    <span class="hljs-string">"zenMode.hideTabs"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"telemetry.enableCrashReporter"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"telemetry.enableTelemetry"</span>: <span class="hljs-literal">false</span>,
+	<span class="hljs-string">"insertDateString.format"</span>: <span class="hljs-string">"`DDD YYYY-MMM-DD hh:mm:ss.SS Z`\n"</span>,
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// markdown</span>
+    <span class="hljs-string">"markdown.styles"</span>: [],
+    <span class="hljs-string">"markdown.previewFrontMatter"</span>: <span class="hljs-string">"show"</span>,
+    <span class="hljs-string">"markdown.preview.fontFamily"</span>: <span class="hljs-string">"Calibri, Carlito, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif"</span>,
+    <span class="hljs-string">"markdown.preview.fontSize"</span>: <span class="hljs-number">14</span>,
+    <span class="hljs-string">"markdown.enableExperimentalExtensionApi"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// markdown-toc</span>
+    <span class="hljs-string">"markdown-toc.orderedList"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// // markdown-pdf</span>
+    <span class="hljs-comment">// // Output format: pdf, html, png, jpeg</span>
+    <span class="hljs-comment">// // "markdown-pdf.type": "html",</span>
+    <span class="hljs-comment">// "markdown-pdf.outputDirectory": "/media/sak/70_Current/_Notes/formatted-docs",</span>
+    <span class="hljs-comment">// // Page Option. Page size: A3, A4, A5, Legal, Letter, Tabloid</span>
+    <span class="hljs-comment">// "markdown-pdf.format": "Legal",</span>
+    <span class="hljs-comment">// "markdown-pdf.styles": [],</span>
+    <span class="hljs-comment">// // Set the style file name. for example: github.css, monokai.css ...</span>
+    <span class="hljs-comment">// // ~/.vscode/extensions/yzane.markdown-pdf-0.1.7/styles/*.css</span>
+    <span class="hljs-comment">// "markdown-pdf.highlightStyle": "github.css",</span>
+    <span class="hljs-comment">// "markdown-pdf.breaks": true,</span>
+    <span class="hljs-comment">// //</span>
+    <span class="hljs-comment">// "markdown-pdf.border.top": "1.0cm",</span>
+    <span class="hljs-comment">// "markdown-pdf.border.bottom": "1.0cm",</span>
+    <span class="hljs-comment">// "markdown-pdf.border.right": "1cm",</span>
+    <span class="hljs-comment">// "markdown-pdf.border.left": "1.5cm",</span>
+    <span class="hljs-comment">// //</span>
+    <span class="hljs-comment">// "markdown-pdf.header.contents": "&lt;div style=\"text-align: right;\"&gt;&lt;strong&gt;Static Text, need to replace for each export&lt;/strong&gt;&lt;/div&gt;&lt;hr/&gt;&lt;/br&gt;",</span>
+    <span class="hljs-comment">// "markdown-pdf.header.height": "2.9cm",</span>
+    <span class="hljs-comment">// //</span>
+    <span class="hljs-comment">// "markdown-pdf.footer.height": "1.8cm",</span>
+    <span class="hljs-comment">// "markdown-pdf.footer.contents": "&lt;hr/&gt;&lt;div style=\"float:left;\"&gt;&amp;copy;2017 oblak consulting&lt;/div&gt;&lt;div style=\"float:right;\"&gt;Page  of &lt;/div&gt;",</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-string">"reflow.preferredLineLength"</span>: <span class="hljs-number">120</span>,
+    <span class="hljs-string">"docthis.includeDescriptionTag"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// MARKDOWN CONVERTER SETTINGS:</span>
+    <span class="hljs-comment">// The path to save the converted files to.</span>
+    <span class="hljs-comment">// Note: The path may be relative to the markdown-file that is to be converted.</span>
+    <span class="hljs-string">"markdownConverter.outDir"</span>: <span class="hljs-string">"/media/sak/70_Current/_Notes/formatted-docs"</span>,
+
+    <span class="hljs-comment">// The path to the working-directory.</span>
+    <span class="hljs-comment">// </span>
+    <span class="hljs-comment">// Note:</span>
+    <span class="hljs-comment">// Each file-path, like, for example, the template, stylesheets etc. are relative to this path.</span>
+    <span class="hljs-comment">// This path may be relative to the workspace-directory.</span>
+    <span class="hljs-string">"markdownConverter.workDir"</span>: <span class="hljs-string">"."</span>,
+
+    <span class="hljs-comment">// true to convert the current file even if it's not written in Markdown; otherwise false.</span>
+    <span class="hljs-string">"markdownConverter.ignoreLanguage"</span>: <span class="hljs-literal">false</span>,
+
+    <span class="hljs-comment">// true to save the file automatically before the conversion-process; otherwise false.</span>
+    <span class="hljs-string">"markdownConverter.autoSave"</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-comment">// The quality of the rendered file.</span>
+    <span class="hljs-string">"markdownConverter.document.quality"</span>: <span class="hljs-number">90</span>,
+
+    <span class="hljs-comment">// Either a single or a set of types to convert the markdown-file to.</span>
+    <span class="hljs-comment">// "markdownConverter.conversionType": "PDF",</span>
+    <span class="hljs-string">"markdownConverter.conversionType"</span>: [
+        <span class="hljs-string">"PDF"</span>,
+        <span class="hljs-string">"HTML"</span>
+    ],
+
+    <span class="hljs-comment">// Settings related to the document.</span>
+    <span class="hljs-string">"markdownConverter.document"</span>: {
+    <span class="hljs-string">"emoji"</span>: <span class="hljs-string">"github"</span>,
+    <span class="hljs-string">"layout"</span>: {
+        <span class="hljs-string">"margin"</span>: {
+        <span class="hljs-string">"top"</span>: <span class="hljs-string">"1cm"</span>,
+        <span class="hljs-string">"right"</span>: <span class="hljs-string">"1cm"</span>,
+        <span class="hljs-string">"bottom"</span>: <span class="hljs-string">"1cm"</span>,
+        <span class="hljs-string">"left"</span>: <span class="hljs-string">"1cm"</span>
+        },
+        <span class="hljs-string">"format"</span>: <span class="hljs-string">"A4"</span>,
+        <span class="hljs-string">"orientation"</span>: <span class="hljs-string">"portrait"</span>
+    },
+    <span class="hljs-string">"header"</span>: {
+        <span class="hljs-string">"height"</span>: <span class="hljs-string">"15mm"</span>,
+        <span class="hljs-string">"content"</span>: <span class="hljs-string">"&lt;table style=\"width: 100%; table-layout: fixed; \"&gt;&lt;td style=\"text-align: left; \"&gt;&lt;/td&gt;&lt;td style=\"text-align: center\"&gt;{{ PageNumber }}/{{ PageCount }}&lt;/td&gt;&lt;td style=\"text-align: right\"&gt;&lt;/td&gt;&lt;/table&gt;"</span>
+    },
+    <span class="hljs-string">"footer"</span>: {
+        <span class="hljs-string">"height"</span>: <span class="hljs-string">"1cm"</span>,
+        <span class="hljs-string">"content"</span>: <span class="hljs-string">"&lt;table style=\"width: 100%; table-layout: fixed; \"&gt;&lt;td style=\"text-align: left; \"&gt;&lt;/td&gt;&lt;td style=\"text-align: center\"&gt;2017-05-26&lt;/td&gt;&lt;td style=\"text-align: right\"&gt;&lt;/td&gt;&lt;/table&gt;"</span>
+    }
+    }
+    <span class="hljs-comment">//</span>
+
+</div></code></pre>
+
+        </article>
+    </body>
+</html>

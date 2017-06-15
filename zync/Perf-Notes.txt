@@ -1,0 +1,82 @@
+Performance Plan
+
+ASSESSMENT CRITERIA - PERFORMANCE EXPECTATIONS
+
+WHAT
+Individual Goals - Executes against all aspects of job in both quantity and quality.  Produces high quality work in line with key business goals.
+
+HOW
+
+Superior Customer Experience - 
+Views own work in terms of how it impacts internal and external customer; 
+has a strong understanding of customer needs; 
+uses customer feedback to improve processes/service.
+
+Teamwork in Support of Winning Culture - 
+Is supportive of others' ideas and goals; demonstrates a positive attitude, even when facing adversity; 
+supports team decisions once made; 
+is direct in all relationships and fosters an environment that promotes inclusiveness and teamwork.
+
+Winning with Integrity - 
+Is widely trusted and keeps confidences; 
+admits mistakes; 
+doesn't misrepresent self for personal gain; 
+puts team needs before personal agendas.
+
+Effective Leadership - 
+Effectively leads the team to gain results; 
+establishes and communicates clear priorities; 
+builds and motivates the team; 
+works to improve capabilities of team members.
+
+
+PERFORMANCE OBJECTIVES - WHAT & HOW
+
+TITLE
+Project Delivery
+
+DESCRIPTION
+Deliver All Projects, Meeting Or Exceeding org Goals For On-Time Delivery, On-Time Milestone Delivery, Defect Removal Rate, Resource Utilization, And Effort Variance
+A. 95% Or Above Project On-Time Delivery                                                                                       
+B. 90% Or Above Milestone Delivery                                                            
+C. 95% Defect Removal Rate
+D. 20% Or Less Effort Variance.
+E. Improve Productivity Qoq 10% From Q1 Baseline
+F. Product Quality Score Of 3.5 Or Greater At Year End
+G. Requirements Stability: Track The Requirement Stability And Identify / Implement Actions With Segment Partners When The Requirement Changes Are Greater Than 10% Of The Baseline
+
+TITLE
+Implementation & Adherence To Process
+
+DESCRIPTION
+A. Contribute To org Goal Of Achieving ISO Certification ( Qx FYxx ) By
+B. Following The  Software Quality Processes As Defined By The Quality Framework; This Will Be Measured Through SQA Reviews On Projects.
+C. Support Software Process Improvement Throughout FYxx By Submitting At Least One Approved Change Request
+D. Acting As The Qco/Cmc/Cma In Projects
+E. 100% Compliance To All Organizational Policies And Procedures
+F. Capture And Share The Lessons Learnt For 100% Of Completed Projects
+G. 100% Accurate, On-Time Entry Of Timesheet In The Appropriate Tasks/Areas By Cob Sunday, Every Week.
+
+TITLE
+Implementation & Adherence To Process
+
+DESCRIPTION
+Attend 100% Of The Training Scheduled And Achieve Progress In Skills As Defined By The Training Plan
+Participate In Software Process Improvement Areas / ISO Assessment / PAT Groups
+BPI Participation
+Contribute To The ORG BPI Savings Goal By Identifying & Executing BPI Projects And Getting Yellow, Green  Or Black Belt
+
+TITLE
+Winning Culture
+
+DESCRIPTION
+Community: Contribute Positively And Encourage Participation In Various Community Development Activities.
+
+TITLE
+Other
+
+DESCRIPTION
+A) Participate In The Technical Competency Forums
+B) Conduct Technical Seminars/ Brown Bags (Technical / Functional Domain) For Peers At The Center
+C) Define A Secondary Technical Skill And Gain More Knowledge On It Thru Formal Class, Self-Study And Hands On Experience
+
