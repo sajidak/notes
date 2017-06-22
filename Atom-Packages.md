@@ -26,7 +26,8 @@ rsync -nvh /media/sak/70_Current/Work/buffer/markdown-themeable-pdf-configs/* ~/
 - [x] lines
 - [x] language-markdown
 - [x] markdown-themeable-pdf
-- [ ] pdf-view
+- [x] pdf-view (Linux only)
+- [x] select-rectangle
 
 ## Now Installed
 
@@ -39,6 +40,25 @@ rsync -nvh /media/sak/70_Current/Work/buffer/markdown-themeable-pdf-configs/* ~/
 'body':
   'ctrl-shift-I': 'date:datetime'
 ```
+**Format Options:**
+| **Key** |             **Format**             |
+| ------- | ---------------------------------- |
+| YYYY    | Four digit year                    |
+| MMMM    | Full month name. ie January        |
+| MMM     | Short month name. ie Jan           |
+| MM      | Zero padded month ie 01            |
+| M       | Month ie 1                         |
+| DDDD    | Full day or week name ie Tuesday   |
+| DDD     | Abbreviated day of the week ie Tue |
+| DD      | Zero padded day ie 08              |
+| D       | Day ie 8                           |
+| HH24    | Hours in 24 notation ie 18         |
+| HH      | Padded Hours ie 06                 |
+| H       | Hours ie 6                         |
+| MI      | Padded Minutes                     |
+| SS      | Padded Seconds                     |
+| PP      | AM or PM                           |
+| P       | am or pm                           |
 
 ### lines
 - Sort (case sensitive or not)
@@ -105,7 +125,6 @@ https://atom.io/packages/markdown-themeable-pdf
 - Known - Table header glitches when a table starts directly on a new page
 	- put in your markdown in front of the table an html code <div class="page-break" /> to prevent this.
 - Customization
--
 |     file     |                intent                |
 | ------------ | ------------------------------------ |
 | document.css | default styles that will be applied? |
@@ -141,7 +160,8 @@ https://atom.io/packages/pdf-view
 	- uses javascript-natural-sort
 	- `sorter:natural-sort`
 
-### atom-mdtoc (best option, `Mon, 08-May-2017 16:05:38 +0530`)
+### atom-mdtoc
+(best option, `Mon, 08-May-2017 16:05:38 +0530`)
 - Auto linking via anchor tags
 - Depth control e.g. maxDepth:6
 - Refresh list on save with updateOnSave:1 (disable with updateOnSave:0)
@@ -201,6 +221,42 @@ https://atom.io/packages/pdf-view
 		- https://www.npmjs.com/package/pandoc-bin
 	-  pandoc - Pandoc Previewer
 
+### New
+- https://atom.io/packages/js-refactor-atom
+- https://atom.io/packages/nms-color-bracket
+	-
+    Colors pairs of Brackets based on nesting level
+    Colors up to 12 deep
+    Alt-q to toggle
+    Saving will reprocess current page
+    Unpaired close "}" brackets will flash
+- https://atom.io/packages/emmet
+- https://atom.io/packages/nanobot
+- https://atom.io/packages/fonts
+	- from http://programmingfonts.org/list
+	- 3270, Anka/Coder, Anonymous Pro, Aurulent Sans Mono, Average Mono, BPmono, Bitstream Vera Sans Mono, Code New Roman, Consolamono, Cousine, Cutive Mono, DejaVu Mono, Droid Sans Mono, Effects Eighty, Fantasque Sans Mono, Fifteen, Fira Mono, FiraCode, Fixedsys, Fixedsys with ligatures, GNU Freefont, GNU Unifont, Generic Mono, Hack, Hasklig, Hermit Light, Hermit, Inconsolata, Inconsolata-g, Latin Modern Mono Light, Latin Modern Mono, Lekton, Liberation Mono, Luxi Mono, M+ Light, M+ Medium, M+ Thin, M+, Meslo, Monofur, Monoid, Mononoki, NotCourierSans, Nova Mono, Office Code Pro, Oxygen Mono, PT Mono, Profont, Proggy Clean, Quinze, Roboto, Share Tech Mono, Source Code Pro Extra Light, Source Code Pro Light, Source Code Pro Medium, Source Code Pro, Sudo, TeX Gyre Cursor, Terminus, Ubuntu Mono, VT323, Verily Serif Mono, saxMono
+- https://atom.io/packages/pretty-json
+	- Minify and sorting commands are available too.
+- https://atom.io/packages/slides-preview
+	- preivew markdown slides using remarkjs
+	- also https://github.com/shafreeck/slides
+	- share and synchronize your slides
+- https://atom.io/packages/atom-live-server
+	- Launch a simple development http server with live reload capability.
+- https://atom.io/packages/atom-html-preview
+	- A live preview tool for Atom Editor.
+	- Press CTRL-SHIFT-H in the editor to open the preview pane.
+
+### select-rectangle
+- **Select alt-s**
+- At first, select region that you want to do. Next, press alt-s to select rectangle region.
+- if repeating the alt-s would go back to the initial selection. After that, You can copy, cut or following actions.
+- **Clear alt-cmd-c**
+After selecting rectangle region by alt-s, alt-cmd-c clears the region-rectangle by replacing all of its contents with spaces.
+- **Open alt-cmd-o**
+- After selecting rectangle region by alt-s, alt-cmd-o inserts blank space to fill the space of the region-rectangle (open-rectangle).
+- This pushes the previous contents of the region-rectangle to the right.
+
 ### autoprefixer
 - Prefix CSS and SCSS with Autoprefixer
 - Run on Save option
@@ -230,19 +286,42 @@ https://atom.io/packages/pdf-view
 
 
 ## Other Evaluated
+### column-select
+**WILL NOT WORK ON WINDOWS, KEY BINDINGS ARE FOR ROTATING SCREEN**
+**Key Bindings**
+|         **Command**         |       **Mac**       |    **Windows**    |     **Linux**      |
+| --------------------------- | ------------------- | ----------------- | ------------------ |
+| Up                          | Ctrl-Shift-Up       | Ctrl-Alt-Up       | Alt-Shift-Up       |
+| Down                        | Ctrl-Shift-Down     | Ctrl-Alt-Down     | Alt-Shift-Down     |
+| PageUp                      | Ctrl-Shift-PageUp   | Ctrl-Alt-PageUp   | Alt-Shift-PageUp   |
+| PageDown                    | Ctrl-Shift-PageDown | Ctrl-Alt-PageDown | Alt-Shift-PageDown |
+| Up to top of document.      | Ctrl-Shift-Home     | Ctrl-Alt-Home     | Alt-Shift-Home     |
+| Down to bottom of document. | Ctrl-Shift-End      | Ctrl-Alt-End      | Alt-Shift-End      |
+
+Compared to the normal column selection in Atom, this does the following
+- Allows reversing direction (go down a few lines, if you go one too many just go up one).
+- Added Page and Document jumps.
+- Skips rows that are too short.
+- If you start at the end of a line, then it will stay at the end of each line.
+- Handles tab characters.
+
 ### pdfify-atom
 https://atom.io/packages/pdfify
 - Needs [pdfify](https://github.com/swinton/pdfify)
 	- Generates Octocat-friendly PDFs from Markdown
 	- generate a PDF `pdfify /path/to/some/markdown/file.md`
 	- To insert a page break, include a {.page-break} header attribute `# Lorem ipsum {.page-break}`
-	- Customized styles - create a ~/.pdfify/style.css based off the included lib/style.css
-	- Customized header / footer - create a ~/.pdfify/header.html /  ~/.pdfify/footer.html based off lib/header.html / lib/footer.html
+	- Customized styles
+		- create `~/.pdfify/style.css` based off the included lib/style.css
+	- Customized header
+		-  create `~/.pdfify/header.html` based off lib/header.html
+	- Customized footer
+		- create `~/.pdfify/footer.html` based off lib/footer.html
 
 ### wkhtmltopdf and wkhtmltoimage
 **Not package, but dependency**
 https://wkhtmltopdf.org/
-- un entirely "headless"
+- run entirely "headless"
 - download from https://wkhtmltopdf.org/downloads.html
 - Linux - depends on: zlib, fontconfig, freetype, X11 libs (libX11, libXext, libXrender)
 - `wkhtmltopdf [GLOBAL OPTION]... [OBJECT]... <output file>`
@@ -251,13 +330,13 @@ https://wkhtmltopdf.org/
 
 ### markdown-pdf
 - depends on markdown-preview , marked
-	- will not work as markdown-preview-enhanced is installed
+	- will not work if markdown-preview-enhanced is installed
 
+### More
 - [x] atom-beautify
 	- Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom
 	- It will only beautify selected text if a selection is found – if not, the whole file will be beautified.
 	- Beautify On Save can be enabled for each language individually.
-
 
 - [x] markdown-document
 	- **Fixed in 1.17**
@@ -273,7 +352,6 @@ https://wkhtmltopdf.org/
 	- formats tables
 	- renumbers lists
 	- cleans up empty lines
-
 
 - ~~markdown-folding~~ - It folds and unfolds markdown sections following the headers.
 
@@ -296,8 +374,6 @@ https://wkhtmltopdf.org/
 - [x] atom-material-ui
 	- requires Atom 1.17
 	- not very suitable for intended use
-
-
 
 ## `keymap.json` extract
 ```js

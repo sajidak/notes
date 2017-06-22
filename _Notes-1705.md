@@ -21,6 +21,67 @@ Placeholder for items that are to be followed up
 	- https://www.stellarinfo.com/password-recovery/office-password-recovery.php
 
 ***
+# Sun, 18-Jun-2017
+
+## Libreoffice Extensions
+https://extensions.openoffice.org/en/project/qr-code-generator-0
+- Create QR-code easily since Writer or Calc.
+- This OXT use an embedded Javascript from Kazuhiko Arase (under license MIT).
+
+https://extensions.libreoffice.org/extensions/barcode
+https://extensions.libreoffice.org/templates/calendar-creator/2.0
+
+## Barcode Reader with javascript
+- https://github.com/lindell/JsBarcode
+- http://barcode-coder.com/en/barcode-jquery-plugin-201.html
+- http://lindell.me/JsBarcode/
+- https://github.com/lindell/JsBarcode/
+- http://www.jqueryscript.net/other/Simple-jQuery-Based-Barcode-Generator-Barcode.html
+-
+- http://www.jqueryscript.net/other/Creating-A-QR-Code-Containing-A-URL-with-jQuery-qrcode.html
+- http://www.jqueryscript.net/other/jQuery-Plugin-For-Creating-QR-Codes-On-Your-Website-ClassyQR.html
+- http://www.jqueryscript.net/other/jQuery-Scroll-To-Top-Barcode-Plugin.html
+
+
+### Decoder
+- https://atandrastoth.co.uk/main/pages/plugins/webcodecamjs/
+- https://github.com/andrastoth/WebCodeCamJS
+- https://github.com/serratus/quaggaJS
+-
+- https://github.com/dwa012/html5-qrcode
+- https://github.com/LazarSoft/jsqrcode
+	- https://github.com/zxing/zxing
+	- https://github.com/micjahn/ZXing.Net
+- http://www.webondevices.com/javascript-barcode-scanner/
+- https://github.com/yurydelendik/zbarjs
+- http://a.kabachnik.info/jquery-working-with-barcode-scanners.html
+
+## jQuery Webcam
+- https://plugins.jquery.com/ScriptCam/
+
+
+# Sun, 18-Jun-2017
+## Markdown syntax
+`from Pandoc manual`
+- Superscript sample: H~2~O
+- Subscript Sample: 2^10^ = 1024
+- Column alignment
+	- Left (default)
+	- center `:-----:`
+	- right `------:`
+
+|      package      | Center | Right  | Ver Curr |
+| ----------------- |:------:| ------:| -------- |
+| jQuery            | 1.10.2 |  3.1.1 | 3.2.1    |
+| jQuery.Validation | 1.11.1 | 1.16.0 | 1.16.0   |
+- Internal Links
+	- TBD:
+- Inline note ^[This is the sample]
+
+- Footnote sample
+[^one]: This should be a foot note
+ 	Some sample text, as long as it is indented
+
 
 # Tue, 06-Jun-2017
 
@@ -34,7 +95,7 @@ base url = `https://marketplace.visualstudio.com/items?itemName=`
 ## Versions
 `Tue, 06-Jun-2017 10:06:47 +0530`
 |      package      | Ver MVC | Ver Nuget | Ver Curr |                          URL                           |
-| ----------------- | ------- | --------- | -------- | ------------------------------------------------------ |
+| ----------------- | :-----: | --------: | -------- | ------------------------------------------------------ |
 | jQuery            | 1.10.2  | 3.1.1     | 3.2.1    | https://jquery.com/                                    |
 | jQuery.Validation | 1.11.1  | 1.16.0    | 1.16.0   | https://github.com/jquery-validation/jquery-validation |
 | Modernizr         | 2.6.2   | 2.8.3     | 3.5.0    | https://modernizr.com/                                 |

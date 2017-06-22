@@ -7,6 +7,14 @@
 - http://msftdbprodsamples.codeplex.com/releases/view/55330
 - https://gist.github.com/gabehesse/1002735
 
+## System.Data.Entity
+### DbFunctions
+- `public static string Left(string stringArgument, long? length)`
+- `public static string Right(string stringArgument, long? length)`
+- `public static System.DateTime? AddDays(System.DateTime? dateValue, int? addValue)`
+- `public static int? DiffDays(System.DateTime? dateValue1, System.DateTime? dateValue2)`
+
+
 ## Enum as Data Type
 - https://visualstudiomagazine.com/articles/2017/02/01/enumerated-values.aspx
 - http://eliot-jones.com/2015/03/entity-framework-enum

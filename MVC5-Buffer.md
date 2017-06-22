@@ -11,20 +11,21 @@ Temporary container to hold notes till they can be organized
 
 
 ## Data Annotations
-Annotation `[Display(Name = "VALUE")]` will be used as Label for the feild, by MVC5 template. Other tags appear to be ignored, but needs to be investigated.
+Annotation `[Display(Name = "VALUE")]` will be used as Label for the feild, by MVC5 template.
+Other tags appear to be ignored, but needs to be investigated.
 ## DataAnnotations - Get more Information
 - System.ComponentModel.DataAnnotations
 	- EnumDataTypeAttribute
 	- `[Required(ErrorMessage="{0} is required")]`
-	- StringLength
+	- `StringLength`
 	- `[MinLength(3,ErrorMessage="{0} should have three or more letters")]`
-	- RegularExpression
+	- `RegularExpression`
 	- `[Range(100, 10000, ErrorMessage = "Units in stock should be between {1} and {2}.")]`
 	- `[DataType(DataType.Password)]`
 	- `[Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]`
 	- `[UIHint("UnitsInStock")]`
 - see
-	- http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx
+	- [system.componentmodel.dataannotations](http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx)
 
 ### Using UIHint
  [UIHintAttribute](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute(v=vs.98).aspx)
@@ -39,6 +40,8 @@ Annotation `[Display(Name = "VALUE")]` will be used as Label for the feild, by M
 
 
 ### Using Metadata Class
+> **TODO:** Update from generated code, to ensure sync
+
 http://www.ozkary.com/2015/01/add-data-annotations-to-entity.html
 **Note:** Ensure namespace is same as in EF6 generated classes.
 ```cs
@@ -103,7 +106,7 @@ Parameners to use:
 |     |                            | `TODO:` Get from Entity source file                                      |
 | 2   | `${ANNOTATION_NAME_SPACE}` | Additional namespace segment to be applied on the Metadata class         |
 |     |                            | , to avoid polluting the Entity name space                               |
-|     |                            | **Default** = `${ENTITY_NAME_SPACE}_Annotations`                         |
+|     |                            | **Default** = `${ENTITY_NAME_SPACE}.Annotations`                         |
 |     |                            | **Note:** Expansion will NOT be done, value will be replaced AS-IS       |
 | 3   | `${METADATA_CLASS_SUFFIX}` | Suffix to be added to Entity class name, to get the Metadata class name  |
 |     |                            | **Default** = `${ENTITY_CLASS_NAME}_Metadata`                            |
@@ -115,13 +118,13 @@ Parameners to use:
 |     |                            | , if any generatable files exist in the folder                           |
 
 **Planned Enhancements**
-- Get entity namespace from entity source itself
-	- should support multiple namespaces
+- ~~Get entity namespace from entity source itself~~
+	- ~~should support multiple namespaces~~
 - Remove existing attributes from Entity code
 - Use reflection to get details needed
 
-**Keywords:** `namespace `, `    public partial class `, `        public `
-```cs
+**Keywords:** `'namespace '`, `'    public partial class '`, `'        public '`
+```
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -163,7 +166,7 @@ namespace ${ENTITY_NAME_SPACE}
 - gets a copy of the parent view''s ViewData dictionary.
 - Updates made to the data within the partial view are not persisted to the parent view
 - e.g.
-```html
+```
 <body>
     @{ Html.RenderPartial("_Header"); }
     @Html.Partial("_Sidebar")
@@ -173,35 +176,35 @@ namespace ${ENTITY_NAME_SPACE}
     @{ Html.RenderPartial("_Footer"); }
 </body>
 ```
--  Partial
+-  Partial (`System.Web.Mvc.Html.PartialExtensions`)
+	- `Partial(this System.Web.Mvc.HtmlHelper htmlHelper, string partialViewName, object model, System.Web.Mvc.ViewDataDictionary viewData)`
+	- Will render a partial view as an HTML-encoded string
 	- returns an IHtmlString and can be referenced by prefixing the call with `@`
 	- to render the static data
--  RenderPartial
-	- streams the rendered output directly to the response
+-  RenderPartial (`System.Web.Mvc.Html.RenderPartialExtensions`)
+	- `RenderPartial(this System.Web.Mvc.HtmlHelper htmlHelper, string partialViewName, object model, System.Web.Mvc.ViewDataDictionary viewData)`
+	- streams rendered output directly to the response
 	- to render the static data
 	- Because it doesn't return a result, it must be called within a Razor code block
 	-  in most cases it's recommended you use Partial
 - Passing data to partial views
-	- the view engine passes each partial view as a reference to the same view model object it received from the controller
+	- the view engine passes to each partial view as a reference the same view model object it received from the controller
 	- to pass an explicit parameter to the partial view
 	- `@Html.Partial("_CustomerBox", customer)`
 	- can access the global ViewData and ViewBag collections from within a partial view
-	- Any value stored in such dictionaries by the controller can still be read from the partial view even when the Model property is overridden in the parent view
+	- Any value stored in such dictionaries by the controller can still be read from the partial view
+		- even when the Model property is overridden in the parent view
 	- can use ViewData and ViewBag to pass additional info
 - Action
 	- returns the markup as a string
-	-  to implement the dynamic data
+	- to implement the dynamic data
 - RenderAction
 	- writes directly to the output stream
-	-  to implement the dynamic data
-```html
+	- to implement the dynamic data
+```
 @Html.Action(“_PartialView”);
 @{Html.RenderAction(“_PartialView”);}
 ```
-
-### What is difference between ViewData and ViewBag
-- TODO:
-
 
 ### global.asax
 - **TODO:** Understand more of this.
@@ -236,11 +239,28 @@ ViewEngines.Engines.Add(customEngine);
 - [view component](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components)
 	- [**core**] If your views need to execute code, the recommended pattern is to use a view component instead of a partial view
 
+## ViewData VS ViewBag Vs TempData
+- ViewData is a property of controller that exposes an instance of the ViewDataDictionary class
+	- nothing but a dictionary of objects and it is accessible by string as key
+	- Type Conversion code is required while enumerating
+	- Valid only during the current request
+- ViewBag is just a wrapper around the ViewData
+	- ViewBag is a dynamic property able to set and get value dynamically
+	- and able to add any number of additional fields without converting it to strongly typed
+	- No need to type conversion while enumerating
+	- Valid only during the current request
+- TempData is a dictionary which is derived from TempDataDictionary class
+	- TempData keeps data for the time of HTTP Request, which means that it holds data between two consecutive requests
+	- to transfer data between controllers or between actions
+	-  generally used to store one time messages
+	- TempData.Keep() method can keep value in TempData object after request completion
+	- Valid during the current and subsequent request
+
 
 ## HTML Helpers - MVC
-- Inline Html Helpers
+- **Inline Html Helpers**
 	- can be reused only on the same view
-	```html
+	```
 		<!-- Definition -->
 	    @helper ListingItems(string[] items)
 	     {
@@ -259,7 +279,7 @@ ViewEngines.Engines.Add(customEngine);
 	     <h3>Book List:</h3>
 	     @ListingItems(new string[] { "How to C", "how to C++", "how to C#" })
 	 ```
-- Built-In Html Helpers
+- **Built-In Html Helpers**
 	- Standard Html Helpers
 		- `@Html.TextBox("Textbox1", "val") `
 		- Html.ActionLink, Html.Beginform, Html.EndForm, Html.Label, Html.TextBox, Html.TextArea, Html.Password, Html.DropDownList, Html.CheckBox, Html.RedioButton, Html.ListBox, Html.Hidden
@@ -272,7 +292,7 @@ ViewEngines.Engines.Add(customEngine);
 		- requires some initial care and attention to set up
 		- selects an appropriate HTML element based on property’s data type and metadata
 		- Display, DisplayFor, Editor, EditorFor
-- Custom Html Helpers
+- **Custom Html Helpers**
 	- can also create your own custom helper methods by creating an extension method on the HtmlHelper class or by creating static methods with in a utility class
 	```cs
     public static class CustomHelpers
@@ -308,3 +328,32 @@ ViewEngines.Engines.Add(customEngine);
 	```
 
 ## Enums as datatypes
+
+
+## Culture - Internationalization
+### Culture and UI Culture
+- **Culture** is used to for formatting culture dependent values, such as date formats, time formats, the currency symbol, an so forth
+- **UI Culture** is used to load resource files.
+	- The UI Culture determines the language the user interface is rendered in
+	- Used to select Resource Files
+
+### Apply Globally
+- in **global.asax.cs**
+	```cs
+	protected void Application_Start()
+	{
+	    //The culture value determines the results of culture-dependent functions, such as the date, number, and currency (NIS symbol)
+	    System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("en-us");
+	}
+	```
+- In **web.config**
+	```cs
+	<globalization culture="en-US" uiCulture="en-US" />
+	```
+
+### Apply per User
+```cs
+var user = await _userManager.FindByIdAsync(User.GetUserId());
+user.Culture = viewModel.Culture;
+user.UICulture = viewModel.UICulture;
+```
