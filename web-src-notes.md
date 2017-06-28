@@ -34,7 +34,7 @@
 
 
 # js
-## http://jquerymodal.com/
+http://jquerymodal.com/
 ```js
 $('#manual-ajax').click(function(event) {
   event.preventDefault();
@@ -59,11 +59,11 @@ $('#manual-ajax').click(function(event) {
 - `window.open(URL, name, specs, replace)`
 	- `URL` - Optional. Specifies the URL of the page to open. If no URL is specified, a new window with about:blank is opened
 	- `name` Optional. Specifies the target attribute or the name of the window.
-		- _blank - URL is loaded into a new window. This is default
-		- _parent - URL is loaded into the parent frame
-		- _self - URL replaces the current page
-		- _top - URL replaces any framesets that may be loaded
-		- name - The name of the window		
+		- `_blank` - URL is loaded into a new window. This is default
+		- `_parent` - URL is loaded into the parent frame
+		- `_self` - URL replaces the current page
+		- `_top` - URL replaces any framesets that may be loaded
+		- `name` - The name of the window
 
 ## other
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/open
@@ -76,19 +76,40 @@ $('#manual-ajax').click(function(event) {
 
 
 # HTML
+## favicon
+- inside the `<head>` element
+- `<link rel="shortcut icon" href="http://example.com/favicon.ico" />`
+-  other image formats, such as .png. .gif, .jpeg, and even animated GIFs
+- .ico format has had wide acceptance from browsers for quite some time and is a common format when using favicons
+- 16x16, 32x32, 48x48, or 64x64 pixels in size, and 8-bit, 24-bit, or 32-bit in color depth
+**OR**
+- one favicon for your entire domain
+	- save the favicon.ico file to the root folder
+	- must be accessible from http://www.yourdomain.com/favicon.ico
+**More e.g.s**
+http://www.favicon-generator.org/
+```html
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<link rel="icon" type="image/x-icon" href="http://example.com/favicon.ico" />
+<link rel="icon" type="image/png" href="http://example.com/favicon.png" />
+<link rel="icon" type="image/gif" href="http://example.com/favicon.gif" />
+```
+
 ## Window Object
 https://www.w3schools.com/jsref/obj_window.asp
 ### Window Object Properties
-- document 	Returns the Document object for the window (See Document object)
-- status 	Sets or returns the text in the statusbar of a window
+- `document` 	Returns the Document object for the window (See Document object)
+- `status` 	Sets or returns the text in the statusbar of a window
 ### Window Object Methods
-- open() 	Opens a new browser window
+- `open()` 	Opens a new browser window
 ### Document Object Properties and Methods
-document.open() 	Opens an HTML output stream to collect output from document.write()
-document.title 	Sets or returns the title of the document
-document.write() 	Writes HTML expressions or JavaScript code to a document
-document.writeln() 	Same as write(), but adds a newline character after each statement
-document.readyState 	Returns the (loading) status of the document
+- `document.open()` 	Opens an HTML output stream to collect output from document.write()
+- `document.title` 	Sets or returns the title of the document
+- `document.write()` 	Writes HTML expressions or JavaScript code to a document
+- `document.writeln()` 	Same as write(), but adds a newline character after each statement
+- `document.readyState` 	Returns the (loading) status of the document
 
 # Other interesting
 - https://www.w3schools.com/howto/howto_css_cards.asp
@@ -109,6 +130,5 @@ document.readyState 	Returns the (loading) status of the document
 	function showPosition(position) {
 		x.innerHTML = "Latitude: " + position.coords.latitude +
 		"<br>Longitude: " + position.coords.longitude;
-	} 
+	}
 	```
-

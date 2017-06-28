@@ -31,7 +31,7 @@ Interesting features, but need to understand fully
 	- jinplace-1.2.1.min.js
 	- jinplace-extra-all.js.html
 	- jinplace-extra-all.min.js.html
-	- jinplace-jQuery_plugin_for_in_place_editing.mht
+	- `jinplace-jQuery_plugin_for_in_place_editing.mht`
 
 
 
@@ -54,7 +54,9 @@ http://holt59.github.io/datatable/
 http://markcell.github.io/jquery-tabledit/
 - inline edit
 - dropdown values
-- see `Example #6`
+- ajax source only?
+	- workaround for local data
+- see `Example @2, #4, #6`
 
 ## jTable
 http://www.jtable.org/
@@ -94,6 +96,8 @@ https://github.com/arboshiki/lobilist
 
 ## editableTableWidget
 https://mindmup.github.io/editable-table/
+https://github.com/mindmup/editable-table/blob/master/mindmup-editabletable.js
+- 3KB
 - lightweight, grid editing
 - simple cell editing
 - very convenient for spreadsheet editing
@@ -103,6 +107,10 @@ https://mindmup.github.io/editable-table/
 http://code.cwwonline.be/serviceflextableditjquery
 - spreadsheet-like editing
 - good looks
+- first row is assumed to be header row
+- insert rows & columns
+- delete rows and columns
+- all cells are `string` only
 
 ## JS Classes
 https://www.jsclasses.org/
@@ -110,7 +118,7 @@ https://www.jsclasses.org/
 https://atandrastoth.co.uk/main/pages/plugins/filereader/
 http://www.jsclasses.org/package/401-JavaScript-Read-files-user-selected-with-the-FileReader-API.html
 - **Files:**
-	- HTML5-File-Reader.mht
+	- `HTML5-File-Reader.mht`
 
 ## gridmanager.js
 http://neokoenig.github.io/jQuery-gridmanager/
@@ -189,3 +197,23 @@ http://www.jqwidgets.com/
 - Printing
 - Keyboard Navigation
 - State Maitenance
+
+
+# Tree View
+_Initial List_
+- https://www.jstree.com/
+	- drag & drop support
+	- inline edit, create and delete
+	- fuzzy searching
+	- keyboard navigation
+	- tri-state checkboxes
+	- customizable node types
+- https://mbraak.github.io/jqTree/
+	- **most intersting** Sun, 25-Jun-2017
+	- Create a tree from JSON data
+	- Drag and drop
+	- Saves the state
+	- Keyboard support
+	- Lazy loading
+	- Written in Typescript
+	- `https://github.com/mbraak/jqTree`

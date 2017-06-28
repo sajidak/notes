@@ -49,6 +49,18 @@ Wed, 07-Jun-2017 20:20:57 +0530
 - Look Up
 	- `@RenderBody()`
 	- `@RenderSection()`
+- [MVC3+] The `@RenderSection` syntax goes into the Shared View, such as:
+```
+<div id="sidebar">
+    @RenderSection("Sidebar", required: false)
+</div>
+```
+This would then be placed in your view with `@Section` syntax:
+```
+@section Sidebar{
+    <!-- Content Here -->
+}
+```
 - Link Layout by
 	- `Layout = "~/_Layout.cshtml";` in xyz.cshtml page
 - The `Page` object is available on all .cshtml pages

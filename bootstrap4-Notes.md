@@ -1,6 +1,7 @@
 # Bootstrap 4 - Handy Reference
 `Fri, 09-Jun-2017 21:35:57 +0530`
 _Contains only those bits needed for RCW project._
+**TODO:** Add info on icon usage
 
 **Contents**
 

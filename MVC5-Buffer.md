@@ -160,6 +160,32 @@ namespace ${ENTITY_NAME_SPACE}
 }
 ```
 
+## Sections
+- Definition, in layout page
+```cs
+@section Scripts {
+     <script type="text/javascript" src="/scripts/main.js"></script>
+   }
+```
+- By default, the body and all sections in a content page must all be rendered by the layout page
+The body and every section in a Razor page must be either rendered or ignored.
+- to ignore the body or sections, call the `IgnoreBody` and `IgnoreSection` methods
+
+### Importing Shared Directives
+- `@addTagHelper`
+- `@removeTagHelper`
+- `@tagHelperPrefix`
+	- the closest one to the view overrides any others
+- `@using`
+	- all are included; duplicates are ignored
+- `@model`
+	- the closest one to the view overrides any others
+- `@inherits`
+	- the closest one to the view overrides any others
+- `@inject`
+	- for each property, the closest one to the view overrides any others with the same property name
+
+
 ## Partial Views
 - partial views do not run `_ViewStart.cshtml`
 - Partial views can be chained
@@ -292,6 +318,7 @@ ViewEngines.Engines.Add(customEngine);
 		- requires some initial care and attention to set up
 		- selects an appropriate HTML element based on property’s data type and metadata
 		- Display, DisplayFor, Editor, EditorFor
+- [MVC4] `Url.Content()`: Content() method is a method of UrlHelper class. It converts a virtual (relative) path to an application absolute path. It has one parameter of string type that is a virtual path of the content. It returns an application's absolute path. If the specified content path (parameter of the method) does not start with the tilde (~) character, then this method returns contentPath unchanged. Url.Content() ensures that all links work no matter if the site is in a virtual directory or in the web site root.
 - **Custom Html Helpers**
 	- can also create your own custom helper methods by creating an extension method on the HtmlHelper class or by creating static methods with in a utility class
 	```cs
