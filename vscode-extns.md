@@ -1,4 +1,4 @@
-# VSCode extensions
+# VSCode extensions [](title)[](notoc)
 `Fri 2017-May-26 17:25:20.046 +05:30`
 
 ```bash
@@ -9,6 +9,12 @@ rsync -vhr ~/.vscode/extensions/ /media/sak/70_Current/Work/buffer/vscode-xtns-b
 # restore extensions:
 rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensions/
 ```
+
+***
+## Contents [](notoc)
+[](toc)
+
+***
 
 # Installed
 ## C#
@@ -57,12 +63,21 @@ rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensio
 
 ## MarkdownConverter
 - `manuth.markdown-converter`
-- **Install and trail**
+- alternative to 'Markdown PDF'
+- **Install and trail**, looks most configurable
 - convert MarkDown-files to html, png, or pdf
 - DateTime-Formatting, configuring your own CSS-styles, setting Headers and Footers, FrontMatter
 - Detailed config, front page, odd/even page...
     - https://github.com/manuth/MarkdownConverter/wiki/Config
 - Does it work offline?
+
+## Markdown PDF
+- `yzane.markdown-pdf`
+- alternative to 'MarkdownConverter'
+* Syntax highlighting
+* emoji
+* checkbox
+* Single style header and footer for all pages
 
 ## Perl
 - `henriiik.vscode-perl`
@@ -81,6 +96,102 @@ rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensio
 ## Regex Previewer
 - `chrmarti.regex`
 - Shows the current regular expression's matches in a side-by-side document. This can be turned on/off
+
+***
+# Review Sun 2017-Oct-15
+
+## Extensible Markdown Converter
+- `sakryukov.convert-markdown-to-html`
+- What works?
+    Breaks footnotes
+    Outline number list works for 2 levels
+
+ 1. See [Configuration and Usage](https://sakryukov.github.io/vscode-markdown-to-html/)
+ 2. user can extend features by installing any of the "markdown-it" plug-ins
+ 3. Conversion of individual file or all Markdown files of the current Visual Studio Code workspace;
+ 4. A possibility of installation of “markdown-it” plug-ins in an arbitrary directory, without the need to install “markdown-it” itself;
+ 5. Optional user-configurable auto-numbering with rich set of options;
+ 6. User-configurable Markup syntax coloring for plug-ins;
+ 7. Optional embedding of CSS in HTML;
+ 8. Optional Detection of the document title based on user-configurable Regular Expression;
+ 9. Optional preview in the default Web browser;
+1. Preview in Visual Studio Code, in a full-size window or side by side, with styles fully matching generated HTML file;
+2. Configuration of all processing detail of the extension, “markdown-it” and its plug-ins, from a single source.
+3. **Extras**
+    1. Tagging for detection of the document title
+        1. `[](title)`
+    2. File include declaration
+    3. Table of Contents (TOC) tag
+        2. `[](toc)` on a line by itself
+    4. Exclude from TOC tag
+        3. `[](notoc)` on same line as header, at end
+
+## Markdown Extended (not working as espected)
+- `jebbs.markdown-extended`
+- use this plugin with Markdown Styling plugins, or the export HTML pages are not styled:
+[Markdown Preview Github Styling](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles)
+- To support extra export formats, like PDF/PNG/JPEG, you need to download phantom binary accordingly, and config User Settings: `"markdownExtended.phantomPath": "path/to/phantomjs.exe"`
+1. Extended Ability
+2. Export to HTML / PDF / PNG / JPEG {got error}
+3. Copy HTML to clipboard
+4. Extended Plugins
+    1. markdown-it-table-of-contents
+    2. markdown-it-footnote [^1]
+    3. markdown-it-abbr
+    4. markdown-it-sup
+    5. markdown-it-sub
+    6. markdown-it-checkbox [^Checkbox]
+    7. markdown-it-attrs
+    8. markdown-it-kbd
+    9. markdown-it-underline
+5. - 
+6. [^1]: Footnote one
+[^Checkbox]: Footnote for checkbox
+
+## Markdown Shortcuts (good, tables to check)
+- `mdickin.markdown-shortcuts`
+- Handy shortcuts for editing Markdown (.md, .markdown) files. Now with title and context menu integration!
+- [x] - md-shortcut.toggleNumbers  (works with outline too)
+- [x] - md-shortcut.toggleCheckboxes
+- md-shortcut.addTableWithHeader
+    - Makes pretty table
+
+## Markdown Footnotes
+- `bierner.markdown-footnotes`
+- Adds `[^1]` footnote syntax support to VS Code's built-in Markdown preview
+
+## Markdown helper
+- `joshbax.mdhelper`
+- Apply Markdown formatting to text (keyboard shortcuts, context menu)
+- Change text case
+- Format GFM table
+
+
+## Markdown Checkbox
+
+
+## Markdown All in One
+- `yzhang.markdown-all-in-one`
+- keyboard shortcuts, table of contents, auto preview and more
+- Table formatter
+- Document outline
+
+## Markdown TOC
+- `AlanWalk.markdown-toc`
+
+## Markdown TOC
+- `joffreykern.markdown-toc`
+- Generate a Table of Content base on markdown title (from level 2 to 4).
+- Replace an existing toc when generate it again
+- Insert anchor on your titles
+- Auto-saving when a toc is generated
+- Configurable generation of
+    - Numbering your table of contents
+    - Save your document when table of content generated
+
+## Markdown Preview Enhanced
+- `jasonroger.markdown-preview-enhanced-fork`
+- keybindings similar to atom-linux
 
 
 # To Install
@@ -137,6 +248,18 @@ This extension pack contains useful extensions for C# and especially .NET Core d
 	- edit markdown documents in vscode and instantly preview it in your browser
 - `html tag wrapper` hwencc.html-tag-wrapper
 - `Knockout.js Snippets for VS Code` furstenberg.knockoutjs
+
+## Lua
+### vscode-lua
+`trixnz.vscode-lua`
+- [x] Autocompletion
+- [x] Go to Symbol
+- [x] Error checking
+- [x] Linting
+- [ ] Code Snippets
+Support for linting is provided via [luacheck](https://github.com/mpeterv/luacheck)
+
+
 
 
 # Current Working

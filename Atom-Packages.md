@@ -1,16 +1,19 @@
----
-title: Atom PAckages
----
-
 # Atom packages for markdown
 
+**Contents**
 [TOC]
 
 **Temporary update - till image fixed**
 ```bash
-# Update
-rsync -nvh /media/sak/70_Current/Work/buffer/markdown-themeable-pdf-configs/* ~/.atom/markdown-themeable-pdf/
+# Update 1 - update styles
+WORK_FOLDER="/media/sak/70_Current/Work/buffer/markdown-themeable-pdf-configs";
+rsync -v ${WORK_FOLDER}/working.css ~/.atom/packages/markdown-themeable-pdf/css/document.css
+rsync -v ${WORK_FOLDER}/*.js ~/.atom/markdown-themeable-pdf/
+rsync -v ${WORK_FOLDER}/markdown-themeable-pdf.js ~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js
+# Update 2 - fix error in atom-mdtoc
+sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
 ```
+
 
 ## keybindings
 ```js
@@ -34,31 +37,63 @@ rsync -nvh /media/sak/70_Current/Work/buffer/markdown-themeable-pdf-configs/* ~/
 ### Date
 - Insert the current date & time at cursor
 - date:date, date:time, and date:datetime
-- Date Time Format `DDD, DD-MMM-YYYY HH24:MI:SS +0530`
+- Date Time Format `DD-MMM-YYYY`
+- Date Time Format `ddd, DD-MMM-YYYY HH:mm:ss.SSS ZZ`
+	- for time stamp `ddd, DD-MMM-YYYY HH:mm:ss.X ZZ`
+	- [formats](https://date-fns.org/docs/format)
 - Keybinding
 ```
 'body':
   'ctrl-shift-I': 'date:datetime'
 ```
 **Format Options:**
-| **Key** |             **Format**             |
-| ------- | ---------------------------------- |
-| YYYY    | Four digit year                    |
-| MMMM    | Full month name. ie January        |
-| MMM     | Short month name. ie Jan           |
-| MM      | Zero padded month ie 01            |
-| M       | Month ie 1                         |
-| DDDD    | Full day or week name ie Tuesday   |
-| DDD     | Abbreviated day of the week ie Tue |
-| DD      | Zero padded day ie 08              |
-| D       | Day ie 8                           |
-| HH24    | Hours in 24 notation ie 18         |
-| HH      | Padded Hours ie 06                 |
-| H       | Hours ie 6                         |
-| MI      | Padded Minutes                     |
-| SS      | Padded Seconds                     |
-| PP      | AM or PM                           |
-| P       | am or pm                           |
+| Unit                    | Token  | Result examples                  |
+|:----------------------- |:------ |:-------------------------------- |
+| Month                   | `M`    | 1, 2, ..., 12                    |
+|                         | `Mo`   | 1st, 2nd, ..., 12th              |
+|                         | `MM`   | 01, 02, ..., 12                  |
+|                         | `MMM`  | Jan, Feb, ..., Dec               |
+|                         | `MMMM` | January, February, ..., December |
+| Quarter                 | `Q`    | 1, 2, 3, 4                       |
+|                         | `Qo`   | 1st, 2nd, 3rd, 4th               |
+| Day of month            | `D`    | 1, 2, ..., 31                    |
+|                         | `Do`   | 1st, 2nd, ..., 31st              |
+|                         | `DD`   | 01, 02, ..., 31                  |
+| Day of year             | `DDD`  | 1, 2, ..., 366                   |
+|                         | `DDDo` | 1st, 2nd, ..., 366th             |
+|                         | `DDDD` | 001, 002, ..., 366               |
+| Day of week             | `d`    | 0, 1, ..., 6                     |
+|                         | `do`   | 0th, 1st, ..., 6th               |
+|                         | `dd`   | Su, Mo, ..., Sa                  |
+|                         | `ddd`  | Sun, Mon, ..., Sat               |
+|                         | `dddd` | Sunday, Monday, ..., Saturday    |
+| Day of ISO week         | `E`    | 1, 2, ..., 7                     |
+| ISO week                | `W`    | 1, 2, ..., 53                    |
+|                         | `Wo`   | 1st, 2nd, ..., 53rd              |
+|                         | `WW`   | 01, 02, ..., 53                  |
+| Year                    | `YY`   | 00, 01, ..., 99                  |
+|                         | `YYYY` | 1900, 1901, ..., 2099            |
+| ISO week-numbering year | `GG`   | 00, 01, ..., 99                  |
+|                         | `GGGG` | 1900, 1901, ..., 2099            |
+| AM/PM                   | `A`    | AM, PM                           |
+|                         | `a`    | am, pm                           |
+|                         | `aa`   | a.m., p.m.                       |
+| Hour                    | `H`    | 0, 1, ... 23                     |
+|                         | `HH`   | 00, 01, ... 23                   |
+|                         | `h`    | 1, 2, ..., 12                    |
+|                         | `hh`   | 01, 02, ..., 12                  |
+| Minute                  | `m`    | 0, 1, ..., 59                    |
+|                         | `mm`   | 00, 01, ..., 59                  |
+| Second                  | `s`    | 0, 1, ..., 59                    |
+|                         | `ss`   | 00, 01, ..., 59                  |
+| 1/10 of second          | `S`    | 0, 1, ..., 9                     |
+| 1/100 of second         | `SS`   | 00, 01, ..., 99                  |
+| Millisecond             | `SSS`  | 000, 001, ..., 999               |
+| Timezone                | `Z`    | -01:00, +00:00, ... +12:00       |
+|                         | `ZZ`   | -0100, +0000, ..., +1200         |
+| Seconds timestamp       | `X`    | 512969520                        |
+| Milliseconds timestamp  | `x`    | 512969520900                     |
+
 
 ### lines
 - Sort (case sensitive or not)
@@ -94,47 +129,89 @@ rsync -nvh /media/sak/70_Current/Work/buffer/markdown-themeable-pdf-configs/* ~/
   'ctrl-shift-M': 'markdown-preview-enhanced:toggle'
 ```
 - disable in setting `Keybindings`
-- Scrool sync, 2 side
+- Scroll sync, 2 side
 - pandoc
 - TOC gen (beta)
 	- can also create TOC by inserting `[TOC]` to your markdown file
 - export HTML, mobile friendly
 - many more . . .
 - Customization:
-```bash
-# How to use this?
-/home/sak/.atom/markdown-preview-enhanced/phantomjs_header_footer_config.js
-
-```
 
 
 ### markdown-themeable-pdf
 https://atom.io/packages/markdown-themeable-pdf
 - `markdown-preview-enhanced` can also export html
 - exports markdown file to PDF, HTML, JPEG or PNG format
-- start new PDF page by typing Snippet `page-break` in editor
-- custom css
-	- `~/.atom/markdown-themeable-pdf/styles.css` or
-	- per project `project-path/markdown-themeable-pdf/styles.css`
-	- or define path in settings
-	- Custom header & Custom footer
-		- `~/.atom/markdown-themeable-pdf/header.js`
-		- `~/.atom/markdown-themeable-pdf/footer.js`
-		- per project settings also
-		- or keep at custom location
-- Known - Table header glitches when a table starts directly on a new page
-	- put in your markdown in front of the table an html code <div class="page-break" /> to prevent this.
-- Customization
-|     file     |                intent                |
-| ------------ | ------------------------------------ |
-| document.css | default styles that will be applied? |
-| footer.js    | footer content in html format        |
-| header.js    | header content in html format        |
-| logo.png     | not needed                           |
-| styles.css   | custom styles that will be applied   |
-- backups are at `~/70_Current/Work/buffer/markdown-themeable-pdf-configs/`
-- Styles that will be applied `~/.atom/packages/markdown-themeable-pdf/css/document.css`
-- Default Settings `~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js`
+- Start new PDF page
+	- ~~by typing Snippet `page-break` in editor~~
+	- **Inline method** (WORKS)
+		- Add the following code where you would like to have a page break in your HTML document:
+		`<div style="page-break-after: always;"></div>`
+	- Stylesheet method
+		- Add this code to your existing CSS to get the same result.
+		`.pagebreak {page-break-after: always;}`
+- Code highlight themes `~/.atom/packages/markdown-themeable-pdf/node_modules/highlight.js/styles`
+
+#### Customization - PDF output
+
+| file         | intent                                                      | file                                                       |
+| ------------ | ----------------------------------------------------------- | ---------------------------------------------------------- |
+| document.css | default styles that will be applied                         | `~/.atom/packages/markdown-themeable-pdf/css/document.css` |
+| footer.js    | footer content in html format                               | `~/.atom/markdown-themeable-pdf/footer.js`                 |
+| header.js    | header content in html format                               | `~/.atom/markdown-themeable-pdf/header.js`                 |
+| styles.css   | custom styles that will be applied on top of `document.css` |                                                            |
+| markdown-themeable-pdf.js |   |  |
+
+- Per project `project-path/markdown-themeable-pdf/styles.css`
+
+**To apply changes to package locations**
+```sh
+WORK_FOLDER="/media/sak/70_Current/Work/buffer/markdown-themeable-pdf-configs";
+rsync -v ${WORK_FOLDER}/working.css ~/.atom/packages/markdown-themeable-pdf/css/document.css
+rsync -v ${WORK_FOLDER}/*.js ~/.atom/markdown-themeable-pdf/
+rsync -v ${WORK_FOLDER}/markdown-themeable-pdf.js ~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js
+```
+- Files Changed are:
+	- `document.css` original content as installed
+	- `working.css` modified copy of `document.css`
+	- `header.js` with updated content
+	- `footer.js` with updated content
+
+#### Customization - General
+- Following are availaible for use,
+- from ~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js
+- line 242: `jobInfo` as `info`
+	- `info.fileInfo`
+- Explore values of
+	- fileInfo.dest
+- JS - to show messages to user: `atom.notifications`
+	- .addInfo('text to display');
+	- .addWarning('text to display');
+	- .addError('text to display');
+	- .addSuccess('text to display');
+	
+#### Customization - HTML Template
+- file `~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js`
+- line 462 to 465 - replace with
+```js
+                '<html>\n' +
+                '<head>\n' +
+                '<meta charset="UTF-8">\n' +
+                '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+                '<title>' + jobInfo.fileInfo.name + '</title>\n' +
+                '<style>\n' + cssStyles + '\n</style>\n' +
+                '</head>\n' +
+                '<body>\n' + 
+                customHeader.html + 
+                '<div id="pageContent">\n' + 
+                html + '\n' +
+                '</div>' + 
+                customFooter.html + 
+                '</body>\n' +
+                '</html>\n';
+
+```
+
 
 ### pdf-view
 https://atom.io/packages/pdf-view
@@ -149,7 +226,8 @@ https://atom.io/packages/pdf-view
 - **WORKS**, Need to manually add keybindings
 
 ### language-gfm-enhanced
-- fork of language-gfm extended to support some features of markdown-preview-enhanced.
+- fork of language-gfm extended to support some features of markdown-preview-enhanced
+- TO INSTALL AND TEST
 
 ### sorter
 - Alphabetic Sort
@@ -170,6 +248,25 @@ https://atom.io/packages/pdf-view
 - Use a flatten list instead of a tree with flatten:1 (use tree with flatten:0)
 - Header numbering with numbering:1 (disable with numbering:0)
 - Works with repeated headings (see also this Table Of Contents)
+#### Error in v0.8.3
+To fix [See](https://github.com/mcpride/atom-mdtoc/issues/6)
+modify file `~/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
+```
+// replace in line 291
+String::repeat = (n) -> Array(n+1).join(this)
+// to
+String::_repeat_ = (n) -> Array(n+1).join(this)
+
+//replace in line 120
+@tocContent += '&emsp;'.repeat(level - 1)
+//to
+@tocContent += '&emsp;'._repeat_(level - 1)
+
+//replace in line 122
+@tocContent += '   '.repeat(level - 1) + '- '
+//to
+@tocContent += '   '._repeat_(level - 1) + '- '
+```
 
 ***
 ## Sample, Tests
@@ -224,12 +321,11 @@ https://atom.io/packages/pdf-view
 ### New
 - https://atom.io/packages/js-refactor-atom
 - https://atom.io/packages/nms-color-bracket
-	-
-    Colors pairs of Brackets based on nesting level
-    Colors up to 12 deep
-    Alt-q to toggle
-    Saving will reprocess current page
-    Unpaired close "}" brackets will flash
+    - Colors pairs of Brackets based on nesting level
+    - Colors up to 12 deep
+    - Alt-q to toggle
+    - Saving will reprocess current page
+    - Unpaired close "}" brackets will flash
 - https://atom.io/packages/emmet
 - https://atom.io/packages/nanobot
 - https://atom.io/packages/fonts
@@ -249,13 +345,13 @@ https://atom.io/packages/pdf-view
 
 ### select-rectangle
 - **Select alt-s**
-- At first, select region that you want to do. Next, press alt-s to select rectangle region.
-- if repeating the alt-s would go back to the initial selection. After that, You can copy, cut or following actions.
+	- At first, select region that you want to do. Next, press alt-s to select rectangle region.
+	- if repeating the alt-s would go back to the initial selection. After that, You can copy, cut or following actions.
 - **Clear alt-cmd-c**
-After selecting rectangle region by alt-s, alt-cmd-c clears the region-rectangle by replacing all of its contents with spaces.
+	- After selecting rectangle region by alt-s, alt-cmd-c clears the region-rectangle by replacing all of its contents with spaces.
 - **Open alt-cmd-o**
-- After selecting rectangle region by alt-s, alt-cmd-o inserts blank space to fill the space of the region-rectangle (open-rectangle).
-- This pushes the previous contents of the region-rectangle to the right.
+	- After selecting rectangle region by alt-s, alt-cmd-o inserts blank space to fill the space of the region-rectangle (open-rectangle).
+	- This pushes the previous contents of the region-rectangle to the right.
 
 ### autoprefixer
 - Prefix CSS and SCSS with Autoprefixer
@@ -409,7 +505,20 @@ https://wkhtmltopdf.org/
 ### markdown-preview-enhanced
 - Disable package `markdown-preview`, keymaps conflict
 - `Keybindings` > `Enable` = UNCHECK
+### atom-mdtoc
+- To fix [error](https://github.com/mcpride/atom-mdtoc/issues/6)
+	- Replace all 3 `repeat` with `_repeat_`
+	- in file `~/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
+	- occurs in lines 120, 122, 201
 ### markdown-themeable-pdf
+- `Show by Default` = UNCHECK
+- Export File Type
+	- pdf
+- Papersize Format
+	- Legal
+- Code Highlighting Theme
+	- github-gist-css
+	- theme defines are at `~/.atom/packages/markdown-themeable-pdf/node_modules/highlight.js/styles`
 
 
 ## Info

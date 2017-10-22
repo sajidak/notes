@@ -276,6 +276,41 @@ Images in figures have no explicit size, so be sure to add the `.img-fluid` clas
 	  <span class="custom-file-control"></span>
 	</label>
 	```
+- To make a custom "upload file" control, wrap the `<input>` tag inside a `<label>` that has the `.custom-file` class applied.
+- Use `.custom-file-input` on the actual `<input>` element.
+- Also use a `<span>` element with the `.custom-file-control` class applied.
+- To set text of the button
+	```scss
+	$custom-file-text: (
+	  placeholder: (
+	    en: "Choose file...",
+	    es: "Seleccionar archivo..."
+	  ),
+	  button-label: (
+	    en: "Browse",
+	    es: "Navegar"
+	  )
+	);
+	```
+- to support file uploads, HTML forms must specify an `enctype` of `multipart/form-data`
+	``` html
+	<form method="post" enctype="multipart/form-data" asp-controller="UploadFiles" asp-action="Index">
+	```
+	- see https://docs.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads
+
+- For additional information see
+	- https://www.quackit.com/bootstrap/bootstrap_4/tutorial/bootstrap_custom_forms.cfm
+	- https://www.codeply.com/go/SkIJQ5LqKp/bootstrap-4-file-input
+	- https://www.codeply.com/go/1cYCiy9m7M/bootstrap-4-file-input
+	- https://github.com/twbs/bootstrap/issues/20813
+		```html
+		<label class="custom-file d-block">
+			<input data-toggle="custom-file" data-target="#company-logo" type="file" name="company_logo" accept="image/png" class="custom-file-input">
+			<span id="company-logo" class="custom-file-control custom-file-name" data-content="Upload company logo..."></span>
+		</label>
+		```
+	- https://bootstrap-vue.js.org/docs/components/form-file/
+
 
 ### Input group
 - does not support multiple form-controls in a single input group

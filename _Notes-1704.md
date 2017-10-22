@@ -13,7 +13,9 @@ Steps:
 	- `GRUB_THEME="/boot/grub/themes/Crunchy-simple-blue/theme.txt"`
 - Then, don't forget to update your grub:
 - `sudo update-grub `
-- **Ref:** http://wiki.rosalab.ru/en/index.php/Grub2_theme_/_reference
+- **Ref:** 
+  - http://wiki.rosalab.ru/en/index.php/Grub2_theme_/_reference
+  - http://ubuntuforums.org/showthread.php?t=1534689
 
 ## Interesting Themes
 - https://www.gnome-look.org/p/1111552/
@@ -122,3 +124,4 @@ Delete after use to keep this note clean
 
 http://www.apta.com/resources/hottopics/circulators/Urban%20Circulator%20Presentations/Project-Management-Oversight.pdf
 https://www.transit.dot.gov/regulations-and-guidance/project-management-oversight-pmo
+

@@ -3,13 +3,73 @@ Wed, 07-Jun-2017 20:20:57 +0530
 
 **Contents:**
 
+pL_PRODUCTS.en
+
 [TOC]
 ## TODO:
 - Seperate MVC5 and MVC Core information
 	- _AppStart.cshtml
 	- Dependency Injection
+- EF6 with MVC5
+	- https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/
+	
 ## See:
-- Page.User
+- MVC documentation
+	- https://www.asp.net/mvc
+	- https://docs.microsoft.com/en-us/aspnet/mvc/mvc5
+	- https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started
+	- https://docs.microsoft.com/en-us/aspnet/mvc/overview/views/using-page-inspector-in-aspnet-mvc
+- [Accessing Settings from a Controller](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/dependency-injection#accessing-settings-from-a-controller)
+- [Getting Started with ASP.NET MVC 5](https://docs.microsoft.com/en-gb/aspnet/mvc/overview/getting-started/introduction/getting-started)
+
+
+## File Upload
+- View
+	```
+	@using (Html.BeginForm("Create", "Student", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+	```
+	```html
+	<input type="submit" value="Create" class="btn btn-default" />
+	```
+- Controller
+	```cs
+	public ActionResult Create(
+		[Bind(Include = "LastName, FirstMidName, EnrollmentDate")]Student student
+			, HttpPostedFileBase upload
+			)
+	```
+	- Parameter name **upload** should matche the name attribute's value of the input type="file", so that the MVC model binder can bind the uploaded file to the parameter
+	- To save to file system
+	```cs
+	// TODO: use same extension as uploaded file
+
+	/* Using HttpPostedFileBase  upload */
+	if (upload != null)
+	{
+		string path = Path.Combine(
+							  Server.MapPath("~/UploadedFiles")
+							, Path.GetFileName(upload.FileName)
+							);
+		upload.SaveAs(path);
+	}
+	ViewBag.FileStatus = "File uploaded successfully.";
+
+	/* Using HttpPostedFileBase upload */
+	var Inputfile = Request.Files[0];
+	if (Inputfile != null && Inputfile.ContentLength > 0)
+	{
+		var filename = Path.GetFileName(Inputfile.FileName);
+		var path = Path.Combine(Server.MapPath("~/uploadedfile/"), filename);
+		Inputfile.SaveAs(path);
+		ViewBag.FileStatus = "File uploaded successfully.";
+	}
+	```
+- Links
+	- https://www.mikesdotnetting.com/article/259/asp-net-mvc-5-with-ef-6-working-with-files
+	- http://www.c-sharpcorner.com/article/uploading-files-using-strongly-typed-fileuploader-in-Asp-Net/
+	- both in `File-upload-MVC5.mht`
+
+## Page.User
 	- System.Web.WebPages.HelperPage
 	- System.Security.Principal.IPrincipal
 		- System.Security.Principal.GenericPrincipal
@@ -185,3 +245,40 @@ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging
 
 ## Routing
 https://blogs.msdn.microsoft.com/webdev/2013/10/17/attribute-routing-in-asp-net-mvc-5/
+
+## AppSettings from web.config
+- [Example 1](https://www.codeproject.com/Articles/1012286/Read-web-config-Settings)
+	```cs
+	public static string GetAppSettingUsingConfigurationManager(string customField)
+	{
+	    return System.Configuration.ConfigurationManager.AppSettings[customField];
+	}
+
+	public static string GetAppSetting(string customField)
+	{
+	    System.Configuration.Configuration config =
+	        System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(null);
+	    if (config.AppSettings.Settings.Count > 0)
+	    {
+	        var customSetting = config.AppSettings.Settings[customField].ToString();
+	        if (!string.IsNullOrEmpty(customSetting))
+	        {
+	            return customSetting;
+	        }
+	    }
+	    return null;
+	}
+	```
+	```xml
+	<appSettings>
+	    <add key="webpages:Version" value="3.0.0.0" />
+	    <add key="webpages:Enabled" value="false" />
+	    <add key="ClientValidationEnabled" value="true" />
+	    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+	    <add key="DatabaseINILocation" value="C:\config\config.ini" />
+	    <add key="testPort" value="49610" />
+	</appSettings>
+	```
+- Links
+	- [MVC6](https://neelbhatt40.wordpress.com/2015/12/15/getting-a-configuration-value-in-asp-net-5-vnext-and-mvc-6/)
+	- http://www.jwc3.net/2014/06/tidy-up-your-webconfig.html

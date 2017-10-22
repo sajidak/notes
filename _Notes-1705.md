@@ -21,6 +21,37 @@ Placeholder for items that are to be followed up
 	- https://www.stellarinfo.com/password-recovery/office-password-recovery.php
 
 ***
+# Thu, 27-Jul-2017
+
+## Yogananda H Chandrappa
+https://www.linkedin.com/in/yogananda-h-chandrappa-1336666/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_top%3BDnMg8m2nTBanTtd%2F7D22Zg%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_search_srp_top-search_srp_result
+
+## Dressing Table - Option 1
+- https://www.urbanladder.com/products/sirius-standing-mirror
+	- **with one of**
+	- https://www.urbanladder.com/products/zephyr-bedside-table
+	- https://www.urbanladder.com/products/covelo-bedside-table?sku=FNTBBS43WG30044
+	- https://www.urbanladder.com/products/barrie-bedside-table?sku=FNTBBS43DO10025
+	- **or with one of**
+	- https://www.pepperfry.com/emilio-chest-of-four-drawers-in-belgian-oak-finish-by-casacraft-1376023.html
+	- https://www.pepperfry.com/elicia-chest-of-four-drawers-in-tropicana-walnut-belgian-oak-finish-by-casacraft-1376015.html
+	- https://www.pepperfry.com/chest-of-four-drawers-in-white-new-oak-finish-by-dhep-furniture-1596433.html
+
+## Dressing Table - Option 2
+- https://www.pepperfry.com/tiagodresser-with-mirror-in-wenge-colour-by-hometown-1517100.html
+- https://www.pepperfry.com/wego-dressing-table-by-crystal-furnitech-1361998.html
+- https://www.pepperfry.com/kosmo-grace-dressing-table-in-rigato-walnut-finish-by-spacewood-1441296.html
+- https://www.pepperfry.com/tower-dressing-table-in-maple-colour-by-royal-oak-1447300.html
+
+- https://www.urbanladder.com/products/zephyr-bedside-table
+
+
+***
+# Tue, 11-Jul-2017
+## Domain at INR 99
+`https://www.bigrock.in/free-privacy-protect?a_aid=4d2c643cb0d0a&location=IN&chan=ga_dis_scmc&ad=ga_dis_scmc&cmp=r(C)_Competitors_(SCMC)&kw=wiki.helionet.org&adid=191312493320&coupon=BRCOM99PP&adg=(cb)_godaddy&gclid=CLD_tJ6egdUCFUWIjwodwIcHKQ`
+
+***
 # Sun, 18-Jun-2017
 
 ## Libreoffice Extensions
@@ -105,7 +136,9 @@ base url = `https://marketplace.visualstudio.com/items?itemName=`
 
 ## Windows 8.1 Pro Installation Key
 `XKY4K-2NRWR-8F6P2-448RF-CRYQH`
-**Note:** This is an Official Installation Key not the Activation Key for windows 8.1.
+**Note:**
+- This is an Official Installation Key not the Activation Key for windows 8.1.
+- Did not work with downloaded retail ISO
 
 ## [Dell Precision M6400 - Drivers](http://www.dell.com/support/home/us/en/19/product-support/product/precision-m4600/drivers)
 - DRVR_WIN_R292027.EXE

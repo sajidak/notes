@@ -161,6 +161,62 @@
 
 # Workable
 
+# New Set
+Tue, 11-Jul-2017 16:07:31 +0530
+https://hosting.asp.net/hosting/home
+
+## HelioHost
+https://hosting.asp.net/hosting/hostingprovider/details/1105
+https://www.heliohost.org/
+Tommy
+$0 Per Year
+With every account comes:
+We offer 99.9% uptime, unlimited bandwidth, unlimited cpu, unlimited memory, unlimited domains, and unlimited databases. We offer ASP.NET 4.6, Java/jsp/war, Python, Django, Flask, Perl, Ruby, Ruby on Rails, PHP 7.1, 1000 MB storage, MySQL, PostgreSQL, SQLite, and much more. You can create as many fully functional yourname@yourdomain.com email addresses as you want. We have Softaculous automatic script installer. We have the best control panel: cPanel. The list goes on and on, but the best part IT'S ALL FOR FREE!
+
+    Access to cPanel
+    Ability to edit A, CNAME, TXT, and MX records
+    500MB of Disk Space
+    Unlimited E-mail accounts
+    Unlimited Bandwidth
+    Unlimited Subdomains
+    Unlimited Parked Domains
+    Unlimited Addon Domains
+    Unlimited FTP Accounts
+    Unlimited Mailing Lists
+    Unlimited MySQL/PostgreSQL/SQLite Databases
+    Access to phpMyAdmin/phpPgAdmin
+    Ability to add Perl Modules
+    SSL ( Requires dedicated IP ,our provider of dedicated IPs is requesting $12 per dedicated IP. For more info about SSL)
+    Softaculous (Easy installation of popular software such as blogging and forum platforms.)
+
+HelioHost accounts can use the following scripting languages:
+
+    PHP
+    ASP.NET
+    Ruby/Ruby on Rails
+    Python & Django
+    Java/JSP
+    Perl
+
+- PHP 5 and PHP 7 hosting with safe-mode disabled. Installed libraries include cURL, GD, Sockets, XML RPC, and many more.
+- ASP.NET 4.6 scripting with our free hosting package. We use the Mono Project to provide this service.
+- Apache Tomcat users can deploy servlets applications or run stand-alone Java Server Pages
+- Ruby on Rails
+- Django framework built on top of Python
+- Python
+- Perl
+-
+
+
+## ASP.NET Webhosting
+https://www.aspify.com/en/webhosting/
+FREEHOSTING
+
+##  GearHost
+https://www.gearhost.com/pricing
+SHARED > Free
+
+
 ***
 # Unclassified
 ## hostgator.in @ 445/m
@@ -258,7 +314,7 @@
 
 - non-transactional MySQL 5.5 database
 	- What does it mean?
-	
+
 ## URL Rewrite
 - https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-global-and-distributed-rewrite-rules
 - **URL Rewrite Module 2**

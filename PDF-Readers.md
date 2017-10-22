@@ -5,6 +5,23 @@
 	 - qpdfview
 	 - XPDF
 
+> Batch of Sat, 14-Oct-2017 14:45:39.888 +0530
+## PDF Studio Viewer
+Closed Source
+https://www.qoppa.com/pdfstudioviewer/
+- Display PDFs with high fidelity
+- Render all interactive features:
+	- Annotations & Form Fields
+	- Digital Signatures & Layers
+- Advanced User Interface:
+	- Thumbnails & Comments Panes
+	- Loupe, Pan & Zoom
+	- Rulers & Grids
+- Advanced Print Options
+- Advanced Search Options
+see also https://www.qoppa.com/pdfviewer/
+
+> Earlier Batch
 
 ## qpdfview
 https://launchpad.net/qpdfview
@@ -85,6 +102,7 @@ https://mupdf.com/downloads/mupdf-1.11-windows.zip
 
 ## Sumatra PDF
 https://www.sumatrapdfreader.org/free-pdf-reader.html
+Supported OS: Windows 10, Windows 8, Windows 7, Vista, XP.
 PDF, ePub, MOBI, CHM, XPS, DjVu, CBZ, CBR reader for Windows
 https://www.sumatrapdfreader.org/dl/SumatraPDF-3.1.2-64.zip
 https://www.sumatrapdfreader.org/manual.html

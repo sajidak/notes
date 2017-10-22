@@ -265,7 +265,7 @@ ViewEngines.Engines.Add(customEngine);
 - [view component](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components)
 	- [**core**] If your views need to execute code, the recommended pattern is to use a view component instead of a partial view
 
-## ViewData VS ViewBag Vs TempData
+## ViewData vs ViewBag vs TempData
 - ViewData is a property of controller that exposes an instance of the ViewDataDictionary class
 	- nothing but a dictionary of objects and it is accessible by string as key
 	- Type Conversion code is required while enumerating
