@@ -192,7 +192,7 @@ rsync -v ${WORK_FOLDER}/markdown-themeable-pdf.js ~/.atom/packages/markdown-them
 	
 #### Customization - HTML Template
 - file `~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js`
-- line 462 to 465 - replace with
+- line 461 to 465 - replace with
 ```js
                 '<html>\n' +
                 '<head>\n' +

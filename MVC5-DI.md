@@ -1,7 +1,9 @@
 # MVC5 Dependency Injection
 
+[TOC]
+
 ## Note:
-- MVC5 Dependency Injection engines support constructor-based and property-based injection. 
+- MVC5 Dependency Injection engines support constructor-based and property-based injection.
 - Constructor-based injection
 	- Add parameters to the constructor. 
 	- Those parameters will be populated automatically by the DI engine if a matching rule / object is registered.
@@ -10,7 +12,7 @@
 	```
 
 - Property-based injection
-	- Create a property with a public setter and decorate it with the [FromService] attribute. 
+	- Create a property with a public setter and decorate it with the [FromService] attribute.
 	- The property will get populated during the object’s creation by the DI engine.
 	```cs
 	[FromServices]
@@ -38,7 +40,7 @@
 - In controller, add private property of Interface type
 	- and add constructor with parameter
 - [OPTIONAL] Move Unity Configuration to Separate File
-	- unity.config 
+	- unity.config
 
 ## Using Unity.MVC
 `http://www.c-sharpcorner.com/UploadFile/dacca2/implement-ioc-using-unity-in-mvc-5/`
@@ -46,33 +48,33 @@
 
 ### Step 1: Create Unity container
 ```cs
-using Microsoft.Practices.Unity;  
-using Microsoft.Practices.Unity.Mvc;   
-public class Bootstrapper  
-{  
-	public static IUnityContainer Initialise()  
-	{  
-		var container = BuildUnityContainer();  
-		DependencyResolver.SetResolver(new UnityDependencyResolver(container));  
-		return container;  
-	}  
-	private static IUnityContainer BuildUnityContainer()  
-	{  
-		var container = new UnityContainer();  
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Mvc;
+public class Bootstrapper
+{
+	public static IUnityContainer Initialise()
+	{
+		var container = BuildUnityContainer();
+		DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+		return container;
+	}
+	private static IUnityContainer BuildUnityContainer()
+	{
+		var container = new UnityContainer();
 
-		// register all your components with the container here  
-		//This is the important line to edit  
-		container.RegisterType<ICompanyRepository, CompanyRepository>();   
+		// register all your components with the container here
+		//This is the important line to edit
+		container.RegisterType<ICompanyRepository, CompanyRepository>();
 
 
-		RegisterTypes(container);  
-		return container;  
-	}  
-	public static void RegisterTypes(IUnityContainer container)  
-	{  
+		RegisterTypes(container);
+		return container;
+	}
+	public static void RegisterTypes(IUnityContainer container)
+	{
 
-	}  
-}  
+	}
+}
 ```
 ### Step 2 : Register container class
 - In `Application_Start()' call `Bootstrapper.Initialise()`
@@ -89,101 +91,101 @@ public static void RegisterComponents()
 
 ### Step 3 : Create Model
 ```cs
-    public class Company  
-    {  
-        public int Id { get; set; }  
-        public string Name { get; set; }  
-        public string Category { get; set; }  
-    }  
+    public class Company
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+    }
 ```
 ### Step 4 : Create Interface
 ```cs
-    public interface ICompanyRepository  
-    {  
-       IEnumerable<Company> GetAll();  
-       Company Get(int id);  
-       Company Add(Company item);  
-       bool Update(Company item);  
-       bool Delete(int id);  
-    }  
+    public interface ICompanyRepository
+    {
+       IEnumerable<Company> GetAll();
+       Company Get(int id);
+       Company Add(Company item);
+       bool Update(Company item);
+       bool Delete(int id);
+    }
 ```
 ### Step 5 : Implement interface
 ```cs
-    public class CompanyRepository : ICompanyRepository  
-    {  
-        private List<Company> products = new List<Company>();  
-        private int _nextId = 1;  
-  
-        public CompanyRepository()  
-        {  
-            // Add products for the Demonstration  
-            Add(new Company { Name = "TIMKEN Eng", Category = "Engenering"});  
-            Add(new Company { Name = "Wipro", Category = "software"});  
-            Add(new Company { Name = "HSBC", Category = "Bank"});  
-        }  
-  
-        public IEnumerable<Company> GetAll()  
-        {  
-            // TO DO : Code to get the list of all the records in database  
-            return products;  
-        }  
-        public Company Get(int id)  
-        {  
-            // TO DO : Code to find a record in database  
-            return products.Find(p => p.Id == id);  
-        }  
-        public Company Add(Company item)  
-        {  
-            if (item == null)  
-            {  
-                throw new ArgumentNullException("item");  
-            }  
-  
-            // TO DO : Code to save record into database  
-            item.Id = _nextId++;  
-            products.Add(item);  
-            return item;  
-        }  
-        public bool Update(Company item)  
-        {  
-            if (item == null)  
-            {  
-                throw new ArgumentNullException("item");  
-            }  
-  
-            // TO DO : Code to update record into database  
-            int index = products.FindIndex(p => p.Id == item.Id);  
-            if (index == -1)  
-            {  
-                return false;  
-            }  
-            products.RemoveAt(index);  
-            products.Add(item);  
-            return true;  
-        }  
-        public bool Delete(int id)  
-        {  
-            // TO DO : Code to remove the records from database  
-            products.RemoveAll(p => p.Id == id);  
-            return true;  
-        }  
-    }   
+    public class CompanyRepository : ICompanyRepository
+    {
+        private List<Company> products = new List<Company>();
+        private int _nextId = 1;
+
+        public CompanyRepository()
+        {
+            // Add products for the Demonstration
+            Add(new Company { Name = "TIMKEN Eng", Category = "Engenering"});
+            Add(new Company { Name = "Wipro", Category = "software"});
+            Add(new Company { Name = "HSBC", Category = "Bank"});
+        }
+
+        public IEnumerable<Company> GetAll()
+        {
+            // TO DO : Code to get the list of all the records in database
+            return products;
+        }
+        public Company Get(int id)
+        {
+            // TO DO : Code to find a record in database
+            return products.Find(p => p.Id == id);
+        }
+        public Company Add(Company item)
+        {
+            if (item == null)
+            {
+                throw new ArgumentNullException("item");
+            }
+
+            // TO DO : Code to save record into database
+            item.Id = _nextId++;
+            products.Add(item);
+            return item;
+        }
+        public bool Update(Company item)
+        {
+            if (item == null)
+            {
+                throw new ArgumentNullException("item");
+            }
+
+            // TO DO : Code to update record into database
+            int index = products.FindIndex(p => p.Id == item.Id);
+            if (index == -1)
+            {
+                return false;
+            }
+            products.RemoveAt(index);
+            products.Add(item);
+            return true;
+        }
+        public bool Delete(int id)
+        {
+            // TO DO : Code to remove the records from database
+            products.RemoveAll(p => p.Id == id);
+            return true;
+        }
+    }
 ```
-### Step 6 : Add controller class to the application 
+### Step 6 : Add controller class to the application
 ```cs
-    public class CompanyController : Controller  
-    {  
-        readonly ICompanyRepository repo;  
-        public CompanyController(ICompanyRepository tempProduct)  
-        {  
-            this.repo = tempProduct;  
-        }  
-        public string Index()  
-        {  
-            var data = repo.GetAll();  
-            return JsonConvert.SerializeObject(data);  
-        }  
-    }  
+    public class CompanyController : Controller
+    {
+        readonly ICompanyRepository repo;
+        public CompanyController(ICompanyRepository tempProduct)
+        {
+            this.repo = tempProduct;
+        }
+        public string Index()
+        {
+            var data = repo.GetAll();
+            return JsonConvert.SerializeObject(data);
+        }
+    }
 ```
 
 ### RegisterType method
@@ -214,9 +216,9 @@ myContainer.RegisterType<CustomerService>(new ContainerControlledLifetimeManager
 
 ### Lifetime Managers
 - TransientLifetimeManager
-    - For this lifetime manager Unity creates and returns a new instance of the requested type for each call to the Resolve or ResolveAll method. 
+    - For this lifetime manager Unity creates and returns a new instance of the requested type for each call to the Resolve or ResolveAll method.
     - This lifetime manager is used by default for all types registered using the RegisterType, method unless you specify a different lifetime manager
-- ContainerControlledLifetimeManager 
+- ContainerControlledLifetimeManager
     - registers an existing object as a singleton instance.
     - Unity returns the same instance of the registered type or object each time you call the Resolve or ResolveAll method or when the dependency mechanism injects instances into other classes.
 - HierarchicalLifetimeManager
@@ -239,7 +241,7 @@ Using the **RegisterInstance** method to register an existing object results in 
 
 ## Builtin infrastructure (Preferred)
 `http://dotnetliberty.com/index.php/2015/10/15/asp-net-5-mvc6-dependency-injection-in-6-steps/`
-- Can register a concrete implementation or bind an implementation to an interface. 
+- Can register a concrete implementation or bind an implementation to an interface.
 - This can be done by either specifying both types as generic or pass them as type parameters.
 
 - In Controller
@@ -288,7 +290,7 @@ namespace DependencyDemo.Services
 ```cs
         private IGreetingService _greetingService;
         private IGreetingService _secondService;
- 
+
         public GreetingController(IGreetingService greetingService, IGreetingService secondService)
         {
             _greetingService = greetingService;
@@ -303,22 +305,22 @@ services.AddInstance<IGreetingService>(new GreetingService());
 
 ## Service Types
 ### AddSingleton
-- A new instance of that class is being created for every dependency injection. 
-- 
+- A new instance of that class is being created for every dependency injection.
+-
 - `services.AddSingleton<IGreetingService, GreetingService>();`
-- Rather than providing a specific instance to the services collection, we just supply the implementation type as a second type parameter. 
-- This tells ASP.NET to create one and only one instance of IGreetingService, and 
+- Rather than providing a specific instance to the services collection, we just supply the implementation type as a second type parameter.
+- This tells ASP.NET to create one and only one instance of IGreetingService, and
 - any components wanting an IGreetingService will use the same shared instance.
 
 ### AddTransient
 - Only one instance of that class is being created across the entire application and that instance is being used during the dependency injection.
-- 
+-
 - services.AddTransient<IGreetingService, GreetingService>();
 - each time somebody asks for an IGreetingService, they will get a brand new instance of GreetingService
 
 ### AddScoped
 - A new instance of that class is being created for every request. If multiple components are requesting an instance of that class from the dependency injection engine during a single request, all of them will receive the same instance.
-- 
+-
 - `services.AddScoped<IGreetingService, GreetingService>();`
 - for the lifetime of a single web request, the same instance will be returned to that request.
 - Individual requests have their own dependencies that are alive for the duration of that request.
@@ -333,5 +335,3 @@ services.AddInstance<IGreetingService>(new GreetingService());
 	- http://www.toplinestrategies.com/blogs/application-development/dependency-injection-mvc-5
 	- http://www.c-sharpcorner.com/UploadFile/dacca2/implement-ioc-using-unity-in-mvc-5/
 	- https://www.codeproject.com/Articles/1163016/Using-Unity-Framework-in-ASP-NET-MVC
-
-

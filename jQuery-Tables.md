@@ -1,5 +1,5 @@
 # jQuery Tables
-
+[TOC]
 ## jsGrid [Appears best fit]
 http://js-grid.com/
 https://github.com/tabalinas/jsgrid
@@ -37,8 +37,11 @@ Interesting features, but need to understand fully
 
 ## Gijgo [look further]
 http://gijgo.com/grid
-- Other components also dialog, tree, editor, draggable, droppable,
-- Grouped rows
+- Other components also Dialog, Tree, WYSIWYG Editor, Draggable, Droppable,
+- HTML Sourced Data, make a table into a grid
+- Grouped rows to group records based on column values
+- Inline editing
+- Nested Grids, Connected Grids
 
 ## Datatables
 https://datatables.net/
@@ -73,6 +76,7 @@ https://github.com/andrastoth/advtable
 - password protected database update with timeout
 - resizeable
 - Add HTML5 datepicker
+- last updated `21 Jul 2013`
 
 # Interesting
 
@@ -208,6 +212,10 @@ _Initial List_
 	- keyboard navigation
 	- tri-state checkboxes
 	- customizable node types
+	- Plugins for non-core features
+	- Nodes need naming convention (?)
+		- label | id
+		- children
 - https://mbraak.github.io/jqTree/
 	- **most intersting** Sun, 25-Jun-2017
 	- Create a tree from JSON data
@@ -216,4 +224,7 @@ _Initial List_
 	- Keyboard support
 	- Lazy loading
 	- Written in Typescript
+	- Nodes need naming convention
+		- label | id
+		- children
 	- `https://github.com/mbraak/jqTree`

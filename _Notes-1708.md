@@ -1,5 +1,8 @@
 
 # Sun 15-Oct-2017
+
+[TOC]
+
 ## HTML to PDF Converters
 * wkhtmltopdf
 	* https://wkhtmltopdf.org
@@ -13,7 +16,7 @@
 
 ## Markdown to HTML Converters
 * Showdown
-	* https://github.com/showdownjs/showdown	
+	* https://github.com/showdownjs/showdown
 * markdown-js
 	* https://github.com/evilstreak/markdown-js
 	* limited functionality?
