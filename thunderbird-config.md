@@ -1,13 +1,37 @@
 # Thunderbird Config
-> Required for each Profile
 `Thu, 21-Sep-2017 12:09:12 +0530`
+> Required for each Profile
 
-cat /media/sak/70_Current/Mailbox/profiles.ini > ~/.thunderbird/profiles.ini
+**Contents:**
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+- [Thunderbird Config](#thunderbird-config)   
+   - [Working Notes](#working-notes)   
+   - [Inbox Columns](#inbox-columns)   
+   - [General](#general)   
+   - [Extensions](#extensions)   
+      - [CardBook](#cardbook)   
+      - [SmartTemplate4](#smarttemplate4)   
+      - [Stationery](#stationery)   
+   - [Broken Extensions](#broken-extensions)   
+      - [Super Date Format](#super-date-format)   
+      - [Profile Buttons](#profile-buttons)   
+   - [Extensions - Other](#extensions-other)   
+   - [Custom Templates](#custom-templates)   
+      - [SmartTemplate4 - Reply Quote header](#smarttemplate4-reply-quote-header)   
+      - [SmartTemplate4 - Forward Quote Header](#smarttemplate4-forward-quote-header)   
+      - [Stationery - Default Template](#stationery-default-template)   
+   - [Notes:](#notes)   
+      - [Zoho mail configuration](#zoho-mail-configuration)   
+
+<!-- /MDTOC -->
+***
 
 ## Working Notes
-- hotmail sending is broken
-	- due to an extension
+- **Default Charset** `ISO-8859-1`
+- `cat /70_Current/Mailbox/profiles.ini > ~/.thunderbird/profiles.ini`
 
+***
 ## Inbox Columns
 - Threads
 - Attachments
@@ -15,60 +39,75 @@ cat /media/sak/70_Current/Mailbox/profiles.ini > ~/.thunderbird/profiles.ini
 - Subject
 - Date
 
+***
 ## General
 - Extension Preferences stored in `~/.thunderbird/c1fvpy7s.default/prefs.js`
 	- try copy into new profile, see if settings replicated
+- `Menu` > `Preferences` > `Account Settings`
+	- [x] `Attach the signature from a file instead (text, HTML, or image):`
 
+***
 ## Extensions
 ### CardBook
 - Disable `Unique source for contacts`
 
-
-
-
-### Manually sort folders
-- not much used, optional
-
-### Profile Buttons
-- Useful for current usage
-- not compatible with current version, after v42.0
-- try 'ProfileSwitcher'
-
 ### SmartTemplate4
-- `Reply` & `Forward` > `Replace line breaks with <br>`
+- `Write`, `Reply` & `Forward`
+    - [x] `Use instead of default quote header`
+    - [x] `use HTML (e.g. <b>bold</b>)`
+- `Write`, `Reply` & `Forward` > `Replace line breaks with <br>`
 	- First `checked`, restart and then `unchecked`
-	-
+	- (Uncheck after a restart, if untouched is treated as checked)
 - `Global Settings` > `Advanced Functions` > `Support Stationery addon` = *checked*
+- `Advanced` > `Global Settings`
+	- [x] `Process Signature`
+	- [x] `Replace line breaks in plain text signature with <br>`
+	- [x] `Support Stationery addons`
+	- [x] `Insert Space to highlight %cursor%`
+	- [x] `Display button in status bar`
+	- [ ] Others keep unchecked
 - **See**
 	- In Advanced Settings, `Remove email address unless .......`
 
 ### Stationery
 - Needed for global template
-- **See** in options
-	- `Number of rows in Addressing Widget`
+- `Options` > `Number of rows in Addressing Widget`
+	- `<default>`
 
+***
+## Broken Extensions
 ### Super Date Format
 - `%d-%b-%y %H:%M`
-- not compatible with
+- not compatible with current version
+### Profile Buttons
+- Useful for current usage
+- not compatible with current version, after v42.0
+- try 'ProfileSwitcher' (also broken)
 
-### Theme Font & Size Changer
-- Optional, to customize appearance
-
-### ImportExportTools
-- useful for exporting mails to offline accounts
-
+***
 ## Extensions - Other
+- **Theme Font & Size Changer**
+	- Optional, to customize appearance
+
+- **ImportExportTools**
+	- Optional, useful for exporting mails to offline accounts
+
+- **Manually sort folders**
+	- not much used, optional
+
 - **Profile Folder Button**
 	- Opens the profile folder, in default application
 
 - **Cardbook**
 	- Need to understand
+
 - **Contact Tabs**
 	- works only with Thunderbird address books
 	- supports all fields of Thunderbird's default address book as well as those added gContactSync when viewing a contact
 
-## SmartTemplate4 Quote Headers
-### Reply Quote header
+***
+## Custom Templates
+### SmartTemplate4 - Reply Quote header
 ```html
 <hr><b>From:</b> %from% &lt;%from(mail)%&gt;
 <br><b>Sent:</b> %X:=sent% %A%, %d% %B%, %Y% %H%:%M% %date_tz% (%tz_name(1)%)
@@ -77,7 +116,7 @@ cat /media/sak/70_Current/Mailbox/profiles.ini > ~/.thunderbird/profiles.ini
 <br>
 ```
 
-### Forward Quote Header
+### SmartTemplate4 - Forward Quote Header
 ```html
 <hr><b>From:</b> %from% &lt;%from(mail)%&gt;
 <br><b>Sent:</b> %X:=sent% %A%, %d% %B%, %Y% %H%:%M% %date_tz% (%tz_name(1)%)
@@ -85,18 +124,59 @@ cat /media/sak/70_Current/Mailbox/profiles.ini > ~/.thunderbird/profiles.ini
 <br><b>Subject:</b> %subject%
 ```
 
-## Notes:
-- `/media/sak/70_Current/Mailbox/tb-profiles.ini`
-- XPIs at `/media/sak/70_Current/Downloads/thunderbird-extns/*xpi`
-- sh `sudo rsync -nvhr /media/sak/70_Current/Downloads/thunderbird-extns/*xpi /usr/lib/thunderbird-addons/extensions/`
+### Stationery - Default Template
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- <meta http-equiv="Content-type" content="text/html;charset=UTF-8"> -->
+  <style>
+    * {
+      font-family: Calibri, Carlito, Arial, "Lucida Sans Unicode", sans-serif;
+      font-size: 12pt;
+    }
+    .mail-sig{
+      /* top | right | bottom | left */
+      margin: 0rem 0rem 0rem 0.5rem;
+      padding: 0.5rem;
+      border: 1px solid #aaa;
+      border-left: 3px solid #f61515;
+      background-color: rgba(240, 240, 255, 0.9);
+      display: block;
+    }
+    blockquote.cite[type=cite]{
+      margin: 0px !Important;
+      padding: 0px !Important;
+      border-width: 0px !Important;
+    }
+  </style>
+</head>
+<body>
 
-## Migration:
-```bash
-# Cleanup junk
-rm -vfr /home/sak/.thunderbird/c1fvpy7s.default
-rm -vf /home/sak/.thunderbird/profiles.ini
+  <div>
+    <p>Hi %cursor%,</p>
+  </div>
 
-# Update with new profile
+  <br>
+  %sig(html)%
 
+  <br>
+  %quoteHeader%
 
+  %quotePlaceholder%
+
+</body>
+</html>
 ```
+
+***
+## Notes:
+### Zoho mail configuration
+- Server Settings
+	- `imappro.zoho.com:993`
+	- `smtp.zoho.com:465`
+	- SSL/TLS
+	- Normal Password
+
+***
+Last Updated: `307, 03-Nov-2017 2224:11:70 +0530`

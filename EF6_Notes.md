@@ -1,5 +1,7 @@
 # Entity Framework 6.1.3
 
+[TOC]
+
 ## Further Reading
 - [T4 Templates](https://www.exceptionnotfound.net/using-t4-templates-to-generate-enums-from-database-lookup-tables/)
 	- its a code generator and anything not surround by <# #> is standard text
