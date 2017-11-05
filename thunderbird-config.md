@@ -3,26 +3,25 @@
 > Required for each Profile
 
 **Contents:**
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+<!-- MDTOC maxdepth:6 firsth1:0 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-- [Thunderbird Config](#thunderbird-config)   
-   - [Working Notes](#working-notes)   
-   - [Inbox Columns](#inbox-columns)   
-   - [General](#general)   
-   - [Extensions](#extensions)   
-      - [CardBook](#cardbook)   
-      - [SmartTemplate4](#smarttemplate4)   
-      - [Stationery](#stationery)   
-   - [Broken Extensions](#broken-extensions)   
-      - [Super Date Format](#super-date-format)   
-      - [Profile Buttons](#profile-buttons)   
-   - [Extensions - Other](#extensions-other)   
-   - [Custom Templates](#custom-templates)   
-      - [SmartTemplate4 - Reply Quote header](#smarttemplate4-reply-quote-header)   
-      - [SmartTemplate4 - Forward Quote Header](#smarttemplate4-forward-quote-header)   
-      - [Stationery - Default Template](#stationery-default-template)   
-   - [Notes:](#notes)   
-      - [Zoho mail configuration](#zoho-mail-configuration)   
+- [Working Notes](#working-notes)
+- [Inbox Columns](#inbox-columns)
+- [General](#general)
+- [Extensions](#extensions)
+   - [CardBook](#cardbook)
+   - [SmartTemplate4](#smarttemplate4)
+   - [Stationery](#stationery)
+- [Broken Extensions](#broken-extensions)
+   - [Super Date Format](#super-date-format)
+   - [Profile Buttons](#profile-buttons)
+- [Extensions - Other](#extensions-other)
+- [Custom Templates](#custom-templates)
+   - [SmartTemplate4 - Reply Quote header](#smarttemplate4-reply-quote-header)
+   - [SmartTemplate4 - Forward Quote Header](#smarttemplate4-forward-quote-header)
+   - [Stationery - Default Template](#stationery-default-template)
+- [Notes:](#notes)
+   - [Zoho mail configuration](#zoho-mail-configuration)
 
 <!-- /MDTOC -->
 ***
@@ -45,6 +44,17 @@
 	- try copy into new profile, see if settings replicated
 - `Menu` > `Preferences` > `Account Settings`
 	- [x] `Attach the signature from a file instead (text, HTML, or image):`
+	```html
+	Regards,
+	<br>FIRST-NAME.
+	<br>
+	<br>
+	<div class="mail-sig">
+	<b>FIRST MIDDLE SURNAME</b>
+	<br>DESIGNATION
+	<br>+91 0000 1111 00
+	</div>
+	```
 
 ***
 ## Extensions
@@ -179,4 +189,4 @@
 	- Normal Password
 
 ***
-Last Updated: `307, 03-Nov-2017 2224:11:70 +0530`
+Last Updated: `Fri, 03-Nov-2017 22:49:13.501 +0530`

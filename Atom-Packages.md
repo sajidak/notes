@@ -154,13 +154,13 @@ https://atom.io/packages/markdown-themeable-pdf
 
 #### Customization - PDF output
 
-| file         | intent                                                      | file                                                       |
-| ------------ | ----------------------------------------------------------- | ---------------------------------------------------------- |
-| document.css | default styles that will be applied                         | `~/.atom/packages/markdown-themeable-pdf/css/document.css` |
-| footer.js    | footer content in html format                               | `~/.atom/markdown-themeable-pdf/footer.js`                 |
-| header.js    | header content in html format                               | `~/.atom/markdown-themeable-pdf/header.js`                 |
-| styles.css   | custom styles that will be applied on top of `document.css` |                                                            |
-| markdown-themeable-pdf.js |   |  |
+| file                      | intent                                                      | file                                                                    |
+| ------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------------- |
+| document.css              | default styles that will be applied                         | `~/.atom/packages/markdown-themeable-pdf/css/document.css`              |
+| footer.js                 | footer content in html format                               | `~/.atom/markdown-themeable-pdf/footer.js`                              |
+| header.js                 | header content in html format                               | `~/.atom/markdown-themeable-pdf/header.js`                              |
+| styles.css                | custom styles that will be applied on top of `document.css` |                                                                         |
+| markdown-themeable-pdf.js | core code for generating html or pdf output                 | `~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js` |
 
 - Per project `project-path/markdown-themeable-pdf/styles.css`
 
@@ -189,7 +189,7 @@ rsync -v ${WORK_FOLDER}/markdown-themeable-pdf.js ~/.atom/packages/markdown-them
 	- .addWarning('text to display');
 	- .addError('text to display');
 	- .addSuccess('text to display');
-	
+
 #### Customization - HTML Template
 - file `~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js`
 - line 461 to 465 - replace with
@@ -201,12 +201,12 @@ rsync -v ${WORK_FOLDER}/markdown-themeable-pdf.js ~/.atom/packages/markdown-them
                 '<title>' + jobInfo.fileInfo.name + '</title>\n' +
                 '<style>\n' + cssStyles + '\n</style>\n' +
                 '</head>\n' +
-                '<body>\n' + 
-                customHeader.html + 
-                '<div id="pageContent">\n' + 
+                '<body>\n' +
+                customHeader.html +
+                '<div id="pageContent">\n' +
                 html + '\n' +
-                '</div>' + 
-                customFooter.html + 
+                '</div>' +
+                customFooter.html +
                 '</body>\n' +
                 '</html>\n';
 

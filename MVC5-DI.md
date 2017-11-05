@@ -5,7 +5,7 @@
 ## Note:
 - MVC5 Dependency Injection engines support constructor-based and property-based injection.
 - Constructor-based injection
-	- Add parameters to the constructor. 
+	- Add parameters to the constructor.
 	- Those parameters will be populated automatically by the DI engine if a matching rule / object is registered.
 	```cs
 	public HomeController(IBranchService branchService)
@@ -45,6 +45,9 @@
 ## Using Unity.MVC
 `http://www.c-sharpcorner.com/UploadFile/dacca2/implement-ioc-using-unity-in-mvc-5/`
 `https://www.codeproject.com/Articles/1163016/Using-Unity-Framework-in-ASP-NET-MVC`
+`_Notes/ASP-NET-MVC/MVC5/DependencyInjectionWithUnity.pdf`
+[Developer’s Guide to Dependency Injection using Unity (PDF, EPUB)](http://go.microsoft.com/fwlink/p/?LinkID=290913)
+`https://www.microsoft.com/en-us/download/confirmation.aspx?id=39944&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1`
 
 ### Step 1: Create Unity container
 ```cs
@@ -214,6 +217,18 @@ myContainer.RegisterType<CustomerService>(new ContainerControlledLifetimeManager
 
 ```
 
+### RegisterInstance Method
+- The `RegisterInstance` method provides a similar dependency feature to the RegisterType method (when used with the ContainerControlledLifetimeManager) in that it creates a registration that always returns a reference to the same instance of the specified object, as long as that object is in scope.
+- The RegisterType method with a `ContainerControlledLifetimeManager` automatically generates this single instance the first time your code calls it, and the RegisterInstance method accepts an existing instance for which it will return references.
+- If you register a type more than once using the RegisterInstance method (in other words, if you register more than one instance of the same type), only the last one you register remains in the container and is returned when you execute the Resolve or ResolveAll method.
+- By **default**, the RegisterInstance method registers existing object instances with a **container-controlled lifetime** and holds on to a strong reference to the object for the life of the container. You can change this behavior if you want by using a different lifetime manager to control the creation, lifetime, and disposal of the object.
+
+```cs
+StorageAccount account =
+  ApplicationConfiguration.GetStorageAccount("DataConnectionString");
+container.RegisterInstance(account);
+```
+
 ### Lifetime Managers
 - TransientLifetimeManager
     - For this lifetime manager Unity creates and returns a new instance of the requested type for each call to the Resolve or ResolveAll method.
@@ -221,8 +236,16 @@ myContainer.RegisterType<CustomerService>(new ContainerControlledLifetimeManager
 - ContainerControlledLifetimeManager
     - registers an existing object as a singleton instance.
     - Unity returns the same instance of the registered type or object each time you call the Resolve or ResolveAll method or when the dependency mechanism injects instances into other classes.
+	```cs
+	var container =
+		new UnityContainer()
+		    .RegisterType<ICar, BMW>(
+			    new ContainerControlledLifetimeManager()
+		    );
+	```
 - HierarchicalLifetimeManager
-    - Unity returns the same instance of the registered type or object each time you call the Resolve or ResolveAll method or when the dependency mechanism injects instances into other classes. The distinction is that when there are child containers, each child resolves its own instance of the object and does not share one with the parent.
+    - Unity returns the same instance of the registered type or object each time you call the Resolve or ResolveAll method or when the dependency mechanism injects instances into other classes.
+	- The distinction is that when there are child containers, each child resolves its own instance of the object and does not share one with the parent.
 - PerResolveLifetimeManager
     - like a TransientLifetimeManager, but also provides a signal to the default build plan, marking the type so that instances are reused across the build-up object graph.
 - PerThreadLifetimeManager
@@ -239,7 +262,7 @@ Using the **RegisterInstance** method to register an existing object results in 
 
 
 
-## Builtin infrastructure (Preferred)
+## Builtin infrastructure (MVC COre)
 `http://dotnetliberty.com/index.php/2015/10/15/asp-net-5-mvc6-dependency-injection-in-6-steps/`
 - Can register a concrete implementation or bind an implementation to an interface.
 - This can be done by either specifying both types as generic or pass them as type parameters.

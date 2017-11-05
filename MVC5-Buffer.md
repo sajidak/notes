@@ -234,6 +234,7 @@ The body and every section in a Razor page must be either rendered or ignored.
 
 ### global.asax
 - **TODO:** Understand more of this.
+- Appears to be mvc-core
 ```cs
 ViewEngines.Engines.Clear();
 var customEngine = new RazorViewEngine();
