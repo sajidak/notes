@@ -3,30 +3,32 @@
 **Contents**
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-- [Atom Customization](#atom-customization)
-   - [Generic keybindings](#generic-keybindings)
-   - [Installed Packages](#installed-packages)
-      - [Date](#date)
-      - [lines](#lines)
-      - [markdown-table-editor](#markdown-table-editor)
-      - [document-outline](#document-outline)
-      - [markdown-preview-enhanced](#markdown-preview-enhanced)
-      - [markdown-themeable-pdf](#markdown-themeable-pdf)
-      - [pdf-view](#pdf-view)
-      - [atom-mdtoc](#atom-mdtoc)
-- [Index](#index)
-   - [1. Read more](#1-read-more)
-   - [2. `keymap.json` extract](#2-keymapjson-extract)
-      - [i. Info](#i-info)
-   - [3. Package Configurations](#3-package-configurations)
-      - [i. markdown-preview](#i-markdown-preview)
-      - [ii. tree-view](#ii-tree-view)
-      - [iii. markdown-preview-enhanced](#iii-markdown-preview-enhanced)
-      - [iv. atom-mdtoc](#iv-atom-mdtoc)
-      - [v markdown-themeable-pdf](#v-markdown-themeable-pdf)
-      - [vi. markdown-themeable-pdf Customization](#vi-markdown-themeable-pdf-customization)
-         - [HTML Template](#html-template)
-         - [Header and Footer](#header-and-footer)
+- [Atom Customization](#atom-customization)   
+   - [Generic keybindings](#generic-keybindings)   
+   - [Installed Packages](#installed-packages)   
+      - [Removed Packages](#removed-packages)   
+      - [Date](#date)   
+      - [lines](#lines)   
+      - [markdown-table-editor](#markdown-table-editor)   
+      - [document-outline](#document-outline)   
+      - [language-markdown](#language-markdown)   
+      - [markdown-preview-enhanced](#markdown-preview-enhanced)   
+      - [atom-mdtoc](#atom-mdtoc)   
+      - [markdown-themeable-pdf](#markdown-themeable-pdf)   
+      - [pdf-view](#pdf-view)   
+      - [block-selection-mode](#block-selection-mode)   
+- [Index](#index)   
+   - [1. Read more](#1-read-more)   
+   - [2. `keymap.json` extract](#2-keymapjson-extract)   
+   - [3. Package Configurations](#3-package-configurations)   
+      - [i. markdown-preview](#i-markdown-preview)   
+      - [ii. tree-view](#ii-tree-view)   
+      - [iii. markdown-preview-enhanced](#iii-markdown-preview-enhanced)   
+      - [iv. atom-mdtoc](#iv-atom-mdtoc)   
+      - [v. markdown-themeable-pdf](#v-markdown-themeable-pdf)   
+      - [vi. markdown-themeable-pdf Customization](#vi-markdown-themeable-pdf-customization)   
+         - [HTML Template](#html-template)   
+         - [Header and Footer](#header-and-footer)   
 
 <!-- /MDTOC -->
 ***
@@ -38,15 +40,21 @@
 ```
 
 ## Installed Packages
-- [ ] markdown-preview-enhanced
-- [ ] markdown-table-editor
-- [ ] atom-mdtoc
-- [ ] document-outline
+- [ ] date
 - [ ] lines
+- [ ] markdown-table-editor
+- [ ] document-outline
 - [ ] language-markdown
+- [ ] markdown-preview-enhanced
+- [ ] atom-mdtoc
 - [ ] markdown-themeable-pdf
 - [ ] pdf-view (Linux only)
-- [ ] select-rectangle
+- [ ] block-selection-mode (Win Only)
+
+### Removed Packages
+- [ ] ~~select-rectangle~~
+- [ ] ~~markdown-folder~~
+
 
 ### Date
 - Insert the current date & time at cursor
@@ -131,8 +139,24 @@
   'ctrl-alt-o': 'document-outline:toggle'
 ```
 
+### language-markdown
+- Smarter lists
+	- Automatically create new list-items when pressing enter
+	- Indent or outdent list-items by pressing tab or shift+tab
+	- Toggle tasks with cmd+shift+x or ctrl+shift+x
+	- Remove empty trailing list-items when pressing enter
+- Add shortcuts (via _, * and ~) for toggling inline-emphasis and strike-through on selected text
+- Add shortcuts for converting selected text to a link (via @) or an image (via !)
+- Supports embedded HTML- and Liquid-tags
+- Supported grammars
+	- CommonMark Markdown
+	- Github Flavored Markdown (including AtomDoc)
+	- Markdown Extra
+	- CriticMark annotation
+	- Front Matter (yaml, toml and json)
+	- R Markdown
+
 ### markdown-preview-enhanced
-- [ ] recommended: language-gfm-enhanced
 - disable `markdown-preview`, and add in keymap
 ```
 '.editor:not(.mini)':
@@ -145,6 +169,20 @@
 - export HTML, mobile friendly
 - many more . . .
 - **?** Where is stylesheet used for preview formatting?
+
+### atom-mdtoc
+- Auto linking via anchor tags
+- Depth control e.g. maxDepth:6
+- Refresh list on save with updateOnSave:1 (disable with updateOnSave:0)
+- Exclude the first h1-level heading in a file with firsth1:0 (include with firsth1:1)
+- Use spaces instead of bullets with bullets:0 (use bullets with bullets:1)
+- Use a flatten list instead of a tree with flatten:1 (use tree with flatten:0)
+- Header numbering with numbering:1 (disable with numbering:0)
+- Works with repeated headings (see also this Table Of Contents)
+- **Error in [v0.8.3](https://github.com/mcpride/atom-mdtoc/issues/6)**
+	- To fix, modify file `~/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
+	- Replace in lines 120, 122 & 291
+	- `repeat` with `_repeat_`
 
 ### markdown-themeable-pdf
 - https://atom.io/packages/markdown-themeable-pdf
@@ -166,25 +204,37 @@
 - Powered by [PDF.js](https://github.com/mozilla/pdf.js)
 - **?** SumatraPDF for windows?
 
-### atom-mdtoc
-- Auto linking via anchor tags
-- Depth control e.g. maxDepth:6
-- Refresh list on save with updateOnSave:1 (disable with updateOnSave:0)
-- Exclude the first h1-level heading in a file with firsth1:0 (include with firsth1:1)
-- Use spaces instead of bullets with bullets:0 (use bullets with bullets:1)
-- Use a flatten list instead of a tree with flatten:1 (use tree with flatten:0)
-- Header numbering with numbering:1 (disable with numbering:0)
-- Works with repeated headings (see also this Table Of Contents)
-- **Error in [v0.8.3](https://github.com/mcpride/atom-mdtoc/issues/6)**
-	- To fix, modify file `~/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
-	- Replace in lines 120, 122 & 291
-	- `repeat` with `_repeat_`
+### block-selection-mode
+- Needed for Windows only
+- `ctrl-enter` toggle block-selection-mode
+- In block-selection-mode
+	- `ctrl-f` forward-char
+	- `ctrl-b` backward-char
+	- `ctrl-n` next-line
+	- `ctrn-p` previous-line
 
 
 ***
 # Index
 
 ## 1. Read more
+- [ ] [atom-minify-stand-alone](https://atom.io/packages/atom-minify-stand-alone)
+	- Minify a js / css file without dependencies.
+	- Minify css / js files using native json regular expression.
+	- String literal can be parsed normally now.
+	- Works well in most css files and most js files
+	- This package is in early development.
+- [ ] [markdown-footnote](https://atom.io/packages/markdown-footnote)
+	- Inserts a Pandoc compatible Markdown footnote.
+	- Uses a 'random' md5 hash to name footnotes
+	- `ctrl-shift-f` / `cmd-shift-f`
+		- inserts a Pandoc-style `"[^1]"` footnote at cursor position
+		- adds a new line at the end of the file with the same reference
+		- ready for pasting of the link (or any other footnote text)
+	- After inserting the footnote,
+		- `ctrl-shift-b` / `cmd-shift-b` places the cursor
+		- back in the body of the text, just after the initial reference
+		- i.e. a shortcut back to the place in the text body where footnote was inserted
 - [ ] [Pandoc](http://pandoc.org) File format converters
 	- ** CHECK THIS OUT ASAP**
 	- With configuration, can be used to generate PDF files from apps
@@ -212,16 +262,6 @@
   'ctrl-alt-o':   'document-outline:toggle'
   'ctrl-shift-M': 'markdown-preview-enhanced:toggle'
 ```
-### i. Info
-- symbols-view
-```
-'.platform-linux atom-text-editor':
-	'ctrl-r': 			'symbols-view:toggle-file-symbols'
-'.platform-linux atom-text-editor':
-	'ctrl-alt-down':	'symbols-view:go-to-declaration'
-'.platform-linux atom-text-editor':
-	'ctrl-alt-up': 		'symbols-view:return-from-declaration'
-```
 
 ## 3. Package Configurations
 ### i. markdown-preview
@@ -238,7 +278,7 @@
 	- modify file `~/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
 	- Replace in lines 120, 122 & 291
 	- `repeat` with `_repeat_`
-### v markdown-themeable-pdf
+### v. markdown-themeable-pdf
 - `Show by Default` = UNCHECK
 - Export File Type
 	- pdf
@@ -287,6 +327,266 @@
 - File Details like name, extension...
 	- from `~/.atom/packages/markdown-themeable-pdf/lib/markdown-themeable-pdf.js`
 	- `info` object can be used to get file name without extension
+- **Header customization**
+	```js
+	module.exports = function (info) {
+	    return {
+	        height: '1cm',
+	        contents: '<div style="text-align: right;">Page {{page}} of {{pages}}</div>'
+	    };
+	};
+	```
+- **Footer customization**
+	```js
+	module.exports = function (info) {
+	    var yearFormat = function () {
+	        return (new Date()).toLocaleDateString('en-US', {
+	            year: 'numeric',
+	        });
+	    };
+	    return {
+	        height: '1cm',
+	        contents: '<div style="float:left;">&copy; ' + yearFormat() + ' your-name-here</div>' +
+	                  '<div style="float:right;">'       + info.fileInfo.name          + '</div>'
+	    };
+	};
+	```
+- **Default Styles customization** (document.css)
+	- Good enough for now, needs signifigant branding work
+	```css
+	* {
+	    overflow: visible !important;
+	    -webkit-text-size-adjust: 100%;
+	    -webkit-font-smoothing: antialiased;
+	    box-decoration-break: clone;
+	}
+	html, body {
+	    background: #FFF;
+	    font-family: Calibri, Carlito, "Segoe UI", Arial, freesans, sans-serif;
+	    font-size: 12pt;
+	    line-height: 1.2;
+	    color: #333;
+	    word-wrap: break-word;
+		hyphens: auto;
+		margin: 0px 25px;
+	}
+	hr {
+	    margin-top: .5rem;
+	    margin-bottom: 2rem;
+	    border: 0;
+	    border-top: 4px solid #EEE;
+	}
+	code {
+	    font-family: Consolas, "Liberation Mono", Menlo, "Courier New", Courier, monospace;
+	    font-size: 1.0rem;
+	    padding: .1em .4em;
+	    display: inline-block;
+	    background-color: #f9f2f4;
+	    color: #c7254e;
+	    border-radius: 3px;
+	    border: 0 none;
+	    hyphens: manual;
+	}
+	pre code {
+	    font-family: Consolas, "Liberation Mono", Menlo, "Courier New", Courier, monospace;
+	    font-size: 1.0rem;
+	    padding: 15px;
+	    display: block;
+	    background-color: #F9F9F9;
+	    color: #c7254e;	/* #555 */
+	    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .08);
+	    word-wrap: normal;
+		line-height: 1.5rem;
+	}
+	/* replace light background for some hljs themes */
+	code.github-css,
+	code.github-gist-css,
+	code.tomorrow-css,
+	code.default-css,
+	code.googlecode-css,
+	code.ascetic-css,
+	code.color-brewer-css,
+	code.grayscale-css,
+	code.idea-css,
+	code.vs-css,
+	code.xcode-css {
+	    background-color: #F9F9F9 !important;
+	}
+	blockquote {
+	    padding: 10px;
+	    margin-left: 0;
+	    color: #666;
+	    border: 0 none;
+	    border-left: 4px solid #EEE;
+	}
+	blockquote p:last-child,
+	blockquote ul:last-child,
+	blockquote ol:last-child {
+	    margin-bottom: 0;
+	}
+	table {
+	    border-collapse: collapse;
+	    border-spacing: 0;
+	    background-color: #FFF;
+	    width: 100%;
+	    max-width: 100%;
+	    margin-bottom: 20px;
+	    border: 1px solid #DDD;
+	}
+	table div {
+	    page-break-inside: avoid;
+	}
+	th, td {
+	    vertical-align: top;
+	    text-align: left;
+	}
+	table > thead > tr > th,
+	table > tbody > tr > th,
+	table > tfoot > tr > th,
+	table > thead > tr > td,
+	table > tbody > tr > td,
+	table > tfoot > tr > td {
+	    padding: 8px 14px;
+	    vertical-align: top;
+	    border-top: 1px solid #DDD;
+	}
+	table > caption + thead > tr:first-child > th,
+	table > colgroup + thead > tr:first-child > th,
+	table > thead:first-child > tr:first-child > th,
+	table > caption + thead > tr:first-child > td,
+	table > colgroup + thead > tr:first-child > td,
+	table > thead:first-child > tr:first-child > td {
+	    border-top: 0;
+	}
+	table > tbody + tbody {
+	    border-top: 2px solid #DDD;
+	}
+	table table {
+	    background-color: #FFF;
+	}
+	table > thead > tr > th,
+	table > tbody > tr > th,
+	table > tfoot > tr > th,
+	table > thead > tr > td,
+	table > tbody > tr > td,
+	table > tfoot > tr > td {
+	    border: 1px solid #DDD;
+	    vertical-align: top;
+	}
+	table > thead > tr > th,
+	table > thead > tr > td {
+	    font-family: Cambria, Caladea, "serif";
+	    border-bottom-width: 2px;
+	    text-align: center;
+	    vertical-align: middle;
+	    font-weight: bold;
+	    padding-top: 6px;
+	    padding-bottom: 6px;
+	    font-size: 0.9rem;
+	}
+	table > tbody > tr:nth-of-type(odd) {
+	    background-color: #F9F9F9;
+	}
+	img {
+	    max-width: 100%;
+	    height: auto;
+	    vertical-align: middle;
+	}
+	h1, h2, h3, h4, h5, h6 {
+	    font-family: Cambria, Caladea, "serif";
+	    font-weight: bold;
+	    line-height: 1.2;
+	    color: #111;
+	    margin-top: 0.5rem;
+	    margin-bottom: 0.7rem;
+	    padding: 0;
+	    page-break-after: avoid;
+	}
+	h1, h2 {
+	    border-bottom: 1px solid #EEE;
+	    padding-bottom: 0.5rem;
+	}
+	h1 {
+	    font-size: 1.8rem;
+	}
+	h2 {
+	    font-size: 1.5rem;
+	}
+	h3 {
+	    font-size: 1.3rem;
+	}
+	h4 {
+	    font-size: 1.1rem;
+	}
+	h5, h6 {
+	    font-size: 1rem;
+	    font-weight: bold;
+	    color: #666;
+	}
+	p {
+	    margin: 0 0 10px;
+	}
+	input[type="checkbox"] {
+	    margin-right: 6px;
+	    position: relative;
+	    bottom: 1px;
+	}
+	ul,
+	ol {
+	    margin-top: 0;
+	    margin-bottom: 10px;
+	    padding-left: 20px;
+	}
+	li p {
+	    margin-bottom: 2px;
+	}
+	ul li,
+	ol li {
+	    margin-bottom: 2px;
+	}
+	dl {
+	    margin-top: 0;
+	    margin-bottom: 20px;
+	}
+	dt {
+	    font-weight: bold;
+	}
+	dd {
+	    margin-left: 0;
+	}
+	a,
+	a:visited {
+	    text-decoration: none;
+	    color: #4078C0;
+	}
+	.new-page,
+	.page-break,
+	.next-page,
+	.page-end {
+	    page-break-after: always;
+	}
+	#pageHeader,
+	#pageHeader a,
+	#pageHeader a:visited {
+	    color: #777;
+	    /* border-bottom: 1px solid #EEE; */
+	    font-size: 80%;
+	}
+	#pageHeader span {
+	    vertical-align: middle;
+	}
+	#pageFooter {
+	    vertical-align: middle;
+	    border-top: 1px solid #EEE;
+	    padding-top: 5px;
+	    color: #777;
+	    font-size: 80%;
+	}
+	#pageFooter a,
+	#pageFooter a:visited {
+	    color: #777;
+	}
+	```
 
 ***
-`Thu, 26-Oct-2017 11:45:49.1508998549724 +0530`
+`Tue, 07-Nov-2017 20:38:40.1510067320579 +0530`

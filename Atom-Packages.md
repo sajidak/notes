@@ -37,7 +37,7 @@ sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
 ### Date
 - Insert the current date & time at cursor
 - date:date, date:time, and date:datetime
-- Date Time Format `DD-MMM-YYYY`
+- Date Time Format `DD MMM YYYY`
 - Date Time Format `ddd, DD-MMM-YYYY HH:mm:ss.SSS ZZ`
 	- for time stamp `ddd, DD-MMM-YYYY HH:mm:ss.X ZZ`
 	- [formats](https://date-fns.org/docs/format)
