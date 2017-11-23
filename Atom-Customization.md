@@ -16,7 +16,7 @@
       - [atom-mdtoc](#atom-mdtoc)   
       - [markdown-themeable-pdf](#markdown-themeable-pdf)   
       - [pdf-view](#pdf-view)   
-      - [block-selection-mode](#block-selection-mode)   
+      - [select-rectangle](#select-rectangle)   
 - [Index](#index)   
    - [1. Read more](#1-read-more)   
    - [2. `keymap.json` extract](#2-keymapjson-extract)   
@@ -49,11 +49,11 @@
 - [ ] atom-mdtoc
 - [ ] markdown-themeable-pdf
 - [ ] pdf-view (Linux only)
-- [ ] block-selection-mode (Win Only)
+- [ ] select-rectangle (Win only)
 
 ### Removed Packages
 - [ ] ~~select-rectangle~~
-- [ ] ~~markdown-folder~~
+- [ ] ~~block-selection-mode (Win Only)~~
 
 
 ### Date
@@ -69,6 +69,7 @@
   'ctrl-shift-I': 'date:datetime'
 ```
 **Format Options:**
+
 | Unit                    | Token  | Result examples                  |
 |:----------------------- |:------ |:-------------------------------- |
 | Month                   | `M`    | 1, 2, ..., 12                    |
@@ -204,15 +205,14 @@
 - Powered by [PDF.js](https://github.com/mozilla/pdf.js)
 - **?** SumatraPDF for windows?
 
-### block-selection-mode
-- Needed for Windows only
-- `ctrl-enter` toggle block-selection-mode
-- In block-selection-mode
-	- `ctrl-f` forward-char
-	- `ctrl-b` backward-char
-	- `ctrl-n` next-line
-	- `ctrn-p` previous-line
-
+### select-rectangle
+- https://atom.io/packages/select-rectangle
+- Select `alt-s`
+	- At first, select region that you want to do. Next, press alt-s to select rectangle region. if repeating the alt-s would go back to the initial selection. After that, You can copy, cut or following actions.
+- Clear `alt-cmd-c`
+	- After selecting rectangle region by alt-s, alt-cmd-c clears the region-rectangle by replacing all of its contents with spaces.
+- Open `alt-cmd-o`
+	- After selecting rectangle region by alt-s, alt-cmd-o inserts blank space to fill the space of the region-rectangle (open-rectangle). This pushes the previous contents of the region-rectangle to the right.
 
 ***
 # Index

@@ -86,3 +86,25 @@ The visual way for teams to collaborate on any project
 - Communicate seamlessly
 - Make collaboration and organization an email-free process.
 - Get Trello notifications by connecting your boards to Hipchat rooms.
+
+
+## Github notes:
+### create a new repository on the command line
+```sh
+cd /path/to/local/repository/
+echo "# notes" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/sajidak/notes.git
+git push -u origin master
+
+```
+
+### push an existing repository from the command line
+```sh
+cd /path/to/local/repository/
+git remote add origin https://github.com/sajidak/notes.git
+git push -u origin master
+
+```

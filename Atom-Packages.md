@@ -1,7 +1,57 @@
 # Atom packages for markdown
 
 **Contents**
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+- [Atom packages for markdown](#atom-packages-for-markdown)   
+   - [keybindings](#keybindings)   
+   - [Install](#install)   
+   - [Now Installed](#now-installed)   
+      - [Date](#date)   
+      - [lines](#lines)   
+      - [markdown-table-editor](#markdown-table-editor)   
+      - [document-outline](#document-outline)   
+      - [language-markdown](#language-markdown)   
+      - [markdown-preview-enhanced](#markdown-preview-enhanced)   
+      - [atom-mdtoc](#atom-mdtoc)   
+      - [markdown-themeable-pdf](#markdown-themeable-pdf)   
+         - [Customization - PDF output](#customization-pdf-output)   
+         - [Customization - General](#customization-general)   
+         - [Customization - HTML Template](#customization-html-template)   
+      - [pdf-view](#pdf-view)   
+      - [select-rectangle](#select-rectangle)   
+   - [Sample, Tests](#sample-tests)   
+      - [Table1](#table1)   
+   - [Read more](#read-more)   
+      - [New](#new)   
+      - [select-rectangle](#select-rectangle)   
+      - [autoprefixer](#autoprefixer)   
+      - [sass-compiler](#sass-compiler)   
+      - [build-sass](#build-sass)   
+      - [build-sassc](#build-sassc)   
+      - [source-preview-sass](#source-preview-sass)   
+      - [atom-minify-stand-alone](#atom-minify-stand-alone)   
+   - [Other Evaluated](#other-evaluated)   
+      - [column-select](#column-select)   
+      - [pdfify-atom](#pdfify-atom)   
+      - [wkhtmltopdf and wkhtmltoimage](#wkhtmltopdf-and-wkhtmltoimage)   
+      - [markdown-pdf](#markdown-pdf)   
+      - [block-selection-mode](#block-selection-mode)   
+      - [markdown-folder](#markdown-folder)   
+      - [language-gfm-enhanced](#language-gfm-enhanced)   
+      - [sorter](#sorter)   
+      - [More](#more)   
+   - [`keymap.json` extract](#keymapjson-extract)   
+   - [Configuration](#configuration)   
+      - [markdown-preview](#markdown-preview)   
+      - [tree-view](#tree-view)   
+      - [markdown-preview-enhanced](#markdown-preview-enhanced)   
+      - [atom-mdtoc](#atom-mdtoc)   
+      - [markdown-themeable-pdf](#markdown-themeable-pdf)   
+   - [Info](#info)   
+   - [Further Reading](#further-reading)   
+
+<!-- /MDTOC -->
 
 **Temporary update - till image fixed**
 ```bash
@@ -22,15 +72,16 @@ sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
 ```
 
 ## Install
-- [x] markdown-preview-enhanced
-- [x] markdown-table-editor
-- [x] atom-mdtoc
-- [x] document-outline
+- [x] date
 - [x] lines
+- [x] markdown-table-editor
+- [x] document-outline
 - [x] language-markdown
+- [x] markdown-preview-enhanced
+- [x] atom-mdtoc
 - [x] markdown-themeable-pdf
 - [x] pdf-view (Linux only)
-- [x] select-rectangle
+- [ ] select-rectangle (Win only)
 
 ## Now Installed
 
@@ -47,6 +98,7 @@ sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
   'ctrl-shift-I': 'date:datetime'
 ```
 **Format Options:**
+
 | Unit                    | Token  | Result examples                  |
 |:----------------------- |:------ |:-------------------------------- |
 | Month                   | `M`    | 1, 2, ..., 12                    |
@@ -119,6 +171,22 @@ sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
 'body':
   'ctrl-alt-o': 'document-outline:toggle'
   ```
+### language-markdown
+- Smarter lists
+	- Automatically create new list-items when pressing enter
+	- Indent or outdent list-items by pressing tab or shift+tab
+	- Toggle tasks with cmd+shift+x or ctrl+shift+x
+	- Remove empty trailing list-items when pressing enter
+- Add shortcuts (via _, * and ~) for toggling inline-emphasis and strike-through on selected text
+- Add shortcuts for converting selected text to a link (via @) or an image (via !)
+- Supports embedded HTML- and Liquid-tags
+- Supported grammars
+	- CommonMark Markdown
+	- Github Flavored Markdown (including AtomDoc)
+	- Markdown Extra
+	- CriticMark annotation
+	- Front Matter (yaml, toml and json)
+	- R Markdown
 
 ### markdown-preview-enhanced
 `Mon, 08-May-2017 16:05:30 +0530`
@@ -136,6 +204,21 @@ sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
 - export HTML, mobile friendly
 - many more . . .
 - Customization:
+
+### atom-mdtoc
+(best option, `Mon, 08-May-2017 16:05:38 +0530`)
+- Auto linking via anchor tags
+- Depth control e.g. maxDepth:6
+- Refresh list on save with updateOnSave:1 (disable with updateOnSave:0)
+- Exclude the first h1-level heading in a file with firsth1:0 (include with firsth1:1)
+- Use spaces instead of bullets with bullets:0 (use bullets with bullets:1)
+- Use a flatten list instead of a tree with flatten:1 (use tree with flatten:0)
+- Header numbering with numbering:1 (disable with numbering:0)
+- Works with repeated headings (see also this Table Of Contents)
+- **Error in [v0.8.3](https://github.com/mcpride/atom-mdtoc/issues/6)**
+	- To fix, modify file `~/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
+	- Replace in lines 120, 122 & 291
+	- `repeat` with `_repeat_`
 
 
 ### markdown-themeable-pdf
@@ -219,54 +302,14 @@ https://atom.io/packages/pdf-view
 - Powered by [PDF.js](https://github.com/mozilla/pdf.js)
 - ?? SumatraPDF for windows??
 
-
-### markdown-folder
-- **Not of much use. Remove.**
-- folds and unfolds markdown headings and fenced code blocks
-- **WORKS**, Need to manually add keybindings
-
-### language-gfm-enhanced
-- fork of language-gfm extended to support some features of markdown-preview-enhanced
-- TO INSTALL AND TEST
-
-### sorter
-- Alphabetic Sort
-	- default javascript sorting function
-	- `sorter:sort`
-- Natural Sort
-	- sorts like a human
-	- uses javascript-natural-sort
-	- `sorter:natural-sort`
-
-### atom-mdtoc
-(best option, `Mon, 08-May-2017 16:05:38 +0530`)
-- Auto linking via anchor tags
-- Depth control e.g. maxDepth:6
-- Refresh list on save with updateOnSave:1 (disable with updateOnSave:0)
-- Exclude the first h1-level heading in a file with firsth1:0 (include with firsth1:1)
-- Use spaces instead of bullets with bullets:0 (use bullets with bullets:1)
-- Use a flatten list instead of a tree with flatten:1 (use tree with flatten:0)
-- Header numbering with numbering:1 (disable with numbering:0)
-- Works with repeated headings (see also this Table Of Contents)
-#### Error in v0.8.3
-To fix [See](https://github.com/mcpride/atom-mdtoc/issues/6)
-modify file `~/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
-```
-// replace in line 291
-String::repeat = (n) -> Array(n+1).join(this)
-// to
-String::_repeat_ = (n) -> Array(n+1).join(this)
-
-//replace in line 120
-@tocContent += '&emsp;'.repeat(level - 1)
-//to
-@tocContent += '&emsp;'._repeat_(level - 1)
-
-//replace in line 122
-@tocContent += '   '.repeat(level - 1) + '- '
-//to
-@tocContent += '   '._repeat_(level - 1) + '- '
-```
+### select-rectangle
+- https://atom.io/packages/select-rectangle
+- Select `alt-s`
+	- At first, select region that you want to do. Next, press alt-s to select rectangle region. if repeating the alt-s would go back to the initial selection. After that, You can copy, cut or following actions.
+- Clear `alt-cmd-c`
+	- After selecting rectangle region by alt-s, alt-cmd-c clears the region-rectangle by replacing all of its contents with spaces.
+- Open `alt-cmd-o`
+	- After selecting rectangle region by alt-s, alt-cmd-o inserts blank space to fill the space of the region-rectangle (open-rectangle). This pushes the previous contents of the region-rectangle to the right.
 
 ***
 ## Sample, Tests
@@ -428,6 +471,33 @@ https://wkhtmltopdf.org/
 - depends on markdown-preview , marked
 	- will not work if markdown-preview-enhanced is installed
 
+### block-selection-mode
+- Needed for Windows only
+- `ctrl-enter` toggle block-selection-mode
+- In block-selection-mode
+	- `ctrl-f` forward-char
+	- `ctrl-b` backward-char
+	- `ctrl-n` next-line
+	- `ctrn-p` previous-line
+
+### markdown-folder
+- **Not of much use. Remove.**
+- folds and unfolds markdown headings and fenced code blocks
+- **WORKS**, Need to manually add keybindings
+
+### language-gfm-enhanced
+- fork of language-gfm extended to support some features of markdown-preview-enhanced
+- TO INSTALL AND TEST
+
+### sorter
+- Alphabetic Sort
+	- default javascript sorting function
+	- `sorter:sort`
+- Natural Sort
+	- sorts like a human
+	- uses javascript-natural-sort
+	- `sorter:natural-sort`
+
 ### More
 - [x] atom-beautify
 	- Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom
@@ -470,6 +540,8 @@ https://wkhtmltopdf.org/
 - [x] atom-material-ui
 	- requires Atom 1.17
 	- not very suitable for intended use
+
+
 
 ## `keymap.json` extract
 ```js

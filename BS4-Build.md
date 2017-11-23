@@ -4,19 +4,19 @@
 **Contents:**
 <!-- MDTOC maxdepth:6 firsth1:0 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-- [Notes:](#notes)   
-- [Pre-Requisites](#pre-requisites)   
-- [Setup/Update Environment](#setupupdate-environment)   
-- [Build](#build)   
-- [Local documentation, for](#local-documentation-for)   
-- [Install Ruby from Source](#install-ruby-from-source)   
-   - [Depends](#depends)   
-   - [Steps:](#steps)   
-   - [NOTE:](#note)   
-- [Verify](#verify)   
-- [Shell Script](#shell-script)   
-- [Notes:](#notes)   
-- [Strucrure for Command Output, Suggested](#strucrure-for-command-output-suggested)   
+- [Notes:](#notes)
+- [Pre-Requisites](#pre-requisites)
+- [Setup/Update Environment](#setupupdate-environment)
+- [Build](#build)
+- [Local documentation, for](#local-documentation-for)
+- [Install Ruby from Source](#install-ruby-from-source)
+   - [Depends](#depends)
+   - [Steps:](#steps)
+   - [NOTE:](#note)
+- [Verify](#verify)
+- [Shell Script](#shell-script)
+- [Notes:](#notes)
+- [Strucrure for Command Output, Suggested](#strucrure-for-command-output-suggested)
 
 <!-- /MDTOC -->
 
@@ -32,7 +32,7 @@
 - Ruby
 	- from Repo
 		- `sudo apt-get install ruby-full`
-		- v`1:2.3.0+4: all` source v`2.4.1` as on `Sat, 13-May-2017 20:05:03 +0530`
+		- v`1:2.3.3: all` source v`2.4.2` as on `Thu, 16-Nov-2017 13:54:16.851 +0530`
 	- from source
 		- see section **Install Ruby from Source**
 	- using third-party tools
@@ -55,15 +55,18 @@
 
 ## Build
 
+- Update Source files
+	`cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0-beta.2/scss/_custom.scss`
+
 | Task         | Description                                                                                                                      |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| npm test     | Run npm test to run tests locally and compile the CSS and JavaScript into /dist. Uses Sass, Autoprefixer, and UglifyJS.          |
 | npm run dist | npm run dist creates the /dist directory with compiled files. Uses Sass, Autoprefixer, and UglifyJS.                             |
 | npm run docs | Builds and tests CSS, JavaScript, and other assets which are used when running the documentation locally via npm run docs-serve. |
+| npm test     | Run npm test to run tests locally and compile the CSS and JavaScript into /dist. Uses Sass, Autoprefixer, and UglifyJS.          |
 
 
 ## Local documentation, for
-- From the root `/bootstrap` directory, run npm run `docs-serve` in the command line.
+- From the root `/bootstrap` directory, run `npm run docs-serve` in the command line.
 - Open http://localhost:9001 in your browser, and voilà.
 
 
@@ -85,16 +88,38 @@
 	- `pushd /media/sak/70_Current/Work/bootstrap4/ruby-2.4.2`
 - `./configure`
 	- or `./configure 2>&1 | tee a-configure.log`
-	- `./configure --prefix=/20-DEV/Ruby`
-	- sudo ln -s /20-DEV/Ruby/<gem-xyz> /bin/<ruby-xyz>`
-	- repeat for all
+	- `./configure --prefix=/20-DEV/Ruby  2>&1 | tee a-configure.log`
 - `make`
 	- or `sudo make 2>&1 | tee b-make.log`
 - `sudo make install`
 	- or `sudo make install 2>&1 | tee c-make-install.log`
-	- By default, this will install Ruby into `/usr/local`.
+	- By default, this will install Ruby into `/usr/local`
+		- To change, pass the `--prefix=DIR` option to the `./configure` script
+		- sudo ln -s /20-DEV/Ruby/<gem-xyz> /bin/<ruby-xyz>`
+		```sh
+		RUBYBIN="/20-DEV/Ruby/bin"
+		for f in $(ls -1 ${RUBYBIN});
+		do
+		    echo "ln -s /bin/${f}";
+		    sudo ln -s ${RUBYBIN}/${f} /bin/${f};
+		done
+		```
+		- repeat for all
 - `popd` to return back to bootstrap directory
-	- To change, pass the `--prefix=DIR` option to the `./configure` script.
+
+### BUILD Failure
+in `make install` command
+```
+make[2]: Entering directory '/media/sak/70_Current/Work/bootstrap4/ruby-2.4.2/ext/syslog'
+make[2]: Leaving directory '/media/sak/70_Current/Work/bootstrap4/ruby-2.4.2/ext/syslog'
+*** Following extensions failed to configure:
+../.././ext/dbm/extconf.rb:0: Failed to configure dbm. It will not be installed.
+../.././ext/gdbm/extconf.rb:0: Failed to configure gdbm. It will not be installed.
+../.././ext/openssl/extconf.rb:0: Failed to configure openssl. It will not be installed.
+../.././ext/readline/extconf.rb:0: Failed to configure readline. It will not be installed.
+../.././ext/zlib/extconf.rb:0: Failed to configure zlib. It will not be installed.
+*** Fix the problems, then remove these directories and try again if you want.
+```
 ### NOTE:
 - check which programs need to be in global namespace for ruby to work as expected
 - `sudo gem install bundler` is **failing**, need to debug
