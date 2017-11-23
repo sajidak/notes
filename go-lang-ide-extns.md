@@ -1,5 +1,5 @@
 # GO Language - Packages
-`2017-Nov-23`
+`24 Nov 2017`
 
 **Contents**
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
@@ -277,3 +277,4 @@ https://marketplace.visualstudio.com/items?itemName=kevinmcgowan.TypeScriptImpor
 
 
 ***
+`Fri, 24-Nov-2017 00:05:28 +0530`
