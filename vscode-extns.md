@@ -16,6 +16,100 @@ rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensio
 
 ***
 
+# New Review (2017-Nov-25)
+### C#
+https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp
+
+### C# XML Documentation
+https://marketplace.visualstudio.com/items?itemName=k--kato.docomment
+- Type "///", it auto-generates an XML doucumentation comment
+
+### C# Extensions
+https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions
+- Add C# Class
+- Add C# Interface
+- Add fields from constructors
+- Add constructor from properties
+- Add read-only property from constructors
+- Add property from constructors
+- This extension traverses up the folder tree to find the project.json or *.csproj and uses that as the parent folder to determine namspaces.
+
+### Go
+https://marketplace.visualstudio.com/items?itemName=lukehoban.Go
+- Post-install Steps
+	- Rebuild from memory
+- Completion Lists (using gocode)
+- Signature Help (using gogetdoc or godef+godoc)
+- Snippets
+- Quick Info (using gogetdoc or godef+godoc)
+- Goto Definition (using gogetdoc or godef+godoc)
+- Find References (using guru)
+- Find implementations (using guru)
+- References CodeLens
+- File outline (using go-outline)
+- Workspace symbol search (using go-symbols)
+- Rename (using gorename. Note: For Undo after rename to work in Windows you need to have diff tool in your path)
+- Build-on-save (using go build and go test)
+- Lint-on-save (using golint or gometalinter)
+- Format on save as well as format manually (using goreturns or goimports or gofmt)
+- Generate unit tests skeleton (using gotests)
+- Add Imports (using gopkgs)
+- Add/Remove Tags on struct fields (using gomodifytags)
+- Semantic/Syntactic error reporting as you type (using gotype-live)
+- Run Tests under the cursor, in current file, in current package, in the whole workspace (using go test)
+- Show code coverage
+- Generate method stubs for interfaces (using impl)
+- [partially implemented] Debugging (using delve)
+
+### Docker
+https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker
+- Automatic Dockerfile and docker-compose.yml file generation
+- Syntax highlighting and hover tips for docker-compose.yml and Dockerfile files
+- IntelliSense (completions) for Dockerfile and docker-compose.yml files
+- Linting (errors and warnings) for Dockerfile files
+- Command Palette (F1) integration for the most common Docker commands (e.g. Build, Push)
+- Explorer integration for managing Images and Containers
+- Deploy images from DockerHub and Azure Container Registries to Azure App Service
+
+### mssql
+https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql
+- Connect to Microsoft SQL Server, Azure SQL Database and SQL Data Warehouses.
+- Create and manage connection profiles and most recently used connections.
+- Write T-SQL script with IntelliSense, Go to Definition, T-SQL snippets, syntax colorizations, T-SQL error validations and GO batch separator.
+- Execute your scripts and view results in a simple to use grid.
+- Save the result to json or csv file format and view in the editor.
+- Customizable extension options including command shortcuts and more.
+
+### ~~MySQL~~
+https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql
+**Look fot others too**
+- Manage MySQL Connections
+- List MySQL Servers
+- List MySQL Databases
+- List MySQL Tables
+- Run MySQL Query
+
+### MongoDB
+https://marketplace.visualstudio.com/items?itemName=ms-vscode-devlab.vscode-mongodb
+- Connect to local or hosted (e.g. Azure CosmosDB) servers
+- Create and view MongoDB databases and collections with the MongoDB Explorer
+- Author MongoDB "Scrapbooks" with rich IntelliSense (completions) for MongoDB scripts, including collections
+- Execute scripts and see results directly in VS Code
+- Update documents in place
+
+### TODO:
+Add extensions for
+- js
+- ts
+- html5
+- scss, css
+- bundling
+- minify
+- linters
+- formatters
+
+***
+
 # Installed
 ## C#
 - `ms-vscode.csharp`
@@ -144,7 +238,7 @@ rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensio
     7. markdown-it-attrs
     8. markdown-it-kbd
     9. markdown-it-underline
-5. - 
+5. -
 6. [^1]: Footnote one
 [^Checkbox]: Footnote for checkbox
 
@@ -275,7 +369,7 @@ Support for linting is provided via [luacheck](https://github.com/mpeterv/luache
 
 ## md2pdf
 - `qinjia.md2pdf`
-- convert markdown file to pdf 
+- convert markdown file to pdf
 - Converts the Markdown language to PDF not the Markdown formatting to PDF
 
 ## TODO
@@ -380,7 +474,7 @@ Support for linting is provided via [luacheck](https://github.com/mpeterv/luache
     "markdownConverter.outDir": "/media/sak/70_Current/_Notes/formatted-docs",
 
     // The path to the working-directory.
-    // 
+    //
     // Note:
     // Each file-path, like, for example, the template, stylesheets etc. are relative to this path.
     // This path may be relative to the workspace-directory.
@@ -454,5 +548,3 @@ ms-vscode.theme-markdownkit
 C#
 Markdown Table Prettifier
 Markdown TOC
-
-

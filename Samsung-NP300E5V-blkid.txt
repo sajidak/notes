@@ -1,0 +1,13 @@
+Samsung-NP300E5V
+/dev/sda1: LABEL="System Reserved" UUID="B426B6F826B6BAA6" TYPE="ntfs" 
+/dev/sda2: UUID="3AA8BA1DA8B9D819" TYPE="ntfs" 
+/dev/sda3: LABEL="Local Disk" UUID="A4CA69C9CA699876" TYPE="ntfs" 
+
+/dev/sdb1: LABEL="Grub2" UUID="ABF8-A387" TYPE="vfat" 
+/dev/sdc1: LABEL="PRNTDOCS" UUID="2CAE-2F98" TYPE="vfat" 
+/dev/sdc2: LABEL="St0rD1sk" UUID="A2BCB9DCBCB9AB65" TYPE="ntfs" 
+
+
+/mnt/sda3/OSLib/
+kubuntu-17.10-desktop-amd64.iso
+ubuntu-17.10-desktop-amd64.iso

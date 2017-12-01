@@ -44,7 +44,7 @@
 **Important:** Set working folder before proceeding.
 `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0-beta`
 - `npm install jquery popper.js`
-	- to fix briken syntax, check again after next release
+	- to fix broken syntax, check again after next release
 - `npm install`
 	- from root /bootstrap directory
 - `sudo bundle install`

@@ -1,0 +1,129 @@
+galaxy grand prime +
+
+
+    Processor
+        CPU Speed
+        1.4GHz
+        CPU Type
+        Quad-Core
+    Display
+        Size (Main Display)
+        5.0" (126.4mm)
+        Resolution (Main Display)
+        540 x 960 (qHD)
+        Technology (Main Display)
+        PLS TFT LCD
+        Color Depth (Main Display)
+        16M
+        S Pen Support
+        No
+    Camera
+        Video Recording Resolution
+        HD (1280 x 720)@30fps
+        Rear Camera - Resolution
+        CMOS 8.0 MP
+        Rear Camera - F Number
+        f/2.2
+        Front Camera - Resolution
+        CMOS 5.0 MP
+        Front Camera - F Number
+        f/2.2
+        Main Camera - Flash
+        Yes
+        Rear Camera - Auto Focus
+        Yes
+    Memory
+        RAM Size (GB)
+        1.5 GB
+        ROM Size (GB)
+        8 GB
+        Available Memory (GB)*
+        3.4 GB
+        External Memory Support
+        MicroSD (Up to 256GB)
+    Network/Bearer
+        Multi-SIM
+        Dual-SIM
+        SIM size
+        Micro-SIM (3FF)
+        Type of SIM Slot
+        SIM 1 + Hybrid (SIM or MicroSD)
+        Infra
+        2G GSM, 3G WCDMA, 4G LTE FDD
+        2G GSM
+        GSM850, GSM900, DCS1800, PCS1900
+        3G UMTS
+        B1(2100), B2(1900), B5(850), B8(900)
+        4G FDD LTE
+        B1(2100), B3(1800), B5(850), B7(2600), B8(900), B20(800)
+    Connectivity
+        ANT+
+        No
+        USB Interface
+        Micro USB
+        USB Version
+        USB 2.0
+        Location Technology
+        GPS, Glonass
+        Earjack
+        3.5mm Stereo
+        MHL
+        No
+        Wi-Fi
+        802.11 b/g/n 2.4GHz
+        Wi-Fi Direct
+        Yes
+        Bluetooth Version
+        Bluetooth v4.2
+        NFC
+        No
+        Bluetooth Profiles
+        A2DP, AVRCP, DI, HFP, HID, HOGP, HSP, MAP, OPP, PAN, PBAP
+        PC Sync.
+        Smart Switch (PC version)
+    OS
+    Android
+    General Information
+        Color
+        GOLD / BLACK / SILVER
+        Form Factor
+        Touchscreen Bar
+    Sensors
+    Accelerometer, Proximity Sensor
+    Physical specification
+        Dimension (HxWxD, mm)
+        144.8 x 72.1 x 8.9
+        Weight (g)
+        160
+    Battery
+        Internet Usage Time(3G) (Hours)
+        Up to 9
+        Internet Usage Time(LTE) (Hours)
+        Up to 12
+        Internet Usage Time(Wi-Fi) (Hours)
+        Up to 12
+        Video Playback Time (Hours)
+        Up to 12
+        Standard Battery Capacity (mAh)
+        2600
+        Removable
+        Yes
+        Audio Playback Time (Hours)
+        Up to 59
+        Talk Time (3G WCDMA) (Hours)
+        Up to 12
+    Audio and Video
+        Video Playing Format
+        MP4, M4V, 3GP, 3G2, WMV, ASF, AVI, FLV, MKV, WEBM
+        Video Playing Resolution
+        FHD (1920 x 1080) @30fps
+        Audio Playing Format
+        MP3, M4A, 3GA, AAC, OGG, OGA, WAV, WMA, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA
+    Services and Applications
+        Gear Support
+        Gear Circle (Manager Support), Gear Fit2, Gear S2
+        S-Voice
+        No
+        Mobile TV
+        No
+
