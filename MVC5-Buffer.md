@@ -9,6 +9,9 @@ Temporary container to hold notes till they can be organized
 - /ui-layouts-and-themes
 - /security/16-adding-security-and-membership.md
 
+## Images
+- https://docs.microsoft.com/en-us/aspnet/web-pages/overview/ui-layouts-and-themes/9-working-with-images
+-
 
 ## Data Annotations
 Annotation `[Display(Name = "VALUE")]` will be used as Label for the feild, by MVC5 template.
@@ -326,31 +329,33 @@ ViewEngines.Engines.Add(customEngine);
     public static class CustomHelpers
     {
      //Submit Button Helper
-     public static MvcHtmlString SubmitButton(this HtmlHelper helper, string
-     buttonText)
+     public static MvcHtmlString SubmitButton(this HtmlHelper helper, string buttonText)
      {
-     string str = "<input type=\"submit\" value=\"" + buttonText + "\" />";
-     return new MvcHtmlString(str);
+	     string str = "<input type=\"submit\" value=\"" + buttonText + "\" />";
+	     return new MvcHtmlString(str);
      }
      //Readonly Strongly-Typed TextBox Helper
-     public static MvcHtmlString TextBoxFor<TModel, TValue>(this
-     HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TValue>>
-     expression, bool isReadonly)
+     public static MvcHtmlString TextBoxFor<TModel, TValue>(
+	 									  this HtmlHelper<TModel> htmlHelper
+										, Expression<Func<TModel, TValue>> expression
+										, bool isReadonly
+										)
      {
-     MvcHtmlString html = default(MvcHtmlString);
+     	MvcHtmlString html = default(MvcHtmlString);
 
-     if (isReadonly)
-     {
-     html = System.Web.Mvc.Html.InputExtensions.TextBoxFor(htmlHelper,
-     expression, new { @class = "readOnly",
-     @readonly = "read-only" });
-     }
-     else
-     {
-     html = System.Web.Mvc.Html.InputExtensions.TextBoxFor(htmlHelper,
-     expression);
-     }
-     return html;
+		if (isReadonly)
+		{
+		html = System.Web.Mvc.Html.InputExtensions.TextBoxFor(
+		 											htmlHelper
+													, expression
+													, new { @class = "readOnly", @readonly = "read-only" }
+													);
+		}
+		else
+		{
+			html = System.Web.Mvc.Html.InputExtensions.TextBoxFor(htmlHelper, expression);
+		}
+		return html;
      }
     }
 	```

@@ -3,14 +3,22 @@
 **Contents**
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-- [Bash Notes](#bash-notes)   
-   - [Replace Text Inline](#replace-text-inline)   
-      - [sed](#sed)   
-      - [awk](#awk)   
-      - [perl](#perl)   
-      - [Examples](#examples)   
+- [Bash Notes](#bash-notes)
+   - [Replace Text Inline](#replace-text-inline)
+      - [sed](#sed)
+      - [awk](#awk)
+      - [perl](#perl)
+      - [Examples](#examples)
 
 <!-- /MDTOC -->
+
+## Enhance privilages
+Recent releases of Ubuntu use pkexec, since gksu has been deprecated
+**pkexec** - Execute a command as another user
+```sh
+pkexec [--version] [--disable-internal-agent] [--help]
+pkexec [--user username] PROGRAM [ARGUMENTS...]
+```
 
 ## Replace Text Inline
 ### sed

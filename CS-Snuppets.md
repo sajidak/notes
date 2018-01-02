@@ -60,24 +60,28 @@ return string.Format("{0}-{1}-{2}", lsCode.Substring(0, 3), lsCode.Substring(3, 
 ```cs
 public class ReturnStatus
 {
-    /// <summary>
-    /// Status Code of the Action Performed by the function
-    /// </summary>
-    public int Code { get; set; }
-    /// <summary>
-    /// Text message summurizing the outcome of exception
-    /// </summary>
-    public string Message { get; set; }
-    /// <summary>
-    /// Collection of all exceptions that occurred in the function while executing
-    /// </summary>
-    public List<Exception> Exceptions { get; set; }
 	public ReturnStatus()
 	{
 		Code = -1;
 		Message = string.Empty;
 		Exceptions = new List<Exception>();
 	}
+
+    /// <summary>
+    /// Status Code of the Action Performed by the function
+    /// </summary>
+    public int Code { get; set; }
+
+    /// <summary>
+    /// Text message summurizing the outcome of exception
+    /// </summary>
+    public string Message { get; set; }
+	
+    /// <summary>
+    /// Collection of all exceptions that occurred in the function while executing
+    /// </summary>
+    public List<Exception> Exceptions { get; set; }
+
 }
 ```
 
