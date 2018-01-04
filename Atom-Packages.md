@@ -3,53 +3,53 @@
 **Contents**
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-- [Atom packages for markdown](#atom-packages-for-markdown)   
-   - [keybindings](#keybindings)   
-   - [Install](#install)   
-   - [Now Installed](#now-installed)   
-      - [Date](#date)   
-      - [lines](#lines)   
-      - [markdown-table-editor](#markdown-table-editor)   
-      - [document-outline](#document-outline)   
-      - [language-markdown](#language-markdown)   
-      - [markdown-preview-enhanced](#markdown-preview-enhanced)   
-      - [atom-mdtoc](#atom-mdtoc)   
-      - [markdown-themeable-pdf](#markdown-themeable-pdf)   
-         - [Customization - PDF output](#customization-pdf-output)   
-         - [Customization - General](#customization-general)   
-         - [Customization - HTML Template](#customization-html-template)   
-      - [pdf-view](#pdf-view)   
-      - [select-rectangle](#select-rectangle)   
-   - [Sample, Tests](#sample-tests)   
-      - [Table1](#table1)   
-   - [Read more](#read-more)   
-      - [New](#new)   
-      - [select-rectangle](#select-rectangle)   
-      - [autoprefixer](#autoprefixer)   
-      - [sass-compiler](#sass-compiler)   
-      - [build-sass](#build-sass)   
-      - [build-sassc](#build-sassc)   
-      - [source-preview-sass](#source-preview-sass)   
-      - [atom-minify-stand-alone](#atom-minify-stand-alone)   
-   - [Other Evaluated](#other-evaluated)   
-      - [column-select](#column-select)   
-      - [pdfify-atom](#pdfify-atom)   
-      - [wkhtmltopdf and wkhtmltoimage](#wkhtmltopdf-and-wkhtmltoimage)   
-      - [markdown-pdf](#markdown-pdf)   
-      - [block-selection-mode](#block-selection-mode)   
-      - [markdown-folder](#markdown-folder)   
-      - [language-gfm-enhanced](#language-gfm-enhanced)   
-      - [sorter](#sorter)   
-      - [More](#more)   
-   - [`keymap.json` extract](#keymapjson-extract)   
-   - [Configuration](#configuration)   
-      - [markdown-preview](#markdown-preview)   
-      - [tree-view](#tree-view)   
-      - [markdown-preview-enhanced](#markdown-preview-enhanced)   
-      - [atom-mdtoc](#atom-mdtoc)   
-      - [markdown-themeable-pdf](#markdown-themeable-pdf)   
-   - [Info](#info)   
-   - [Further Reading](#further-reading)   
+- [Atom packages for markdown](#atom-packages-for-markdown)
+   - [keybindings](#keybindings)
+   - [Install](#install)
+   - [Now Installed](#now-installed)
+      - [Date](#date)
+      - [lines](#lines)
+      - [markdown-table-editor](#markdown-table-editor)
+      - [document-outline](#document-outline)
+      - [language-markdown](#language-markdown)
+      - [markdown-preview-enhanced](#markdown-preview-enhanced)
+      - [atom-mdtoc](#atom-mdtoc)
+      - [markdown-themeable-pdf](#markdown-themeable-pdf)
+         - [Customization - PDF output](#customization-pdf-output)
+         - [Customization - General](#customization-general)
+         - [Customization - HTML Template](#customization-html-template)
+      - [pdf-view](#pdf-view)
+      - [select-rectangle](#select-rectangle)
+   - [Sample, Tests](#sample-tests)
+      - [Table1](#table1)
+   - [Read more](#read-more)
+      - [New](#new)
+      - [select-rectangle](#select-rectangle)
+      - [autoprefixer](#autoprefixer)
+      - [sass-compiler](#sass-compiler)
+      - [build-sass](#build-sass)
+      - [build-sassc](#build-sassc)
+      - [source-preview-sass](#source-preview-sass)
+      - [atom-minify-stand-alone](#atom-minify-stand-alone)
+   - [Other Evaluated](#other-evaluated)
+      - [column-select](#column-select)
+      - [pdfify-atom](#pdfify-atom)
+      - [wkhtmltopdf and wkhtmltoimage](#wkhtmltopdf-and-wkhtmltoimage)
+      - [markdown-pdf](#markdown-pdf)
+      - [block-selection-mode](#block-selection-mode)
+      - [markdown-folder](#markdown-folder)
+      - [language-gfm-enhanced](#language-gfm-enhanced)
+      - [sorter](#sorter)
+      - [More](#more)
+   - [`keymap.json` extract](#keymapjson-extract)
+   - [Configuration](#configuration)
+      - [markdown-preview](#markdown-preview)
+      - [tree-view](#tree-view)
+      - [markdown-preview-enhanced](#markdown-preview-enhanced)
+      - [atom-mdtoc](#atom-mdtoc)
+      - [markdown-themeable-pdf](#markdown-themeable-pdf)
+   - [Info](#info)
+   - [Further Reading](#further-reading)
 
 <!-- /MDTOC -->
 
@@ -73,7 +73,7 @@ sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
 
 ## Install
 - [x] date
-- [x] lines
+- [x] sort-lines
 - [x] markdown-table-editor
 - [x] document-outline
 - [x] language-markdown
@@ -147,11 +147,13 @@ sed -i 's/repeat/_repeat_/g' ~/.atom/packages/atom-mdtoc/lib/toc-view.coffee
 | Milliseconds timestamp  | `x`    | 512969520900                     |
 
 
-### lines
+### sort-lines
 - Sort (case sensitive or not)
+- natural
 - Reverse
 - Unique
 - Shuffle
+- by-length
 
 ### markdown-table-editor
 - **Works Beautifully**

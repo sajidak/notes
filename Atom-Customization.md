@@ -3,32 +3,32 @@
 **Contents**
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-- [Atom Customization](#atom-customization)   
-   - [Generic keybindings](#generic-keybindings)   
-   - [Installed Packages](#installed-packages)   
-      - [Removed Packages](#removed-packages)   
-      - [Date](#date)   
-      - [lines](#lines)   
-      - [markdown-table-editor](#markdown-table-editor)   
-      - [document-outline](#document-outline)   
-      - [language-markdown](#language-markdown)   
-      - [markdown-preview-enhanced](#markdown-preview-enhanced)   
-      - [atom-mdtoc](#atom-mdtoc)   
-      - [markdown-themeable-pdf](#markdown-themeable-pdf)   
-      - [pdf-view](#pdf-view)   
-      - [select-rectangle](#select-rectangle)   
-- [Index](#index)   
-   - [1. Read more](#1-read-more)   
-   - [2. `keymap.json` extract](#2-keymapjson-extract)   
-   - [3. Package Configurations](#3-package-configurations)   
-      - [i. markdown-preview](#i-markdown-preview)   
-      - [ii. tree-view](#ii-tree-view)   
-      - [iii. markdown-preview-enhanced](#iii-markdown-preview-enhanced)   
-      - [iv. atom-mdtoc](#iv-atom-mdtoc)   
-      - [v. markdown-themeable-pdf](#v-markdown-themeable-pdf)   
-      - [vi. markdown-themeable-pdf Customization](#vi-markdown-themeable-pdf-customization)   
-         - [HTML Template](#html-template)   
-         - [Header and Footer](#header-and-footer)   
+- [Atom Customization](#atom-customization)
+   - [Generic keybindings](#generic-keybindings)
+   - [Installed Packages](#installed-packages)
+      - [Removed Packages](#removed-packages)
+      - [Date](#date)
+      - [lines](#lines)
+      - [markdown-table-editor](#markdown-table-editor)
+      - [document-outline](#document-outline)
+      - [language-markdown](#language-markdown)
+      - [markdown-preview-enhanced](#markdown-preview-enhanced)
+      - [atom-mdtoc](#atom-mdtoc)
+      - [markdown-themeable-pdf](#markdown-themeable-pdf)
+      - [pdf-view](#pdf-view)
+      - [select-rectangle](#select-rectangle)
+- [Index](#index)
+   - [1. Read more](#1-read-more)
+   - [2. `keymap.json` extract](#2-keymapjson-extract)
+   - [3. Package Configurations](#3-package-configurations)
+      - [i. markdown-preview](#i-markdown-preview)
+      - [ii. tree-view](#ii-tree-view)
+      - [iii. markdown-preview-enhanced](#iii-markdown-preview-enhanced)
+      - [iv. atom-mdtoc](#iv-atom-mdtoc)
+      - [v. markdown-themeable-pdf](#v-markdown-themeable-pdf)
+      - [vi. markdown-themeable-pdf Customization](#vi-markdown-themeable-pdf-customization)
+         - [HTML Template](#html-template)
+         - [Header and Footer](#header-and-footer)
 
 <!-- /MDTOC -->
 ***
@@ -41,7 +41,7 @@
 
 ## Installed Packages
 - [ ] date
-- [ ] lines
+- [ ] sort-lines
 - [ ] markdown-table-editor
 - [ ] document-outline
 - [ ] language-markdown
@@ -118,11 +118,13 @@
 | Milliseconds timestamp  | `x`    | 512969520900                     |
 
 
-### lines
+### sort-lines
 - Sort (case sensitive or not)
+- natural
 - Reverse
 - Unique
 - Shuffle
+- by-length
 
 ### markdown-table-editor
 - Format table (automatically)
