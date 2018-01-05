@@ -45,3 +45,17 @@ pkexec [--user username] PROGRAM [ARGUMENTS...]
 
 ### Examples
 `sed -i 's/repeat/_repeat_/g' /home/sak/.atom/packages/atom-mdtoc/lib/toc-view.coffee`
+
+***
+## Grub Sample
+https://www.gnu.org/software/grub/manual/grub/html_node/Installing-GRUB-using-grub_002dinstall.html
+`grub-install --efi-directory=/mnt/usb --boot-directory=/mnt/usb/boot --removable`
+
+```
+menuentry "Windows" {
+	insmod chain
+	insmod ntfs
+	set root=(hd0,1)
+	chainloader +1
+}
+```
