@@ -11,6 +11,20 @@ _Contains only those bits needed for RCW project._
 [TOC]
 ---
 
+## JavaScript plugins
+`in v1.3 (??)`
+-  Modal
+-  Dropdown
+-  Scrollspy
+-  Tab
+-  Tooltip
+-  Popover
+-  Alert
+-  Button
+-  Collapse
+-  Carousel
+-  Typeahead
+
 ## Grid system
 ### Variable width content
 Using the col-{breakpoint}-auto classes, columns can size itself based on the natural width of its content. This is super handy with single line content like inputs, numbers, etc. This, in conjunction with horizontal alignment classes, is very useful for centering layouts with uneven column sizes as viewport width changes.

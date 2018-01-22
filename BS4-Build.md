@@ -26,7 +26,7 @@
 ***
 # Setup Build Tool chain
 ## Pre-Requisites
-- `sudo apt-get install build-essential manpages-dev`
+- `sudo apt-get install build-essential manpages-dev zlib1g-dev`
 - `npm install -g grunt-cli`
 	- `sudo ln -s /20-DEV/node/lib/node_modules/grunt-cli/bin/grunt /bin/grunt`
 - Ruby
@@ -42,12 +42,12 @@
 
 ## Setup/Update Environment
 **Important:** Set working folder before proceeding.
-`pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0-beta`
+`pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0`
 - `npm install jquery popper.js`
-	- to fix broken syntax, check again after next release
+	- to fix broken syntax, check again after 4.0.0 release
 - `npm install`
 	- from root /bootstrap directory
-- `sudo bundle install`
+- `mkdir -v -p /10-Base/ruby-gems; bundle install --path /10-Base/ruby-gems/bundle`
 	- Depends on `sudo apt-get install build-essential manpages-dev`
 	- **Consider** Moving this section to Pre-Reqs
 	- Try install with prefix to project directory
@@ -56,7 +56,7 @@
 ## Build
 
 - Update Source files
-	`cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0-beta.2/scss/_custom.scss`
+	`cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0/scss/_custom.scss`
 
 | Task         | Description                                                                                                                      |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
