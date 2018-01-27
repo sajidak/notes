@@ -1,5 +1,11 @@
 # Notes 1801
 
+## Website offline
+- Web Page Downloader
+- HTTrack (http://www.httrack.com/)
+- Getleft ()
+- wget -r -p //www.makeuseof.com
+
 ## MySQL Start-Stop
 ### Option 1:
 ```sh
