@@ -15,6 +15,24 @@ rsync -vhr /media/sak/70_Current/Work/buffer/vscode-xtns-bak/ ~/.vscode/extensio
 [](toc)
 
 ***
+### Install extensions from Quick Open
+Launch VS Code Quick Open (`Ctrl+P`), paste the following command, and press enter.
+
+ext install ms-vscode.csharp
+ext install k--kato.docomment
+ext install jchannon.csharpextensions
+ext install lukehoban.Go
+ext install ms-vscode-devlab.vscode-mongodb
+ext install joelday.docthis
+ext install vscode-eslint
+ext install jsynowiec.vscode-insertdatestring
+ext install Kevenin.markdowninclude
+ext install darkriszty.markdown-table-prettify
+ext install AlanWalk.markdown-toc
+ext install chrmarti.regex
+
+
+***
 
 # New Review (2017-Nov-25)
 ### C#
