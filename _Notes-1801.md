@@ -6,25 +6,17 @@
 - Getleft ()
 - wget -r -p //www.makeuseof.com
 
-## MySQL Start-Stop
-### Option 1:
-```sh
-# disable auto start
-sudo update-rc.d mysql disable
+---
 
-# manual
-/etc/init.d/mysql start
-/etc/init.d/mysql stop
-/etc/init.d/mysql restart
+## Task Coach
+```sh
+sudo add-apt-repository ppa:taskcoach-developers/ppa
+sudo apt-get install taskcoach
 ```
 
-### Option 2:
-in /etc/init/mysql.conf
-Comment out the start on line
+---
 
-to manually start
-`service mysql start`
-
+## MySQL Start-Stop
 ### mysqld_safe
 https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html
 mysqld_safe is the recommended way to start a mysqld server on Unix. mysqld_safe adds some safety features such as restarting the server when an error occurs and logging runtime information to an error log.
@@ -152,7 +144,7 @@ http://www.fosshub.com/Android-x86.html/
 http://taskcoach.org/
 http://www.ganttproject.biz
 https://www.fosshub.com/Graphic-Apps.html
-- yEd
-- LibreCAD
-- [Sweet Home 3D](http://www.sweethome3d.com/)
-- Vectr
+	- yEd
+	- LibreCAD
+	- [Sweet Home 3D](http://www.sweethome3d.com/)
+	- Vectr
