@@ -1,5 +1,28 @@
 # Notes 1801
 
+## 31 Jan 2018
+### Default applications
+- /usr/share/applications/defaults.list
+- ~/.local/share/applications/mimeapps.list
+`xdg-mime` command
+
+### Default Browser
+`x-www-browser` command alias for registered browser
+
+### Mime Types
+- /etc/mime.types
+- /usr/share/mime/application
+
+`mimetype` command
+`inode/directory`
+
+Associate icon with mime-type
+```sh
+sudo cp text-x-python.svg /usr/share/icons/gnome/scalable/mimetypes
+sudo gtk-update-icon-cache /usr/share/icons/gnome/ -f
+```
+
+
 ## Website offline
 - Web Page Downloader
 - HTTrack (http://www.httrack.com/)
@@ -15,28 +38,6 @@ sudo apt-get install taskcoach
 ```
 
 ---
-
-## MySQL Start-Stop
-### mysqld_safe
-https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html
-mysqld_safe is the recommended way to start a mysqld server on Unix. mysqld_safe adds some safety features such as restarting the server when an error occurs and logging runtime information to an error log.
-
-### systemd
-https://dev.mysql.com/doc/refman/5.7/en/using-systemd.html
-```sh
-systemctl {start|stop|restart|status} mysqld
-# or
-service mysqld {start|stop|restart|status}
-```
-Support for systemd includes these files:
-- mysql.service (Debian platforms): systemd service unit configuration file, with details about the MySQL service.
-- mysql@.service (Debian platforms): Like mysqld.service or mysql.service, but used for managing multiple MySQL instances.
-- mysql-system-start (Debian platforms):
-
-### mysql.server
-https://dev.mysql.com/doc/refman/5.7/en/mysql-server.html
-starts the MySQL server using mysqld_safe.
-
 
 ## Bootstrap 4.0.0 on live machine
 ```sh
