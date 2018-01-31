@@ -27,7 +27,7 @@ sudo service mysql status
 ## Notes:
 - http://upstart.ubuntu.com/cookbook/
 - To turn off autostart. with Upstart
-	- `sudo echo "manual" >> /etc/init/mysql.override`
+	- `sudo echo "manual" | sudo tee -a /etc/init/mysql.override`
 	- OR
 	- Comment line in /etc/init/mysql.conf
 	- `start on runlevel [2345]`
