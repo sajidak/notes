@@ -66,3 +66,17 @@ https://www.howtoforge.com/tutorial/ubuntu-perfect-server-with-apache-php-myqsl-
 3. add line `sql-mode="NO_ENGINE_SUBSTITUTION"`
 
 ---
+
+# Visual Query Designer
+- http://www.navicat.com/en/products/navicat_mysql/mysql_overview.html
+- http://www.sequelpro.com/
+- http://www.heidisql.com/
+- https://www.devart.com/dbforge/mysql/querybuilder/
+- https://sourceforge.net/projects/sqleo/
+	- SQLeoVQB.2017.09.rc1.zip
+- https://www.sqlmaestro.com/products/mysql/codefactory/
+- https://www.activedbsoft.com/overview-querytool.html
+	- sqlquerytool.zip
+
+
+---
