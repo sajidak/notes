@@ -1,5 +1,11 @@
 # Notes 1801
 
+## 04 Feb 2018
+### Trust Relationship
+A manager should trust their devs not to do stupid things, and if the devs do stupid things, the manager is at fault 
+- either because the appropriate expectations haven't been put in place
+- or because the wrong people were hired.
+
 ## 31 Jan 2018
 ### Default applications
 - /usr/share/applications/defaults.list
