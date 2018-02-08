@@ -1,6 +1,12 @@
 # mySql Server
 `28 Jan 2018`
 
+**Also See:**
+- https://dbmstools.com/database-er-diagram-tools/oracle
+- https://dbmstools.com/data-modeling-tools/mysql
+
+
+
 ## Commands for SystemD
 | Command                           | Result                                           |
 |:--------------------------------- |:------------------------------------------------ |
@@ -53,6 +59,20 @@ https://dev.mysql.com/doc/refman/5.7/en/server-options.html
 	- SHOW SESSION VARIABLES
 	- SHOW GLOBAL VARIABLES
 
+#### `--lower-case-table-names`
+| Value | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | Table and database names are stored on disk using the lettercase specified in the CREATE TABLE or CREATE DATABASE statement. Name comparisons are case sensitive. You should not set this variable to 0 if you are running MySQL on a system that has case-insensitive file names (such as Windows or OS X). If you force this variable to 0 with --lower-case-table-names=0 on a case-insensitive file system and access MyISAM tablenames using different lettercases, index corruption may result. |
+| 1     | Table names are stored in lowercase on disk and name comparisons are not case-sensitive. MySQL converts all table names to lowercase on storage and lookup. This behavior also applies to database names and table aliases.                                                                                                                                                                                                                                                                           |
+| 2     | Table and database names are stored on disk using the lettercase specified in the CREATE TABLE or CREATE DATABASE statement, but MySQL converts them to lowercase on lookup. Name comparisons are not case sensitive. This works only on file systems that are not case-sensitive! InnoDB table names are stored in lowercase, as for lower_case_table_names=1.                                                                                                                                       |
+
+**Defaults:** NIX = 0, WIN = 1, OSX = 2
+
+- If **`lower_case_table_names=1`**
+	- Table names are stored in lowercase on disk
+	- Name comparisons are not case-sensitive
+	- MySQL converts all table names to lowercase on storage and lookup
+	- Also applies to database names and table aliases
 
 ### Customize data Directory
 - edit `/etc/mysql/mysql.conf.d/mysqld.cnf`

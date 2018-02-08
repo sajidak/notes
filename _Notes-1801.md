@@ -1,8 +1,24 @@
 # Notes 1801
 
+## 09 Feb 2018
+### Data Modeling tools for MySQL
+- https://dbeaver.jkiss.org/
+	- `dbeaver-ce-4.3.4-linux.gtk.x86_64.tar.gz`
+- http://mogwai.sourceforge.net/erdesignerng.html
+- https://jeddict.github.io/
+- http://squirrel-sql.sourceforge.net/
+- Also
+	- http://www.modelsphere.com/org/open_modelsphere.html
+	-
+
+## 06 Feb 2018
+### Remove VP-UML backup files
+`rm *.vpp.bak_*; rm *.vpp.vbak*;`
+`alias rm-vpp-bak='rm *.vpp.bak_*; rm *.vpp.vbak*;'`
+
 ## 04 Feb 2018
 ### Trust Relationship
-A manager should trust their devs not to do stupid things, and if the devs do stupid things, the manager is at fault 
+A manager should trust their devs not to do stupid things, and if the devs do stupid things, the manager is at fault
 - either because the appropriate expectations haven't been put in place
 - or because the wrong people were hired.
 
