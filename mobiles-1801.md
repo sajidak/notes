@@ -1,3 +1,9 @@
+---
+title: Comparative Evaluation
+sub-title: Mobiles, Jan 2018
+date: 24 Feb 2018
+---
+
 # Mobiles Comparison
 
 `Sun, 28-Jan-2018 01:33:08.253 +0530`

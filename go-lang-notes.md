@@ -6,6 +6,10 @@
 > from: https://gobyexample.com/
 
 ## 23 Feb 2018
+### Mongo Drivers
+In order of preference
+- https://github.com/globalsign/mgo
+
 ### UUIDs
 - https://github.com/google/uuid
 	- go get github.com/google/uuid
@@ -35,6 +39,20 @@
 - https://golang.org/pkg/encoding/hex/
 	- func EncodeToString(src []byte) string
 	- EncodeToString returns the hexadecimal encoding of src.
+	
+### mgo.dial
+
+`func Dial(url string) (*Session, error)`
+
+- Dial establishes a new session to the cluster identified by the given seed server(s). The session will enable communication with all of the servers in the cluster, so the seed servers are used only to find out about the cluster topology.
+
+- Dial will timeout after 10 seconds if a server isn't reached. The returned session will timeout operations after one minute by default if servers aren't available. To customize the timeout, see DialWithTimeout, SetSyncTimeout, and SetSocketTimeout.
+
+- This method is generally called just once for a given cluster. Further sessions to the same cluster are then established using the New or Copy methods on the obtained session. This will make them share the underlying cluster, and manage the pool of connections appropriately.
+
+- Once the session is not useful anymore, Close must be called to release the resources appropriately. 
+
+
 
 ## 30 Jan 2018
 
