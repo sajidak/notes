@@ -10,9 +10,12 @@
 
 ## Windows
 - https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-windows.msi
+
 **Extract from MSI**
+
 	- you can extract the pandoc and pandoc-citeproc executables from the MSI
 `start /wait msiexec.exe /a pandoc-1.19.1-windows.msi /qn targetdir="%TEMP%\pandoc\"`
+
 - **Depends**
 	- For PDF output, you’ll also need to install LaTeX.
 	- We recommend [MiKTeX](https://miktex.org/)
@@ -28,7 +31,7 @@
 - or development code by cloning the [repository](git clone https://github.com/jgm/pandoc)
 - Install stack
 - Change to pandoc source directory and run
-```sh
+```sh {.numberLines}
 stack setup
 stack install --test
 ```
@@ -42,10 +45,13 @@ stack install --test
 
 ## stack - Install
 `https://docs.haskellstack.org/en/stable/install_and_upgrade/`
+
 - Linux - Option 1: Script
-	- wget -qO- https://get.haskellstack.org/ | sh
+	- `wget -qO- https://get.haskellstack.org/ | sh`
 - Linux - Option 2: Package
+
 **Dependencies:**
+
 - `g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg`
 	- https://www.stackage.org/stack/linux-x86_64-static
 	- Unpack the archive and place `stack` somewhere on your %PATH%
@@ -60,6 +66,7 @@ stack install --test
 
 ## MiKTeX - Windows
 `https://miktex.org/portable`
+
 - MiKTeX Portable is distributed as a 7-Zip self-extracting archive
 - https://miktex.org/download/ctan/systems/win32/miktex/setup/miktex-portable-2.9.6326.exe
 - use the 7-Zip file manager to extract the files
