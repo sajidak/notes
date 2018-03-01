@@ -4,6 +4,114 @@
 # Buffer
 > Buffer to manage content till it is organized <br>
 
+## 01 Mar 2018
+### doc.go
+- https://godoc.org/github.com/fluhus/godoc-tricks
+
+### time + reflect
+- Code Sample
+```go
+package main
+
+import (
+	"encoding/binary"
+	"encoding/hex"
+	"fmt"
+	"reflect"
+	"strings"
+	"time"
+)
+
+func main() {
+	fmt.Println("The time is ", time.Now())
+	fmt.Println(time.Now().Unix())
+	fmt.Println(time.Now().UnixNano())
+
+	durUnix := time.Now().Unix()
+	durNano := time.Now().UnixNano()
+	fmt.Println(reflect.TypeOf(durUnix), ", ", reflect.TypeOf(durNano))
+
+	fmt.Println("\nInt64 to Byte")
+	buf := make([]byte, binary.MaxVarintLen64)
+	fmt.Println("BEFORE = Len:", len(buf), ", Contents:", buf)
+	n := binary.PutVarint(buf, durNano)
+	fmt.Println("ATFER  = Size/Write:", len(buf), "/", n, ", Contents:", buf)
+
+	fmt.Println("\nXOR Test")
+	hexSTR := runTestXOR(buf[:5], buf[5:])
+	fmt.Println("runTestXOR = ", hexSTR)
+
+	fmt.Println("\nGenerating bulk codes, for duplication")
+	for i := 0; i < 21; i++ {
+		fmt.Println(fmt.Sprintf("%4d - %v", i, getCodeShort()))
+		time.Sleep(11 * time.Nanosecond)
+	}
+
+}
+
+func getCodeShort() string {
+	buf := make([]byte, binary.MaxVarintLen64)
+	binary.PutVarint(buf, time.Now().UnixNano())
+	xba := make([]byte, 5)
+	for i := 0; i < 5; i++ {
+		xba[i] = buf[i] ^ buf[i+5]
+	}
+	// return fmt.Sprintf("%X-%X-%X", xba[0:2], xba[2:3], xba[3:])	// Upper
+	return fmt.Sprintf("%x-%x-%x", xba[0:2], xba[2:3], xba[3:])     // Lower
+}
+
+func runTestXOR(a []byte, b []byte) string {
+	fmt.Println("Running XOR Test")
+	fmt.Println("A = Len:", len(a), ", Contents:", a)
+	fmt.Println("B = Len:", len(b), ", Contents:", b)
+
+	xba := make([]byte, 5)
+	for i := 0; i < 5; i++ {
+		xba[i] = a[i] ^ b[i]
+	}
+	fmt.Println("XBA = Len:", len(xba), ", Contents:", xba)
+	hexStr := hex.EncodeToString(xba)
+	fmt.Println("XOR string", hexStr)
+
+	fmtStr := fmt.Sprintf("%X-%X-%X", xba[0:2], xba[2:3], xba[3:])
+	// fmt.Println("FMT string", fmtStr)
+
+	return strings.ToUpper(fmtStr)
+}
+```
+- Output
+	```text
+	The time is  2009-11-10 23:00:00 +0000 UTC m=+0.000000001
+	1257894000
+	1257894000000000000
+	int64 ,  int64
+
+	Int64 to Byte
+	BEFORE = Len: 10 , Contents: [0 0 0 0 0 0 0 0 0 0]
+	ATFER  = Size/Write: 10 / 9 , Contents: [128 128 195 177 181 251 247 244 34 0]
+
+	XOR Test
+	Running XOR Test
+	A = Len: 5 , Contents: [128 128 195 177 181]
+	B = Len: 5 , Contents: [251 247 244 34 0]
+	XBA = Len: 5 , Contents: [123 119 55 147 181]
+	XOR string 7b773793b5
+	runTestXOR =  7B77-37-93B5
+
+	Generating bulk codes, for duplication
+	 0 - 7b77-37-93b5
+	 1 - 6d77-37-93b5
+	 2 - 5777-37-93b5
+	 3 - 3977-37-93b5
+	 4 - 2377-37-93b5
+	 5 - 1577-37-93b5
+	 6 - 7f76-37-93b5
+	 7 - 6176-37-93b5
+	 8 - 4b76-37-93b5
+	 9 - 3d76-37-93b5
+	 ... truncated for space
+	```
+
 ## 27 Feb 2018
 ### Print Formatting
 - `return fmt.Sprintf("at %v, %s", e.When, e.What)`
