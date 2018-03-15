@@ -4,6 +4,95 @@
 # Buffer
 > Buffer to manage content till it is organized <br>
 
+## 14-03-2018
+
+### Package "os" [File Tests]
+
+- `type FileInfo`
+	- A FileInfo describes a file and is returned by Stat and Lstat.
+
+	```go
+	type FileInfo interface {
+	        Name() string       // base name of the file
+	        Size() int64        // length in bytes for regular files; system-dependent for others
+	        Mode() FileMode     // file mode bits
+	        ModTime() time.Time // modification time
+	        IsDir() bool        // abbreviation for Mode().IsDir()
+	        Sys() interface{}   // underlying data source (can return nil)
+	}
+	```
+
+- `func Stat(name string) (FileInfo, error)`
+	- Stat returns a FileInfo describing the named file. If there is an error, it will be of type *PathError.
+
+- `func Environ() []string`
+- `func ExpandEnv(s string) string`
+- `func Getenv(key string) string`
+- `func Getpid() int`
+- `func Getwd() (dir string, err error)`
+- `func LookupEnv(key string) (string, bool)`
+- `func TempDir() string`
+- `func (f *File) Stat() (FileInfo, error)`
+- `func StartProcess(name string, argv []string, attr *ProcAttr) (*Process, error)`
+- `func (p *Process) Kill() error`
+
+
+### Samples
+
+- Sample 1
+	- https://golang.org/pkg/os/#example_IsNotExist
+	```go
+	package main
+
+	import (
+		"fmt"
+		"os"
+	)
+
+	func main() {
+		filename := "a-nonexistent-file"
+		if _, err := os.Stat(filename); os.IsNotExist(err) {
+			fmt.Printf("file does not exist")
+		}
+	}
+	```
+
+- Sample 2: **FileMode**
+```go
+package main
+
+import (
+	"fmt"
+	"log"
+	"os"
+)
+
+func main() {
+	fi, err := os.Lstat("some-filename")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	switch mode := fi.Mode(); {
+	case mode.IsRegular():
+		fmt.Println("regular file")
+	case mode.IsDir():
+		fmt.Println("directory")
+	case mode&os.ModeSymlink != 0:
+		fmt.Println("symbolic link")
+	case mode&os.ModeNamedPipe != 0:
+		fmt.Println("named pipe")
+	}
+}
+```
+
+
+
+### Package  "io/ioutil"
+- `func TempDir(dir, prefix string) (name string, err error)`
+- `func TempFile(dir, prefix string) (f *os.File, err error)`
+
+***
 ## 01 Mar 2018
 ### doc.go
 - https://godoc.org/github.com/fluhus/godoc-tricks
@@ -80,6 +169,7 @@ func runTestXOR(a []byte, b []byte) string {
 }
 ```
 - Output
+
 	```text
 	The time is  2009-11-10 23:00:00 +0000 UTC m=+0.000000001
 	1257894000
