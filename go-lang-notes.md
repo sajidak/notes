@@ -4,6 +4,17 @@
 # Buffer
 > Buffer to manage content till it is organized <br>
 
+## 2018-Mar-15
+### Linter - exclude warning types
+- https://github.com/golang/lint/issues/186
+- https://github.com/joefitzgerald/go-plus/issues/189
+```
+"go.lintTool": "gometalinter",
+"go.lintFlags": [
+	"--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\""
+],
+```
+
 ## 14-03-2018
 
 ### Package "os" [File Tests]
