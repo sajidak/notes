@@ -6,6 +6,43 @@
 - https://dbmstools.com/database-er-diagram-tools/oracle
 - https://dbmstools.com/data-modeling-tools/mysql
 
+## Start error on live
+- Run before starting
+	- try `sudo chmod +r /var/lib/mysql/debian-5.7.flag`
+	- try `sudo chmod +w /var/lib/mysql/debian-5.7.flag`
+	- `sudo chmod +rw -R /var/lib/mysql/`
+- For debugging, identify the specific permissions needed
+	- `-rw-r--r-- 1 root  root         0 Mar  3 17:50 debian-5.7.flag`
+	- Configs used:
+		- `/etc/mysql/mysql.conf.d/mysqld.cnf`
+		- log = `/var/log/mysql/error.log`
+- For support
+	- `sudo journalctl -u mysql -f`
+
+
+## Steps to prep database on live
+```sql
+-- Create database
+CREATE DATABASE IF NOT EXISTS `sql-dev`;
+USE `sql-dev`;
+show databases;
+
+-- Create Users
+CREATE USER 'sql-dev-adm'@'%' IDENTIFIED BY 'admPWD180325';
+CREATE USER 'sql-dev-usr'@'%' IDENTIFIED BY 'usrPWD180325';
+
+
+-- Grant Privilages
+GRANT USAGE ON *.* TO 'sql-dev-adm'@'%';
+GRANT USAGE ON *.* TO 'sql-dev-usr'@'%';
+
+GRANT ALL PRIVILEGES ON `sql-dev`.* TO 'sql-dev-adm'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER ON `sql-dev`.* TO 'sql-dev-usr'@'%';
+
+FLUSH PRIVILEGES;
+
+```
+
 ## Commands for SystemD
 | Command                           | Result                                           |
 |:--------------------------------- |:------------------------------------------------ |
@@ -156,6 +193,8 @@ USE [db_name]
 
 show databases;
 
+CREATE SCHEMA `sql-dev` ;
+
 create user [db_user];
 grant all on [db_name].* to '[db_user]'@'localhost' identified by '[db_password]';
 
@@ -197,6 +236,33 @@ quit
 - `UPDATE` - allow them to update table rows
 - `GRANT OPTION` - allows them to grant or remove other users' privileges
 
+#### Export and Import scripts
+- View
+
+	```sql
+	select Host, user, password from user ;
+	SHOW GRANTS FOR 'user'@'localhost';
+	```
+- **Try**: Script to export users, grants
+
+	```sql
+	echo "SELECT DISTINCT CONCAT (\"show grants for '\", user, \"'@'\", host, \"';\") AS query FROM mysql.user; " >   script.sql
+	echo "*** You will be asked to enter the root password twice ******"
+	mysql -u root -p  < script.sql > output.sql ;
+	cat output.sql | grep show > output1.sql  ; rm output.sql -f ;
+	mysql -u root -p  < output1.sql > output.sql ;
+	clear
+	echo "-----Exported Grants-----"
+	cat  output.sql ; rm  output.sql   output1.sql -f
+	echo "-------------------------"
+	rm  script.sql -f
+	```
+
+- **Try**: Script to generate export script
+
+	```sql
+	mysql -B -N -uroot -p -e "SELECT CONCAT('\'', user,'\'@\'', host, '\'') FROM user WHERE user != 'debian-sys-maint' AND user != 'root' AND user != ''" mysql > mysql_all_users.txt
+	```
 
 ### Batch Script
 https://dev.mysql.com/doc/refman/5.7/en/mysql-batch-commands.html

@@ -35,3 +35,8 @@ You can view past standups in the linked playlist.
 https://github.com/aspnet/Home/wiki/Roadmap
 
 The schedule and milestone themes for ASP.NET Core.
+
+### https://www.asp.net/
+- https://www.asp.net/community/articles
+- https://www.c-sharpcorner.com/article/overview-of-identity-in-asp-net-core-2-0/
+-
