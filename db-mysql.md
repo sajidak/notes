@@ -19,6 +19,25 @@
 - For support
 	- `sudo journalctl -u mysql -f`
 
+## Worked - get default secure DB accessible
+```sql
+CREATE USER 'sak'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'sak'@'localhost';
+GRANT GRANT OPTION ON * . * TO 'sak'@'localhost';
+SHOW GRANTS for sak@localhost;
+FLUSH PRIVILEGES;
+SELECT User, Host, plugin, password_expired, password_last_changed, password_lifetime, account_locked  FROM mysql.user;
+```
+
+### Interesting Queries
+```sql
+SELECT * FROM INFORMATION_SCHEMA.SCHEMATA;
+SELECT * FROM INFORMATION_SCHEMA.TABLES;
+SELECT * FROM INFORMATION_SCHEMA.VIEWS;
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS;
+SELECT * FROM INFORMATION_SCHEMA.TRIGGERS;
+SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE;
+```
 
 ## Steps to prep database on live
 ```sql
