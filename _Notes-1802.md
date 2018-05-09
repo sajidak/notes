@@ -1,4 +1,15 @@
-# Notes 1801
+# Notes 1802
+
+## 09 May 2018
+
+### Timestamp format
+- Pluma
+	- `%Y-%m-%d %H:%M:%S`
+	- `2018-05-09 22:12:49`
+- Atom
+	- `ddd, DD-MMM-YYYY HH:mm:ss Z`
+	- `Wed, 09-May-2018 22:13:41 +05:30`
+
 
 ## 12 Feb 2018
 ### Grub Samples
