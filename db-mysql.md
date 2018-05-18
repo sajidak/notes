@@ -21,7 +21,7 @@
 
 ## Worked - get default secure DB accessible
 ```sql
-CREATE USER 'sak'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'sak'@'localhost' IDENTIFIED BY 'some-password-text';
 GRANT ALL PRIVILEGES ON * . * TO 'sak'@'localhost';
 GRANT GRANT OPTION ON * . * TO 'sak'@'localhost';
 SHOW GRANTS for sak@localhost;
@@ -101,6 +101,11 @@ sudo service mysql status
 ---
 
 ## MySQL
+
+### MySQL Utilities
+- mysqldiff --server1=root:toor@localhost:3306 -d sql -q aapi_cloud_r2_0:aapi_cloud
+- mysqldbcompare --server1=root:toor@localhost:3306 --skip-row-count -d -t -q aapi_cloud_r2_0:aapi_cloud
+
 ### System Variables
 https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html
 
