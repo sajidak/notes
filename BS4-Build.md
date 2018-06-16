@@ -42,9 +42,12 @@
 
 ## Setup/Update Environment
 **Important:** Set working folder before proceeding.
+
 `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0`
-- `npm install jquery popper.js`
+
+- `npm install jquery`
 	- to fix broken syntax, check again after 4.0.0 release
+	- `popper.js` not needed for 4.0.0
 - `npm install`
 	- from root /bootstrap directory
 - `mkdir -v -p /10-Base/ruby-gems; bundle install --path /10-Base/ruby-gems/bundle`
@@ -56,6 +59,7 @@
 ## Build
 
 - Update Source files
+-
 	`cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0/scss/_custom.scss`
 
 | Task         | Description                                                                                                                      |

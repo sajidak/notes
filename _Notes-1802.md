@@ -1,5 +1,27 @@
 # Notes 1802
 
+## 15 Jun 2018
+
+### Small linux
+#### 4MLinux
+- http://4mlinux.com/
+- 4MLinux is a miniature, 32-bit Linux distribution focusing on four capabilities: maintenance (as a system rescue live CD), multimedia (for playing video DVDs and other multimedia files), miniserver (using the inetd daemon), and mystery (providing several small Linux games). The distribution includes support for booting on UEFI-enabled machines. 
+
+#### Linux Lite
+CrunchBang++
+Bodhi Linux
+SparkyLinux
+Tiny Core - CorePlus
+Modern X
+Elive
+wattOS
+Nanolinux
+TurnKey GNU/Linux
+ToriOS
+HD Scania
+
+
+
 ## 09 May 2018
 
 ### Timestamp format
