@@ -54,3 +54,9 @@ git log --pretty=format:'' --numstat "$@" | awk 'NF' | awk '{insertions+=$1; del
 --name-status
 
     Show only names and status of changed files. See the description of the --diff-filter option on what the status letters mean.
+
+
+## Trails
+git log --no-merges --since 2018-06-10 --name-only
+git log --no-merges --since 2018-05-24 --use-mailmap --name-status --decorate=short --pretty="%cE"
+git log --no-merges --since 2018-05-24 --use-mailmap --name-status --decorate=short --pretty="%cE"
