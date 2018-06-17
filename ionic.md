@@ -34,7 +34,8 @@
 
 ### Creator
 https://ionicframework.com/products/creator
-- simple drag-&-drop tool for going from idea to App Store, with just the drag of a mouse.
+
+- simple drag-n-drop tool for going from idea to App Store, with just the drag of a mouse.
 - Free ($0/mo)
 	- for hobbyists
     - 1 Project
@@ -43,6 +44,7 @@ https://ionicframework.com/products/creator
 
 ### View app
 https://ionicframework.com/products/view
+
 - Share, test, and collect feedback on your apps with clients and testers from anywhere in the world, all without ever going through the App Stores
 - Easily preview and test your Ionic apps as though they were actually deployed natively
 - Invite testers by email
@@ -50,10 +52,12 @@ https://ionicframework.com/products/view
 
 ### Deploy
 https://ionicframework.com/products/deploy
+
 - Push hot code updates, content changes, A/B tests, and bug fixes in realtime before and after your app is in the App Stores
 - Deploy enables you and your team to send live code changes directly to your users, when you’re ready, without waiting in line for App Store reviews and approvals
 
 ### Package
 https://ionicframework.com/products/package
+
 - Native builds, in the cloud
 - Create native apps in the cloud with Ionic Package to get from code to app store with no platform dependencies or complicated build steps

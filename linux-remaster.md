@@ -1,8 +1,43 @@
 # Linux Remaster Tools
 
+[TOC]
+
 ## Summary
 
+
+## Links
+- https://lkubuntu.wordpress.com/2011/10/10/relinux-a-way-to-create-a-bootable-iso-out-of-your-system/
+- https://sourceforge.net/projects/uck/
+- http://dbad-license.org/
+- http://www.wtfpl.net/txt/copying
+
+
+
 ## Tools
+
+### Pinguy Builder
+https://sourceforge.net/projects/pinguy-os/files/ISO_Builder/
+Last update: 2018-05-22
+- Version 5.* works with *buntu systems 17.04/17.10/18.04
+- Single package for Script and GUI.
+- EFI support including EFI partition on ISO.
+- Populate pool folder with grub-efi for offline installing.
+- Update grub entry with the named used for the CD label.
+- Uses XZ to compress the filesystem.squashfs for smaller ISO size.
+- Added MDM support (Linux Mint display manager).
+- Added GDM support (Gnome Shell display manager).
+- Install:
+	- get Pinguy Builder 5.*
+	- `sudo apt-get purge pinguybuilder`
+	- `sudo dpkg -i pinguybuilder*.deb`
+	- `sudo apt-get install -f`
+
+### Linux Live Kit
+https://www.linux-live.org/
+https://github.com/Tomas-M/linux-live
+- Set of scripts to turn existing preinstalled Linux
+distribution into a Live Kit
+- Use it on a posix-compatible filesystem
 
 ### customizer
 https://github.com/kamilion/customizer
@@ -12,18 +47,6 @@ Last update 2017-09-19
 - For any supported Ubuntu-based ISO image
 - build your own remix with a few mouse clicks
 - **?** does it allow customization of applications, or just applications in the ISO?
-
-### Pinguy Builder
-http://pinguyos.com/2015/09/pinguy-builder-an-app-to-backupremix-buntu/
-https://sourceforge.net/projects/pinguy-os/files/ISO_Builder/
-Last update 2016-04-03
-- Single package for Script and GUI.
-- EFI support including EFI partition on ISO.
-- Populate pool folder with grub-efi for offline installing.
-- Update grub entry with the named used for the CD label.
-- Uses XZ to compress the filesystem.squashfs for smaller ISO size.
-- Added MDM support (Linux Mint display manager).
-- Added GDM support (Gnome Shell display manager).
 
 ### Ubuntu Customization Kit
 https://sourceforge.net/projects/uck/
@@ -61,6 +84,7 @@ Last Update 2012-11-09
 	- You cannot use another installer than Ubiquity
 	- The compressed filesystem size must be below 4GB (no workaround). It will tell you if it’s over 4GB (compressed), but I recommend that you keep your system size below 6GB (uncompressed).
 	- It will install metacity, but in 0.3, this is removed.
+
 
 ## Notes:
 - Ubuntu Mini Remix

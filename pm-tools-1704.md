@@ -32,36 +32,37 @@
 # Preliminary Shortlist
 
 ## [GanttProject](http://www.ganttproject.biz/)
-	- **Very Basic**, data entry is per task in seperate popups
-	- Java based zip `ganttproject-2.8.4-r2134.zip` at 
-	`http://www.ganttproject.biz/download/free` or `https://github.com/bardsoftware/ganttproject/releases`
-	- Release [Notes](http://www.ganttproject.biz/pilsen)
+- **Very Basic**, data entry is per task in seperate popups
+- Java based zip `ganttproject-2.8.4-r2134.zip` at
+	- `http://www.ganttproject.biz/download/free` or
+	- `https://github.com/bardsoftware/ganttproject/releases`
+- Release [Notes](http://www.ganttproject.biz/pilsen)
 
 ## [ONLYOFFICE](https://www.onlyoffice.com/)
-	- office + prj mgmt + other tools. 
-	- [portable, Linux only](http://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors-x64.tar.gz)
-		- Needs 64-bit Ubuntu kernel version 3.8 or later
-	- [Server](https://www.onlyoffice.com/download.aspx)
-	- [virtual box]()
-	- [Android](https://play.google.com/store/apps/details?id=com.onlyoffice.documents)
-	### Features 
-	- Online Document Editors
-	- Document Management
-	- Mail
-	- CRM
-	- Projects
-	- Calendar
+- office + prj mgmt + other tools.
+- [portable, Linux only](http://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors-x64.tar.gz)
+	- Needs 64-bit Ubuntu kernel version 3.8 or later
+- [Server](https://www.onlyoffice.com/download.aspx)
+- [virtual box]()
+- [Android](https://play.google.com/store/apps/details?id=com.onlyoffice.documents)
+### Features
+- Online Document Editors
+- Document Management
+- Mail
+- CRM
+- Projects
+- Calendar
 
 ## [OpenProject](https://www.openproject.org/)
-	- Community Edition, scheduling, time tracking
-	- `need to look at installation`, likely server install using `Ruby on Rails` and `AngularJS`
-	- Installation [guide](https://www.openproject.org/download-and-installation/)
-		```bash
-		wget -qO - https://deb.packager.io/key | sudo apt-key add -
-		/etc/apt/sources.list.d/openproject.list
-		apt-get update
-		apt-get install openproject # installs with all dependencies
-		```
+- Community Edition, scheduling, time tracking
+- `need to look at installation`, likely server install using `Ruby on Rails` and `AngularJS`
+- Installation [guide](https://www.openproject.org/download-and-installation/)
+```bash
+wget -qO - https://deb.packager.io/key | sudo apt-key add -
+/etc/apt/sources.list.d/openproject.list
+apt-get update
+apt-get install openproject # installs with all dependencies
+```
 
 ## [Collabtive](http://collabtive.o-dyn.de/)
 - web server install, needs PHP 5.4 and MySQL 4.1/5.x or SQLite
@@ -83,6 +84,7 @@
 ## [LibrePlan](http://www.libreplan.com/)
 
 # Other
+
 ## To Read
 [Project Management Tools](https://www.tutorialspoint.com/management_concepts/project_management_tools.htm)
 
@@ -94,6 +96,8 @@
 		old, complicated looking process
 
 2. [Software development effort estimation](https://en.wikipedia.org/wiki/Software_development_effort_estimation#Development_estimation_software)
+
 ### [Target Process](https://www.targetprocess.com/)
+
 ### [REVIC Software Estimation Model](https://web.archive.org/web/20101115172302/http://sepo.spawar.navy.mil:80/Estimation.html)
 - `https://sites.google.com/site/revic92/download`

@@ -12,6 +12,7 @@
 > - The  package “Microsoft.Owin.Host.SystemWeb” is used to enable our Owin server to run our API on IIS using ASP.NET request pipeline
 
 **Links:**
+
 - `Learning/Notes+Downloads/MVC5-Token-Based-Auth.mht`
 - http://www.primaryobjects.com/2015/05/08/token-based-authentication-for-web-service-apis-in-c-mvc-net/
 	- `TokenAuthMVC-master.zip`
@@ -29,7 +30,9 @@
 - http://bitoftech.net/2015/01/21/asp-net-identity-2-with-asp-net-web-api-2-accounts-management/
 	- Has multiple sub-links
 
+
 **Other links of interest**
+
 - http://bitoftech.net/2015/03/31/asp-net-web-api-claims-authorization-with-asp-net-identity-2-1/
 - http://www.jerriepelser.com/blog/advanced-configuration-in-the-aspnet5-generic-oauth-provider
 	- An introduction to the ASP.NET 5 Generic OAuth Provider Client
@@ -41,6 +44,7 @@
 
 
 ## Notes
+
 ### http://www.primaryobjects.com/2015/05/08/token-based-authentication-for-web-service-apis-in-c-mvc-net/
 - Token-based authentication involves providing a token or key in the url or HTTP request header, which contains all necessary information to validate a user’s request. Some examples of information included in the token are username, timestamp, ip address, and any other information pertinent towards checking if a request should be honored.
 - `RESTAuthorizeAttribute`

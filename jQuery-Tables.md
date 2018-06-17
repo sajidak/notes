@@ -1,8 +1,10 @@
 # jQuery Tables
-[TOC]
+
 ## jsGrid [Appears best fit]
 http://js-grid.com/
+
 https://github.com/tabalinas/jsgrid
+
 - add new records, update, and remove data rows
 	- inline or popup
 - data filtering by different criterias.
@@ -18,7 +20,9 @@ https://github.com/tabalinas/jsgrid
 
 ## jinplace [look further]
 https://github.com/itinken/jinplace
+
 Interesting features, but need to understand fully
+
 - driven be data-* attributes
 - Directly supports text, textarea and select fields
 - Other kinds of input editors can be written as plugins
@@ -37,6 +41,7 @@ Interesting features, but need to understand fully
 
 ## Gijgo [look further]
 http://gijgo.com/grid
+
 - Other components also Dialog, Tree, WYSIWYG Editor, Draggable, Droppable,
 - HTML Sourced Data, make a table into a grid
 - Grouped rows to group records based on column values
@@ -45,16 +50,20 @@ http://gijgo.com/grid
 
 ## Datatables
 https://datatables.net/
-### jEditable plug-in (*)
+
+### jEditable plug-in
 https://editor.datatables.net/
+
 [Solo - $119]
 
 ## Datatable
 http://holt59.github.io/datatable/
 
 # Editors
+
 ## jQuery-Tabledit
 http://markcell.github.io/jquery-tabledit/
+
 - inline edit
 - dropdown values
 - ajax source only?
@@ -63,10 +72,12 @@ http://markcell.github.io/jquery-tabledit/
 
 ## jTable
 http://www.jtable.org/
+
 depends on jQuery and jQueryUI
 
 ## advtable
 https://github.com/andrastoth/advtable
+
 - editable content
 - selectable row
 - multi select row
@@ -82,6 +93,7 @@ https://github.com/andrastoth/advtable
 
 ## table-to-json
 https://github.com/lightswitch05/table-to-json
+
 Serializes HTML tables into JSON objects.
 - **Files:**
 	- Table-to-JSON.mht
@@ -89,8 +101,10 @@ Serializes HTML tables into JSON objects.
 ## responsive-miller-column
 https://github.com/dsharew/responsive-miller-column
 
+
 ## lobilist
 https://github.com/arboshiki/lobilist
+
 - Multiple list support
 - Different styles
 - Drag & drop list
@@ -100,7 +114,9 @@ https://github.com/arboshiki/lobilist
 
 ## editableTableWidget
 https://mindmup.github.io/editable-table/
+
 https://github.com/mindmup/editable-table/blob/master/mindmup-editabletable.js
+
 - 3KB
 - lightweight, grid editing
 - simple cell editing
@@ -109,6 +125,7 @@ https://github.com/mindmup/editable-table/blob/master/mindmup-editabletable.js
 
 ## flextabledit
 http://code.cwwonline.be/serviceflextableditjquery
+
 - spreadsheet-like editing
 - good looks
 - first row is assumed to be header row
@@ -118,17 +135,23 @@ http://code.cwwonline.be/serviceflextableditjquery
 
 ## JS Classes
 https://www.jsclasses.org/
+
+
 ### HTML5 File Reader
 https://atandrastoth.co.uk/main/pages/plugins/filereader/
+
 http://www.jsclasses.org/package/401-JavaScript-Read-files-user-selected-with-the-FileReader-API.html
+
 - **Files:**
 	- `HTML5-File-Reader.mht`
 
 ## gridmanager.js
 http://neokoenig.github.io/jQuery-gridmanager/
 
+
 ## X-editable [look further]
 http://vitalets.github.io/x-editable/
+
  - create editable elements on your page.
  - It can be used with any engine (bootstrap, jquery-ui, jquery only) and includes both popup and inline modes
  - date-time picker
@@ -139,8 +162,11 @@ http://vitalets.github.io/x-editable/
 
 ## Combodate
 http://vitalets.github.io/combodate/
+
 replaces `<input type="text">` with dropdown elements to pick day, month, year, hour, minutes and seconds.
+
 You can submit form as usual because dropdowns don't have name attribute and not submitted.
+
 - support date, time, datetime
 - 12h / 24h format
 - based on momentjs
@@ -151,11 +177,13 @@ You can submit form as usual because dropdowns don't have name attribute and not
 
 ## Moment.js
 Parse, validate, manipulate, and display dates and times in JavaScript.
+
 - **Files:**
 	- moment-2.18.1.tar.gz
 
 ## jqxDataTable [$199]
 http://www.jqwidgets.com/
+
 - Binding to Local and Remote Data
 - Sorting
 - Filtering
@@ -177,6 +205,7 @@ http://www.jqwidgets.com/asp.net-core-mvc-tag-helpers/
 
 ## jqxGrid [$199]
 http://www.jqwidgets.com/
+
 - Data Binding
 - Outlook-Style Grouping
 - Sorting
@@ -205,6 +234,7 @@ http://www.jqwidgets.com/
 
 # Tree View
 _Initial List_
+
 - https://www.jstree.com/
 	- drag & drop support
 	- inline edit, create and delete
