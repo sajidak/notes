@@ -251,6 +251,7 @@ Bi-Rehmatika Ya Arra-Hamar-Ra-Hi-Miin
 # ٱلَّذِينَ ءَامَنُوا۟ وَكَانُوا۟ يَتَّقُونَ
 - Allazeena aamanoo wa kaanoo yattaqoon
 - Those who believe and keep their duty (to Allah)
+
 ***
 
 `Last updated: Sat, 10-Jun-2017 09:06:43 +0530`

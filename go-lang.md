@@ -1,6 +1,19 @@
 # The Go Programming Language
 26 Nov 2017
 
+## Public Hosting
+- https://www.clever-cloud.com/golang-hosting
+- http://www.golang-cloud.com/
+- https://medium.freecodecamp.org/
+- https://medium.com/
+- http://www.appscale.com/
+- https://www.openshift.com/
+-
+
+
+
+
+
 ## Install the Go tools
 - Download the archive and extract it into /usr/local, creating a Go tree in /usr/local/go.
 	- For example:
@@ -26,7 +39,7 @@
 - You should also remove the Go bin directory from your `PATH` environment variable. Under Linux and FreeBSD you should edit `/etc/profile` or `$HOME/.profile`.
 
 ## Command go
-**See** https://golang.org/cmd/go  
+**See** https://golang.org/cmd/go
 
 Go is a tool for managing Go source code.
 

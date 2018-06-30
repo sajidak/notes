@@ -2,9 +2,9 @@
 
 **Sheikh Abdul Qadir Gilani** (*Allah be pleased with him*) gave the following ten rules for his disciples who wanted to mature themselves and control their nafs.
 
-1. Jokingly or seriously, don't lie, because once your tongue avoids lying, Allah the Most High enlarges your chest and purifies your understanding and ilm (knowledge). That person becomes as if they don't know what a lie is. Everything becomes truth to him. When he hears other people lie, the disciple should pray for them not to lie.  
+1. Jokingly or seriously, don't lie, because once your tongue avoids lying, Allah the Most High enlarges your chest and purifies your understanding and ilm (knowledge). That person becomes as if they don't know what a lie is. Everything becomes truth to him. When he hears other people lie, the disciple should pray for them not to lie.
 
-2. The disciple should avoid cursing or harming humans and other created beings (from bugs to Jinn) because avoiding to curse and harm is the character of the good and loyal friends of Allah. If a person is like this, then Allah protects him or her and their end will be good. They will reach to a high level in Allah's presence. Allah will protect them from being destroyed and protect them from harm. Allah rewards this person with being a blessing to human beings and close to Allah's essence.  
+2. The disciple should avoid cursing or harming humans and other created beings (from bugs to Jinn) because avoiding to curse and harm is the character of the good and loyal friends of Allah. If a person is like this, then Allah protects him or her and their end will be good. They will reach to a high level in Allah's presence. Allah will protect them from being destroyed and protect them from harm. Allah rewards this person with being a blessing to human beings and close to Allah's essence.
 
 3. The disciple has to keep his promise at all times unless he has a very good cause. He must avoid not keeping his promise because not keeping a promise is in the same class as lying. As long as the servant of Allah tries to keep his/her promise the doors of generosity and blessings open to him/her. Loyal lovers of Allah love these people and they get a high station in Allah's presence. It is better that he avoids the habit of making promise, so that he may not be guilty of the breach of promise.
 
@@ -20,11 +20,15 @@
 
 9. A disciple/dervish should not, either truly or falsely, intentionally or unintentionally, by mistake or on purpose take Allah's Name in vain or swear by the Name of Allah.
 
-10. The disciple/dervish should take to hospitality and humility. With humility, the dervish reaches high levels of spirituality and stays at this high level. This is the base of goodness and the highest level of goodness. Because of this quality the lovers of Allah stay with him in troubled times. The Walis (Saints) visit him in the unseen and aid him in his difficulty. Humility is seeing everybody you meet as higher than you and thinking that they might be closer to Allah than yourself.
+10. The disciple/dervish should take to hospitality and humility. With humility, the dervish reaches high levels of spirituality and stays at this high level. This is the base of goodness and the highest level of goodness. Because of this quality the lovers of Allah stay with him in troubled times. The Walis (Saints) visit him in the unseen and aid him in his difficulty.
+
+
 ***
 
 ## Humility ##
-- If the disciple meets a person that is younger than him/her, he/she should say:
+Humility is seeing everybody you meet as higher than you and thinking that they might be closer to Allah than yourself.
+
+If the disciple meets a person that is younger than him/her, he/she should say:
 "*This person did not rebel against Allah; I did. I am sure he/she is better than me.*"
 
 - If the disciple meets a person who is older than himself, he/she should say:
@@ -37,4 +41,5 @@
 "*Maybe one day this disbeliever or agnostic will become a Muslim and do better deeds than myself and he might end up in a better place than I would and I might be misled and end up in a worse place than him.*"
 
 `If a disciple acts with humility like this, then Allah the Most High saves him/her from hardships and makes the disciple reach to the levels of those who give advice for Allah's sake. He will be the closest friend of Allah the Most High.`
+
 ***
