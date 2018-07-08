@@ -1,5 +1,19 @@
 # Notes 1802
 
+## Jul 01 2018 
+### Domain prices - 10 yrs
+.xyz	5670
+.rocks	5890
+.space	3960
+.name	6750
+.guru	
+.today	
+.info	860/
+.co.in	3,990
+.in		4,990
+.tech	5,490
+
+
 ## 15 Jun 2018
 
 ### Small linux

@@ -1,6 +1,14 @@
 # buffer file
 >for temporary editing
 
+## Hotel Property Management
+- online free software
+	- https://nobeds.com/app/en/Dashboard
+	- https://kwhotel.com/en/download/kwhotel-free.
+
+- latest and  used by Branded hotels  ( for reference)
+	- https://docs.oracle.com/cd/E53547_01/opera_5_04_03_core_help/index.htm?toc.htm?359.htm
+
 ## tigervnc
 ```sh
 # Commands to install tigervnc on machine.
