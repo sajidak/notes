@@ -1,6 +1,13 @@
 # buffer file
 >for temporary editing
 
+## Used laptops
+- http://rentopc.in
+- HP EliteBook 8440P - i5 - 8GB RAM - 1 TB HDD
+	- https://www.ebay.in/itm/hp-elitebook-8440p-i5-8gb-ram-1-tb-hdd-with-one-year-seller-warranty/222641396722?hash=item33d6761bf2
+	- Rs. 11,999.00
+
+
 ## Hotel Property Management
 - online free software
 	- https://nobeds.com/app/en/Dashboard
@@ -8,6 +15,9 @@
 
 - latest and  used by Branded hotels  ( for reference)
 	- https://docs.oracle.com/cd/E53547_01/opera_5_04_03_core_help/index.htm?toc.htm?359.htm
+
+- Other
+	- https://www.softwareadvice.com/hotel-management/
 
 ## tigervnc
 ```sh

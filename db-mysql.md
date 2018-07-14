@@ -6,19 +6,6 @@
 - https://dbmstools.com/database-er-diagram-tools/oracle
 - https://dbmstools.com/data-modeling-tools/mysql
 
-## Start error on live
-- Run before starting
-	- try `sudo chmod +r /var/lib/mysql/debian-5.7.flag`
-	- try `sudo chmod +w /var/lib/mysql/debian-5.7.flag`
-	- `sudo chmod +rw -R /var/lib/mysql/`
-- For debugging, identify the specific permissions needed
-	- `-rw-r--r-- 1 root  root         0 Mar  3 17:50 debian-5.7.flag`
-	- Configs used:
-		- `/etc/mysql/mysql.conf.d/mysqld.cnf`
-		- log = `/var/log/mysql/error.log`
-- For support
-	- `sudo journalctl -u mysql -f`
-
 ## Worked - get default secure DB accessible
 ```sql
 CREATE USER 'sak'@'localhost' IDENTIFIED BY 'some-password-text';
@@ -37,29 +24,6 @@ SELECT * FROM INFORMATION_SCHEMA.VIEWS;
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS;
 SELECT * FROM INFORMATION_SCHEMA.TRIGGERS;
 SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE;
-```
-
-## Steps to prep database on live
-```sql
--- Create database
-CREATE DATABASE IF NOT EXISTS `sql-dev`;
-USE `sql-dev`;
-show databases;
-
--- Create Users
-CREATE USER 'sql-dev-adm'@'%' IDENTIFIED BY 'admPWD180325';
-CREATE USER 'sql-dev-usr'@'%' IDENTIFIED BY 'usrPWD180325';
-
-
--- Grant Privilages
-GRANT USAGE ON *.* TO 'sql-dev-adm'@'%';
-GRANT USAGE ON *.* TO 'sql-dev-usr'@'%';
-
-GRANT ALL PRIVILEGES ON `sql-dev`.* TO 'sql-dev-adm'@'%';
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER ON `sql-dev`.* TO 'sql-dev-usr'@'%';
-
-FLUSH PRIVILEGES;
-
 ```
 
 ## Commands for SystemD
