@@ -17,3 +17,54 @@ see
 - https://www.codeproject.com/Articles/1183421/Simple-OAuth-Authorization-Server-with-Identity-Se
 - https://github.com/IdentityServer/IdentityServer4.Samples/tree/release/Quickstarts/1_ClientCredentials
 -
+
+## Sample 1
+http://sourcebrowser.io/Browse/aspnet/AspNetKatana/src/Microsoft.Owin/Security/AuthenticationManager.cs
+> Read more and get MVC differential code.
+
+### Add Needed Packages
+- Microsoft.AspNet.Mvc (this is addition to MVC)
+- Microsoft.Owin.Security
+- Microsoft.Owin.Host.SystemWeb
+- Microsoft.AspNet.Identity.Core
+- Microsoft.Owin.Security.Cookies
+
+### Add OWIN Startup file
+- Add a new item to the project and select (OWIN Start up class)
+- This class is the OWIN set up class that should run first to set OWIN up.
+
+```cs
+
+public class AuthConfig
+   {
+       public void Configuration(IAppBuilder app)
+       {
+           System.Web.Helpers.AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Email;
+           app.UseCookieAuthentication(new CookieAuthenticationOptions
+           {
+               AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+               LoginPath = new PathString("/Account/Login"),
+               CookieSecure = CookieSecureOption.SameAsRequest
+           });
+       }
+   }
+```
+
+```cs
+private void SignIn(List<Claim> claims)//Mind!!! This is System.Security.Claims not WIF claims
+       {
+           var claimsIdentity = new DemoIdentity(claims,
+           DefaultAuthenticationTypes.ApplicationCookie);
+
+           //This uses OWIN authentication
+
+           AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+           AuthenticationManager.SignIn(new AuthenticationProperties()
+				{ IsPersistent = true }, claimsIdentity);
+
+           HttpContext.User = new DemoPrincipal
+			(AuthenticationManager.AuthenticationResponseGrant.Principal);
+       }
+```
+
+- To mark an action or controller as needs authorization/authentication' you add this attribute `[Authorize]`

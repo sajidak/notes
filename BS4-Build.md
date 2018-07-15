@@ -1,29 +1,91 @@
 # Building Bootstrap 4.0 locally
 `07-Oct-2017 1224:10:43 +0530`
 
-**Contents:**
-<!-- MDTOC maxdepth:6 firsth1:0 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
-
-- [Notes:](#notes)
-- [Pre-Requisites](#pre-requisites)
-- [Setup/Update Environment](#setupupdate-environment)
-- [Build](#build)
-- [Local documentation, for](#local-documentation-for)
-- [Install Ruby from Source](#install-ruby-from-source)
-   - [Depends](#depends)
-   - [Steps:](#steps)
-   - [NOTE:](#note)
-- [Verify](#verify)
-- [Shell Script](#shell-script)
-- [Notes:](#notes)
-- [Strucrure for Command Output, Suggested](#strucrure-for-command-output-suggested)
-
-<!-- /MDTOC -->
+> for version v4.1.2
+> WIP, this line will be removed when this doc is fully updated.
+> Sun, 15-Jul-2018 15:00:57.953 +0530
+***
 
 ## Notes:
-
+- Bootstrap is dependent on jQuery and Popper
+	- https://jquery.com/
+	- https://popper.js.org/
 
 ***
+## v 4.1.2
+### Pre-Requisites
+- [x] `sudo apt-get install build-essential manpages-dev zlib1g-dev`
+	- To verify installation
+		- `dpkg --list | grep -i build-essential`
+		- `dpkg --list | grep -i manpages-dev`
+		- `dpkg --list | grep -i zlib1g-dev`
+		- `dpkg --list | grep -i ruby-full`
+		```
+		build-essential   12.4ubuntu1             amd64  Informational list of build-essential packages
+		manpages-dev      4.15-1                  all    Manual pages about using GNU/Linux for development
+		zlib1g-dev:amd64  1:1.2.11.dfsg-0ubuntu2  amd64  compression library - development
+		ruby-full         1:2.5.1                 all    Ruby full installation (default version)
+		```
+- [x] nodejs
+	- `node -v` = v8.11.3
+- [x] `npm install -g grunt-cli`
+	- `sudo ln -s /20-DEV/node/lib/node_modules/grunt-cli/bin/grunt /bin/grunt`
+	- `grunt -v` = grunt-cli: The grunt command line interface (v1.2.0)
+- Ruby
+	- `sudo apt-get install ruby-full`
+	- `ruby -v` = ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
+	- `v2.5.1p57` source `v2.5.1` as on `Sun, 15-Jul-2018 15:16:07.649 +0530`
+
+### Setup/Update Environment
+
+- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.1.2`
+	- **Important:** Set working folder before proceeding.
+
+- [x] `npm install`
+	- to install local dependencies listed in package.json
+	- Run this on installed OS
+	- "Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info."
+	- "Update available 5.6.0 → 6.2.0, Run `npm i -g npm` to update"
+
+- [x] `sudo gem install bundler`
+	- Bundler version 1.16.2
+	- Run this on installed OS
+
+- [x] `bundle install`
+	- Ruby dependencies, such as Jekyll and plugins
+	- Run this on installed OS
+	- Bundle complete! 4 Gemfile dependencies, 31 gems now installed.
+	- Use `bundle info [gemname]` to see where a bundled gem is installed.
+
+### Build
+> Each time the source file is updated.
+
+- Update Source files
+	- `cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss scss/_custom.scss`
+- `npm run dist`
+
+### NPM scripts and Tasks
+
+| Task         | Description                                                                                                                      |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| npm run dist | npm run dist creates the /dist directory with compiled files. Uses Sass, Autoprefixer, and UglifyJS.                             |
+| npm run docs | Builds and tests CSS, JavaScript, and other assets which are used when running the documentation locally via npm run docs-serve. |
+| npm test     | Run npm test to run tests locally and compile the CSS and JavaScript into /dist. Uses Sass, Autoprefixer, and UglifyJS.          |
+
+- Run `npm run` to see all the npm scripts.
+
+### Local documentation, for
+- From the root `/bootstrap` directory, run `npm run docs-serve` in the command line.
+- Open http://localhost:9001 in your browser, and voilà.
+
+### TODO
+- In package.json check for
+	- Popper.js
+	- Autoprefixer
+	- jQuery
+
+***
+> for v 4.0.0
 # Setup Build Tool chain
 ## Pre-Requisites
 - `sudo apt-get install build-essential manpages-dev zlib1g-dev`
@@ -39,15 +101,13 @@
 		- https://bitbucket.org/jonforums/uru
 		- check later
 - `sudo gem install bundler`
+- **TODO:** Add verify commands to list all versions
 
 ## Setup/Update Environment
 **Important:** Set working folder before proceeding.
 
 `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0`
 
-- `npm install jquery`
-	- to fix broken syntax, check again after 4.0.0 release
-	- `popper.js` not needed for 4.0.0
 - `npm install`
 	- from root /bootstrap directory
 - `mkdir -v -p /10-Base/ruby-gems; bundle install --path /10-Base/ruby-gems/bundle`
