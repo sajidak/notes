@@ -83,6 +83,7 @@
 	- Popper.js
 	- Autoprefixer
 	- jQuery
+- Add consolidated commands to verify versions of all dependencies.
 
 ***
 > for v 4.0.0
