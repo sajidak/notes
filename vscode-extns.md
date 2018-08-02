@@ -33,6 +33,75 @@ ext install chrmarti.regex
 
 
 ***
+# CSS-SCSS (2018 Aug 01)
+## Shortlist items
+- HTML CSS Support
+- JS & CSS Minifier
+
+
+## HTML CSS Support
+ecmel.vscode-html-css
+- Missing CSS support for HTML documents.
+- Class attribute completion.
+- Id attribute completion.
+- Supports Zen Coding completion for class and id attributes.
+- Scans workspace folder for css and scss files.
+- Supports remote css files.
+- Uses vscode-css-languageservice.
+
+
+## IntelliSense for CSS class names in HTML
+Zignd.html-css-class-completion
+- https://github.com/zignd/HTML-CSS-Class-Completion
+- CSS class name completion for the HTML class attribute based on the definitions found in your workspace.
+- Command to manually re-cache the class definitions used in the autocompletion
+
+## IntelliSense for CSS, SCSS class names in HTML and Slim
+gencer.html-slim-scss-css-class-completion
+- CSS and SCSS class name completion for the HTML and Slim class attribute based on the definitions found in your workspace.
+
+## Live Sass Compiler
+ritwickdey.live-sass
+- Live SASS & SCSS Compile.
+- Customizable file location of exported CSS.
+- Customizable exported CSS Style (expanded, compact, compressed, nested).
+- Customizable extension name (.css or .min.css).
+- Quick Status bar control.
+- Exclude Specific Folders by settings.
+- Live Reload to browser (Dependency on Live Server extension).
+- Autoprefix Supported (See setting section)
+
+
+## Easy Compile
+refgd.easy-compile
+- Compile TypeScript and Less/Sass/Scss on save
+- Support autoprefixer for Less/Sass/Scss
+- Support mearge all media queries
+- Support inline setting (Only for Complie)
+- minify .js and .css files
+
+## openapi-lint
+mermade.openapi-lint
+- Validation using oas-validator from OAS-Kit
+- Linting using oas-linter also from OAS-Kit
+- OAS v3 intellisense for files named openapi.json, openapi.yaml, openapi.yml
+- OAS v2 intellisense for files named swagger.json, swagger.yaml, swagger.yml
+- Conversion between JSON and YAML
+- Snippets (minimal valid openapi/swagger JSON and YAML documents)
+
+## JS & CSS Minifier
+olback.es6-css-minify
+- A simple Javascript & CSS minifier.
+- Dependencies
+	- uglify-es
+	- clean-css
+
+## CSS Compressor
+bestvow.css-compressor
+
+
+
+
 
 # New Review (2017-Nov-25)
 ### C#

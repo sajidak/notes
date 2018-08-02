@@ -1,6 +1,49 @@
 # buffer file
 >for temporary editing
 
+## xfers
+|  D  |  M  |       A |
+|:---:|:---:| -------:|
+| 18  | 12  |  39,900 |
+| 08  | 01  | 108,000 |
+| 03  | 02  |  74,250 |
+| 08  | 03  |  91,800 |
+| --  | --  | ------- |
+| 04  | 04  | 101,340 |
+| 05  | 04  |  40,000 |
+| 09  | 05  |  72,000 |
+| 09  | 05  |   6,400 |
+| 26  | 06  | 115,200 |
+
+## ECMA
+- Ecma Internationa
+	- http://ecma-international.org/
+- ECMAScript 2017 Language Specification
+	- https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf
+- ECMAScript compatibility table
+	- http://kangax.github.io/compat-table/es6/
+- ECMAScript 6 — New Features
+	- http://es6-features.org/
+- **ERP =>** "Enterprise resource planning (ERP) is business process management software that allows an organization to use a system of integrated applications to manage the business and automate many back office functions related to technology, services and human resources."
+
+
+
+## tar options
+- Formats
+```
+-j, --bzip2	Filter the archive through bzip2(1).
+-J, --xz	Filter the archive through xz(1).
+--lzip	Filter the archive through lzip(1).
+--lzma	Filter the archive through lzma(1).
+--lzop	Filter the archive through lzop(1).
+-z, --gzip, --gunzip, --ungzip	Filter the archive through gzip(1).
+```
+- Skip folders
+```
+--strip-components=NUMBER
+	   Strip NUMBER leading components from file names on extraction.
+```
+
 ## Used laptops
 - http://rentopc.in
 - HP EliteBook 8440P - i5 - 8GB RAM - 1 TB HDD

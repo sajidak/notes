@@ -1,7 +1,7 @@
 # Building Bootstrap 4.0 locally
 `07-Oct-2017 1224:10:43 +0530`
 
-> for version v4.1.2, on 2018 Jul 22
+> for version v4.1.2, updated on 2018 Jul 22
 ***
 
 ## Notes:

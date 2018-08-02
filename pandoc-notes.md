@@ -132,3 +132,31 @@ abstract: |
 ...
 
 ```
+
+# Paramater oprions
+## Output formats
+> shortlisted by interest
+- docx
+- epub
+- epub2
+- epub3
+- gfm
+- html5
+- json
+- man
+- markdown
+- markdown_github
+- markdown_mmd
+- markdown_phpextra
+- markdown_strict
+- odt
+- opendocument
+- plain
+- pptx
+- revealjs
+- rtf
+- s5
+- slideous
+- slidy
+- texinfo
+- textile

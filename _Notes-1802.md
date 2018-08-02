@@ -1,13 +1,18 @@
 # Notes 1802
 
-## Jul 01 2018 
+## 2018 Jul 27
+### JS ecma-262 9.0
+- ISO 8601 Date Time String Format
+	- `YYYY-MM-DDTHH:mm:ss.sssZ`
+
+## Jul 01 2018
 ### Domain prices - 10 yrs
 .xyz	5670
 .rocks	5890
 .space	3960
 .name	6750
-.guru	
-.today	
+.guru
+.today
 .info	860/
 .co.in	3,990
 .in		4,990
@@ -19,7 +24,7 @@
 ### Small linux
 #### 4MLinux
 - http://4mlinux.com/
-- 4MLinux is a miniature, 32-bit Linux distribution focusing on four capabilities: maintenance (as a system rescue live CD), multimedia (for playing video DVDs and other multimedia files), miniserver (using the inetd daemon), and mystery (providing several small Linux games). The distribution includes support for booting on UEFI-enabled machines. 
+- 4MLinux is a miniature, 32-bit Linux distribution focusing on four capabilities: maintenance (as a system rescue live CD), multimedia (for playing video DVDs and other multimedia files), miniserver (using the inetd daemon), and mystery (providing several small Linux games). The distribution includes support for booting on UEFI-enabled machines.
 
 #### Linux Lite
 CrunchBang++
