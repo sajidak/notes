@@ -31,6 +31,57 @@ ext install darkriszty.markdown-table-prettify
 ext install AlanWalk.markdown-toc
 ext install chrmarti.regex
 
+# To Evaluate
+## VSCode Map Preview
+	jumpinjackie.vscode-map-preview
+- VSCode extension for visually previewing geospatial file content (GeoJSON, KML, etc) on a map
+- Support for various formats is available through the format drivers provided by the OpenLayers library
+
+## Extensible Markdown Converter
+	sakryukov.convert-markdown-
+extend Markdown features by installing any of the "markdown-it" plug-ins that are abundantly available in the npm package registry
+
+## Ionic Preview
+	ionic-preview.ionic-preview
+Preview a live version of your Ionic application in an VS Code pane.
+
+
+
+# Markdown
+> Need both for used formatting
+1. `Markdown All in One`
+2. `Markdown Extended`
+
+## Markdown All in One
+	yzhang.markdown-all-in-one
+Keyboard shortcuts
+Table of contents
+Outline view
+Automatically show preview
+Print Markdown to HTML
+List editing
+GitHub Flavored Markdown
+Override "Open Preview" keybinding with "Toggle Preview"
+* Supports list numbering
+* footnotes not supported
+* definitions not supported
+* abbr no support
+
+## Markdown Extended
+	jebbs.markdown-extended
+Extended syntaxes to built-in markdown & What you see is what you get exporter.
+Export to Self Contained HTML / PDF / PNG / JPEG
+Editing Helpers
+add per-file settings inside markdown to override user settings
+Paste as Markdown Table
+markdown-it-table-of-contents [[TOC]]
+markdown-it-container
+markdown-it-deflist
+* supports footnotes
+* no support lists
+* abbr support
+* definitions
+
 
 ***
 # CSS-SCSS (2018 Aug 01)
