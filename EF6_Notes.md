@@ -1,6 +1,41 @@
-# Entity Framework 6.1.3
+# Entity Framework Core 2.1
+## Links
+- https://docs.microsoft.com/en-us/ef/core/get-started/install/
+- https://www.learnentityframeworkcore.com/walkthroughs/existing-database
+- https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/existing-db
+- http://www.entityframeworktutorial.net/efcore/create-model-for-existing-database-in-ef-core.aspx
+- https://ef.readthedocs.io/en/staging/platforms/aspnetcore/existing-db.html
 
-[TOC]
+### Other
+- https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.1
+- https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-vsc?view=aspnetcore-2.1
+- https://msdn.microsoft.com/en-us/magazine/mt767698.aspx
+-
+- https://blog.couchbase.com/net-core-with-visual-studio-code/
+	- ext install net-core-project-manager or ext install csharp
+- https://blogs.msdn.microsoft.com/benjaminperkins/2017/10/18/how-to-install-nuget-package-in-visual-studio-code-linux-ubuntu/
+- https://docs.microsoft.com/en-us/ef/core/extensions/
+	- https://github.com/ErikEJ/SqlCeToolbox/wiki/EF-Core-Power-Tools
+	- https://github.com/Arch/AutoHistory/
+	- https://github.com/riezebosch/efcore-practices/tree/master/src/EFCore.Practices/
+
+### MySQL
+- https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework-core.html
+- https://www.nuget.org/packages/MySql.Data.EntityFrameworkCore/
+	- https://www.nuget.org/packages/MySql.Data/
+	- https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Relational/
+	- https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/
+	- https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework-core-scaffold-example.html
+	- **[Sample DB - Sakila](https://dev.mysql.com/doc/sakila/en/)**
+	- - **[Sample DB - World](https://dev.mysql.com/doc/world-setup/en/)**
+
+### vscode extensions
+- CSharp2TS [ rafaelsalguero.csharp2ts ]
+- C# XML Documentation Comments [ k--kato.docomment ]
+- XML Tools [ qub.qub-xml-vscode ]
+- XML Tools [ dotjoshjohnson.xml ]
+
+# Entity Framework 6.1.3
 
 ## Further Reading
 - [T4 Templates](https://www.exceptionnotfound.net/using-t4-templates-to-generate-enums-from-database-lookup-tables/)
@@ -27,7 +62,7 @@
 
 ## Lookup Tables
 - lookup tables are more flexible than enumerations
-- ou can usually bind lookup tables to UI features (like dropdown lists) more easily than you can bind enumerated values;
+- You can usually bind lookup tables to UI features (like dropdown lists) more easily than you can bind enumerated values;
 - lookup tables can be integrated into SQL statements where Enums can not;
 
 

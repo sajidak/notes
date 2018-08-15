@@ -32,6 +32,14 @@ ext install AlanWalk.markdown-toc
 ext install chrmarti.regex
 
 # To Evaluate
+## Markdown Preview Github Styling
+    bierner.markdown-preview-github-styles
+Changes VS Code's built-in markdown preview to match Github's style
+
+## Markdown Preview with Bitbucket Styles
+    hbrok.markdown-preview-bitbucket
+Replaces the Markdown preview with Bitbucket styles.
+
 ## VSCode Map Preview
 	jumpinjackie.vscode-map-preview
 - VSCode extension for visually previewing geospatial file content (GeoJSON, KML, etc) on a map
