@@ -47,7 +47,7 @@ M&V Associates | MNV Information Technologies
 Mail : vkandaswamy@mnvsol.com
 
 Seenibabu Ramalu -Technical Recruiter
-#55, Divyashree Towers | 5th Floor, Bannerghatta Road | Bangalore-560029, INDIA
+55, Divyashree Towers | 5th Floor, Bannerghatta Road | Bangalore-560029, INDIA
 +91 80 30705473 Ext 55473
 
 Swamy

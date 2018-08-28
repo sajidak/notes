@@ -32,14 +32,6 @@ ext install AlanWalk.markdown-toc
 ext install chrmarti.regex
 
 # To Evaluate
-## Markdown Preview Github Styling
-    bierner.markdown-preview-github-styles
-Changes VS Code's built-in markdown preview to match Github's style
-
-## Markdown Preview with Bitbucket Styles
-    hbrok.markdown-preview-bitbucket
-Replaces the Markdown preview with Bitbucket styles.
-
 ## VSCode Map Preview
 	jumpinjackie.vscode-map-preview
 - VSCode extension for visually previewing geospatial file content (GeoJSON, KML, etc) on a map
@@ -54,11 +46,14 @@ extend Markdown features by installing any of the "markdown-it" plug-ins that ar
 Preview a live version of your Ionic application in an VS Code pane.
 
 
-
 # Markdown
 > Need both for used formatting
 1. `Markdown All in One`
 2. `Markdown Extended`
+
+## Markdown Preview Github Styling
+	bierner.markdown-preview-github-styles
+Changes VS Code's built-in markdown preview to match Github's style
 
 ## Markdown All in One
 	yzhang.markdown-all-in-one

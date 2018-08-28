@@ -98,13 +98,12 @@ Wa Barik Wa Sallim Alai
 - Wa Rafa-Naa Laka Zikrak (4)
 
 ***
-- Fa-Inna Ma_Al  Us-Ri Yusra (5)
+- Fa-Inna Ma_Al Us-Ri Yusra (5)
 - Inna Ma_Al Usri Yusraa (6)
 - Fa-Izaa Faraghta Fansab (7)
 - Wa Ilaa Rabbika Farghab (8).
 
 ***
-
 
 ## D. Surah Ikhlaas (3 Times)
 `Bismillaahir-Rahmaanir-Rahiim`
@@ -222,6 +221,11 @@ Wa Aa-law Aa-lay Syedna Mahommedioun
 Wa Saha-bey Syedna Mahommedioun
 Wa Barik Wa Sallim Alai
 ```
+
+### P. Surah Yunus (62-63)
+- Alaa innaa awliyaaa'al laahi laa khawfun 'alaihim wa laa hoom yahzanoon
+- Allazeena aamanoo wa kaanoo yattaqoon
+
 Bi Fazli Subhana Rabbika Rabbil Izzati Amma Yasifun
 Wa-Salamun Alal Mur-Saliin
 Wal-Hamdu-Lillalah-Hi Rabbil Aa-Lamiin
@@ -254,4 +258,4 @@ Bi-Rehmatika Ya Arra-Hamar-Ra-Hi-Miin
 
 ***
 
-`Last updated: Sat, 10-Jun-2017 09:06:43 +0530`
+`Last updated: Thu, 16-Aug-2018 19:06:15.346 +0530`
