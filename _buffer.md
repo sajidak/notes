@@ -26,6 +26,10 @@
 	- http://es6-features.org/
 - **ERP =>** "Enterprise resource planning (ERP) is business process management software that allows an organization to use a system of integrated applications to manage the business and automate many back office functions related to technology, services and human resources."
 
+## Links
+- https://nationalinterest.org/blog/the-buzz/smith-wessons-44-magnum-revolver-why-you-should-fear-the-23860
+- https://www.ibtimes.co.in/photos/staggering-facts-that-will-prove-that-indian-army-no-joke-17832-slide-97277?utm_source=outbrain.com&utm_content=The+National+Interest&utm_medium=outbrain&utm_campaign=promoted&utm_term=inibtinm_17832
+- https://paid.outbrain.com/network/redir?p=TNPXJGtBNbDRLn1fZB9eTSw1SOVZDFZwV1Lbzv4E-YZIJ767Lx98kwNgtkAZbXrxA2TIFWLLFcrCuGaXrKz-WnVsjBQosWPXdj2A7ygBXOW2AZCQ5MSvVvfePX7tmeJnamZn0LNZIh--iATrjY-7tMfurqHNjY2eQFaJhcPCyM6JbOfXlRr__GoAtooubiJSVOD5Yr2Lz6GTDkhpJp58j72xjyZc7fA18E6Aczb3r4aKjXgqQ2uud1t90DJJ3u6bwBBnc8s-BbpQXKcUWIH3u8QYs4Ma2z2WoJ7XdKcE4ZAzEDY3mM9FN2Lww3E9B4QNA3i5vWfLXbAEp9Fs8wKhSnAbQXEOh5QG3zBIh9D5Km5_U2-D2n-XA-jQlKktX5f776zrEMXQn4vdZOKoJbsrkU8q56ckuewCajAGGyJUZXIDeZyC3eJwP1wkoq7zJayMEXFPo-MDQBA1VX8ZMQxfaa6iR75xkV9oD6ugKDQGDGLGZ2bcTenfS5p0uQzqagZyEuIj3mg-me7lVXreI0qFQmDAapMH4jsJN9bLjzubdcCACwhvTyBnUyOVmLOvKhaODbLs-HmisGT4gwT-IiNCGqj4u8HP9gTqQOmFjjxqN8mpUxPTbARfr-i5AdQb4m9jQuGj31LC92prvs1tLxaxEZ0m5z2SgH6SQG7piSUfgDHsypKjvAIbyFFTXk_g4iRkwwv52KP9i1Ivx1xWSAzImKIuinO3q3ECWmv3_Owf_6ioyhjWDI5laZBEArGC910u9-8GOAbP1ZAFRarqrO-2p9hdca843hGqiQQyiiTnPO1N5B6YM6cU0CXhBCNW1WLujQRp3NmKW3-fNivx7hjuxdP6aniepaGtwGFC5JQ08nMfxiMEBeMB1EuwfaBkDmzFK-Cp-VQVFXP0hcTrcYk2QRB1BTWT033Yh0Zt7S-tmB5brkuSKVql9pmEbs0ujTBgyHCTDXv4pWwEy8M89NNNQCDtd2jXNhCLmER2ckIL2VOmCQbCGfDrsy4u7xGVElL0&c=3633bed4&v=3
 
 
 ## tar options
