@@ -1,7 +1,10 @@
-# EF Core
+# Entity Framework Core
+> https://docs.microsoft.com/en-us/ef/core/index
 
 ## Links
 - Docs at https://docs.microsoft.com/en-us/ef/core/
+- Entity Framework Core API Reference
+	- https://docs.microsoft.com/en-us/dotnet/api/?view=efcore-2.1
 - `dotnet ef dbcontext scaffold`
 	```
 	dotnet add package Microsoft.EntityFrameworkCore.Design
@@ -11,7 +14,6 @@
 - vSCode at
 	- https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-vsc?view=aspnetcore-2.1
 	- https://www.learnentityframeworkcore.com/walkthroughs/aspnetcore-application
-	-
 
 
 ## with an Existing Database
@@ -39,10 +41,11 @@
 
 	// This method gets called by the runtime. Use this method to add services to the container.
 	public void ConfigureServices(IServiceCollection services)
-	{
-	/*	services.Configure<CookiePolicyOptions>(options =>
+	{	/*
+		services.Configure<CookiePolicyOptions>(options =>
 		{
-		});	*/
+		});
+		*/
 
 		services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -50,3 +53,14 @@
 		services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
 	}
 	```
+
+## Concurrency Tokens
+> https://docs.microsoft.com/en-us/ef/core/modeling/concurrency
+
+## Injecting services
+- EF Core can also inject "services" into an entity type's constructor.
+
+## State change events
+> https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-2.1
+- New Tracked And StateChanged events on ChangeTracker can be used to write logic that reacts to entities entering the DbContext or changing their state.
+- https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.changetracker?view=efcore-2.1
