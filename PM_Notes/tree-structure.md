@@ -62,9 +62,8 @@
 	- 540-Automation
 - 60-Release
 	- README.md
+	- Changelog.md
 	- 610-ReleaseNotes
-		- README.md
-	- 620-Changelog.md
 		- README.md
 - 70-Track
 	- README.md

@@ -1,6 +1,21 @@
 # Ubuntu Notes
 > Mon, 24-Sep-2018 13:46:16.372 +0530
 
+## Mount folder on another folder
+- Command
+	```sh
+	sudo mount -o bind /sourcefolderurl /destinationfolderurl
+	# e.g.
+	sudo mount -o bind /var/cache/apt/archives/ /media/sda7/ftpshared/archives
+	# USAGE
+	SRC_DIR="";
+	DST_DIR="${HOME}/.nuget/packages";
+	sudo mount -o bind ${SRC_DIR} ${DST_DIR};
+	```
+- To automatically mount the folder, make an entry in /etc/fstab file at the very end,
+	`/var/cache/apt/archives /media/sda7/ftpshared/archives auto bind,gid=46,defaults 0 0`
+
+
 ## Create Archive
 - Verbose
 	```sh
@@ -18,7 +33,7 @@
 	```
 - Silent Mode, do not print file names that are added.
 	```sh
-	zip -vq ${OUT_ZIP_NAME} ${SRC_ROOT};
+	zip -qr ${OUT_ZIP_NAME} ${SRC_ROOT};
 	```
 ***
 
@@ -33,7 +48,7 @@ sudo dpkg-deb -vx ${DEB_FILE} ${DIR_DEST};
 	- `dpkg-deb -R original.deb tmp`
 
 ### .bz2
-- NOTE: Inspect archive to verify if contents are at root level.
+- **NOTE**: Inspect archive to verify if contents are at root level.
 - Also see `zip` and `unzip`
 
 ```sh
