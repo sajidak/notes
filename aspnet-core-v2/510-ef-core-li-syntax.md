@@ -2,11 +2,58 @@
 > Captured from terminal with `--help` option.
 
 ## Samples
-- Sample 0
-	- This will be the updated code that can be run directly for the project.
+- **Sample 0** - updated code that can be run directly for the project.
+	```sh
+	# Pre-Requisites
+	dotnet add package Microsoft.EntityFrameworkCore.Design
+	dotnet add package Pomelo.EntityFrameworkCore.MySql
+	# or
+	# dotnet add package Pomelo.EntityFrameworkCore.MySql.Signed
+
+	# From Round 3
+	dotnet ef dbcontext scaffold \
+		"server=127.0.0.1;port=3306;user=app-dev-rw;password=c74d1f656ae12fcc;database=APP_DB" \
+		Pomelo.EntityFrameworkCore.MySql \
+		-v -f \
+		-d \
+		-o dbsets \
+		-c rnv2_DBContext \
+		--use-database-names \
+		--framework netcoreapp2.1
+
+	# in single line
+	dotnet ef dbcontext scaffold "server=127.0.0.1;port=3306;user=app2-dev-rw;password=c74d1f656ae12fcc;database=APP_DB" Pomelo.EntityFrameworkCore.MySql -v -f -d -o dbsets -c rnv2_DBContext --use-database-names --framework netcoreapp2.1
+	```
+
+	- Read https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql
+	- Section `3. Services Configuration`
+	- Add Pomelo.EntityFrameworkCore.MySql to the services configuration in your the Startup.cs file.
+	```cs
+	using System;
+	using Microsoft.EntityFrameworkCore;
+	using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+
+	namespace YourNamespace // replace "YourNamespace" with the namespace of your application
+	{
+	  public class Startup
+	  {
+	    public void ConfigureServices(IServiceCollection services)
+	    {
+	      // other service configurations go here
+	      services.AddDbContextPool<YourDbContext>( // replace "YourDbContext" with the class name of your DbContext
+	        options => options.UseMySql("Server=localhost;Database=ef;User=root;Password=123456;", // replace with your Connection String
+	          mysqlOptions =>
+	          {
+	          	mysqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); // replace with your Server Version and Type
+	          }
+	      ));
+	    }
+	  }
+	}
+	```
 
 
-- Sample 1 - MS SQL
+- Sample 1 - MS SQL, from documentation
 	```sh
 	# from https://www.learnentityframeworkcore.com/walkthroughs/existing-database
 
@@ -41,7 +88,7 @@
 	  Microsoft.EntityFrameworkCore.SqlServer \
 	  -o Model
 	```
-- Sample 2 - MySQL
+- Sample 2 - MySQL, from documentation
 	```sh
 	# from https://docs.oracle.com/cd/E17952_01/connector-net-en/connector-net-entityframework-core-scaffold-example.html
 

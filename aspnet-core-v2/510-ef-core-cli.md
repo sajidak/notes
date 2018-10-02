@@ -3,6 +3,13 @@
 
 The .NET Core SDK version 2.1.300 and newer includes dotnet ef commands that are compatible with EF Core 2.0 and later versions.
 
+## Links
+- EF Core .NET CLI
+	- https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet
+	- https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dbcontext-creation
+
+
+
 ## dotnet ef --help
 ```text
 Entity Framework Core .NET Command-line Tools 2.1.3-rtm-32065
