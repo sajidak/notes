@@ -15,6 +15,40 @@
 | 09  | 05  |   6,400 |
 | 26  | 06  | 115,200 |
 
+
+## Induction Cooker
+- Flipkart
+	- Prestige PIC 24.0 Induction Cooktop
+	- Pigeon Favourite IC 1800 W Induction Cooktop
+
+
+## Hosting of interest
+
+- https://www.sslforfree.com/
+- https://www.sslforfree.com/create?domains=somesite.com+www.somesite.com
+- https://domainname.shop/webhotel
+- https://www.inspedium.com/web-hosting/unlimited/#
+
+- Viable
+	- https://www.mythic-beasts.com/hosting
+	- https://www.a2hosting.com/
+
+
+- explore
+	- https://www.vultr.com/promo/ssd-server-100/
+	- https://nowindiaonline.in/windows-web-hosting.html
+	- https://www.aspify.com/en/webhosting/aspnet-freehosting/
+	- https://www.a2hosting.com/web-hosting/windows/compare
+	- https://www.a2hosting.com/web-hosting/linux/compare
+	- https://alpha.net.bd/Hosting/Windows/AspNet.html
+	- https://buyshared.net/shared-cpanel-hosting/
+	- https://www.squarespace.com/
+	- https://neocities.org/
+	- https://wordpress.com/pricing/
+	- https://hosting.blueboard.cz/en/
+	-
+
+
 ## ECMA
 - Ecma Internationa
 	- http://ecma-international.org/

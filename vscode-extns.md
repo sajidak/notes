@@ -32,6 +32,50 @@ ext install AlanWalk.markdown-toc
 ext install chrmarti.regex
 
 # To Evaluate
+**2018 Oct 03**
+
+## Table Formatter
+	shuworks.vscode-table-formatter
+- very simple table formatter
+
+## XML Format
+	mikeburgh.xml-format
+- Format XML documents, without changing the content within elements.
+- uses vkBeautify for xml formating
+
+## XML Tools
+	DotJoshJohnson.xml
+> Look more
+- XML Formatting
+- XML Tree View
+- XPath Evaluation
+- XQuery Linting
+- XQuery Execution
+- XQuery Code Completion
+
+
+## XML Tools
+	qub.qub-xml-vscode
+> does not split attrs, will align if already split
+- Format XML documents (Alt+Shift+F)
+- Error messages for not well-formed XML documents
+- Hover text for declaration name and attribute names
+- Auto-completion for declaration name and attribute names and values
+- Hover text for DOCTYPE name
+- Auto-completion for end tag name
+- Automatically close elements on start tag's closing right angle bracket ('>')
+- Automatically close CDATA on second left square bracket ('[')
+- Automatically close comments on second dash ('-')
+
+
+## XML Formatter
+	fabianlauer.vs-code-xml-format
+- A simple wrapper around https://github.com/FabianLauer/tsxml/ for formatting XML
+- only complete documents can be formatted
+- Open an XML document, press Ctrl+Alt+P and enter 'Format Code'.
+
+**Older**
+
 ## VSCode Map Preview
 	jumpinjackie.vscode-map-preview
 - VSCode extension for visually previewing geospatial file content (GeoJSON, KML, etc) on a map

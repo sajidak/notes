@@ -15,11 +15,11 @@ see https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/
 
 ## Sections
 - To instruct the view engine to ignore the body or sections, call the IgnoreBody and IgnoreSection methods.
-```
-@section Scripts {
-     <script type="text/javascript" src="/scripts/main.js"></script>
-   }
-```
+	```
+	@section Scripts {
+	     <script type="text/javascript" src="/scripts/main.js"></script>
+	   }
+	```
 
 ## Tag Helper
 
@@ -56,4 +56,4 @@ return View("Views/Home/About.cshtml");
     1. Views/[ControllerName]/[ViewName].cshtml
     2. Views/Shared/[ViewName].cshtml
 - If using an absolute path starting at the app root (optionally starting with "/" or "~/"), the .cshtml extension must be specified:
-- 
+ 

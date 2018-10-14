@@ -78,47 +78,73 @@ see [Dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamen
 		- created the first time they're requested
 		- or when ConfigureServices is run
 
-```cs
-public void ConfigureServices(IServiceCollection services)
-{
-    services.Configure<CookiePolicyOptions>(options =>
-    {
-        options.CheckConsentNeeded = context => true;
-        options.MinimumSameSitePolicy = SameSiteMode.None;
-    });
+	```cs
+	public void ConfigureServices(IServiceCollection services)
+	{
+	    services.Configure<CookiePolicyOptions>(options =>
+	    {
+	        options.CheckConsentNeeded = context => true;
+	        options.MinimumSameSitePolicy = SameSiteMode.None;
+	    });
 
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+	    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-    services.AddScoped<IMyDependency, MyDependency>();
-    services.AddTransient<IOperationTransient, Operation>();
-    services.AddScoped<IOperationScoped, Operation>();
-    services.AddSingleton<IOperationSingleton, Operation>();
-    services.AddSingleton<IOperationSingletonInstance>(new Operation(Guid.Empty));
+	    services.AddScoped<IMyDependency, MyDependency>();
+	    services.AddTransient<IOperationTransient, Operation>();
+	    services.AddScoped<IOperationScoped, Operation>();
+	    services.AddSingleton<IOperationSingleton, Operation>();
+	    services.AddSingleton<IOperationSingletonInstance>(new Operation(Guid.Empty));
 
-    // OperationService depends on each of the other Operation types.
-    services.AddTransient<OperationService, OperationService>();
-}
-```
+	    // OperationService depends on each of the other Operation types.
+	    services.AddTransient<OperationService, OperationService>();
+	}
+	```
 - Framework-provided services
 	- Initially, the IServiceCollection provided to ConfigureServices has the following services defined (depending on how the host was configured):
-  
+
 	| Service Type                                                    | Lifetime  |
 	| --------------------------------------------------------------- | --------- |
-	| Microsoft.AspNetCore.Hosting.Builder.IApplicationBuilderFactory | Transient |
-	| Microsoft.AspNetCore.Hosting.IApplicationLifetime               | Singleton |
-	| Microsoft.AspNetCore.Hosting.IHostingEnvironment                | Singleton |
-	| Microsoft.AspNetCore.Hosting.IStartup                           | Singleton |
-	| Microsoft.AspNetCore.Hosting.IStartupFilter                     | Transient |
-	| Microsoft.AspNetCore.Hosting.Server.IServer                     | Singleton |
-	| Microsoft.AspNetCore.Http.IHttpContextFactory                   | Transient |
-	| Microsoft.Extensions.Logging.ILogger<T>                         | Singleton |
-	| Microsoft.Extensions.Logging.ILoggerFactory                     | Singleton |
-	| Microsoft.Extensions.ObjectPool.ObjectPoolProvider              | Singleton |
-	| Microsoft.Extensions.Options.IConfigureOptions<T>               | Transient |
-	| Microsoft.Extensions.Options.IOptions<T>                        | Singleton |
-	| System.Diagnostics.DiagnosticSource                             | Singleton |
-	| System.Diagnostics.DiagnosticListener                           | Singleton |
+	| `Microsoft.AspNetCore.Hosting.Builder.IApplicationBuilderFactory` | Transient |
+	| `Microsoft.AspNetCore.Hosting.IApplicationLifetime`               | Singleton |
+	| `Microsoft.AspNetCore.Hosting.IHostingEnvironment`                | Singleton |
+	| `Microsoft.AspNetCore.Hosting.IStartup`                           | Singleton |
+	| `Microsoft.AspNetCore.Hosting.IStartupFilter`                     | Transient |
+	| `Microsoft.AspNetCore.Hosting.Server.IServer`                     | Singleton |
+	| `Microsoft.AspNetCore.Http.IHttpContextFactory`                   | Transient |
+	| `Microsoft.Extensions.Logging.ILogger<T>`                         | Singleton |
+	| `Microsoft.Extensions.Logging.ILoggerFactory`                     | Singleton |
+	| `Microsoft.Extensions.ObjectPool.ObjectPoolProvider`              | Singleton |
+	| `Microsoft.Extensions.Options.IConfigureOptions<T>`               | Transient |
+	| `Microsoft.Extensions.Options.IOptions<T>`                        | Singleton |
+	| `System.Diagnostics.DiagnosticSource`                             | Singleton |
+	| `System.Diagnostics.DiagnosticListener`                           | Singleton |
 
+### DI in Views
+
+- In View
+	```
+	@inject StatisticsService StatsService
+
+	<ul>
+	<li>Total Items: @StatsService.GetCount()</li>
+	<li>Completed: @StatsService.GetCompletedCount()</li>
+	<li>Avg. Priority: @StatsService.GetAveragePriority()</li>
+	</ul>
+	```
+- In `ConfigureServices(IServiceCollection services)`
+	```cs
+	services.AddTransient<StatisticsService>();
+	```
+- Class
+	```cs
+	public class StatisticsService
+	{
+	  public int GetCount()
+	  {
+	    return _toDoItemRepository.List().Count();
+	  }
+	}
+	```
 
 ## Environments
 see Use [multiple environments](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-2.1)

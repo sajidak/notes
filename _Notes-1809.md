@@ -1,5 +1,19 @@
 # Notes 2018 Sep 16
 
+Sun, 07-Oct-2018 00:12:35.788 +0530
+
+## Ubu8ntu Fonts
+- fonts-liberation2
+	- Fonts with the same metrics as Times, Arial and Courier (v2)
+- fonts-liberation
+	- Fonts with the same metrics as Times, Arial and Courier
+- fonts-arkpandora
+	- Replacement fonts for Microsoft's Arial, Times, and Verdana fonts
+- fonts-urw-base35
+	- font set metric-compatible with the 35 PostScript Level 2 Base Fonts
+- fonts-gfs-artemisia
+	- greek font (Times Greek-like)
+
 Sun, 16-Sep-2018 21:57:02.360 +0530
 
 ## Mavenlink
