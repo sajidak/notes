@@ -146,7 +146,11 @@ public class ProductsApiController : Controller
 }
 ```
 
-### Token replacement in route templates ([controller], [action], [area])
+### Token replacement in route templates
+- `[controller]`
+- `[action]`
+- `[area]`
+
 
 ### route optional parameters, default values, and constraints
 - e.g. 1
