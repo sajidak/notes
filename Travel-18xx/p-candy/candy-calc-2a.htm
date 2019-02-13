@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+	<!--
+	Application created to ease
+	effort in calculating day sales,
+	and to reduce error probability.
+	
+	(c) 2017-2018, લાજવાબ ગૃહ ઉઘોગ, બોરસદ
+	
+	Version 1.0.3
+	- 12-jan-2018 change commission to 40%
+	- 14-feb-2018 change 7 to 10
+	-->
+<html lang="gu">
+<head>
+	<title>Candy calculator</title>
+	<meta charset="utf-8" />
+
+<style>
+* {
+	color: #444444;
+	font-size: 1.5em;
+	text-align: center;
+	}
+h1 {
+	color: #111;
+	font-size: 5rem;
+	margin: 5px 5px;
+	text-shadow: 
+	  #777 1px 3px 2px
+	, #aaa 1px 7px 3px;
+	}
+
+td {
+	font-size: 0.7rem;
+	color: #aaa;
+	}
+th {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #444;
+	text-align: center;
+	}
+	
+input {
+	font-size: 2.5rem;
+	letter-spacing: 4px;
+	width: 80%;
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #8F00BB;
+	border-radius: 5px;
+	box-sizing: border-box;
+	}
+input[type=number]{
+	text-align: right;
+	}
+input[type=number]:focus{
+	background-color: #FFFEC8;
+	border: 2px solid #8F00BB;
+	box-shadow: 10px 10px 5px #888888;
+	}
+input[disabled]{
+	background-color: #fff;
+	border: 0px solid;
+	box-shadow: none;
+	}
+.pnam {
+	width: 90%;
+	font-size: 2.5rem;
+	font-weight: bold;
+	letter-spacing: 3px;
+	padding: 10px;
+	border-width: 0px 0px 1px 0px;
+	margin: -10px 0px 25px 0px;
+	}
+.pltot {
+	}
+
+button {
+	width: 80%;
+	font-size: 3rem;
+	font-weight: bold;
+	letter-spacing: 4px;
+	margin: 10px;
+	padding: 15px;
+	border: 1px solid #650084;
+	border-radius: 10px;
+	box-sizing: border-box;
+	box-shadow: 9px 9px 5px #888888;
+	}
+.btncalc {
+	background-color: #00ff00;
+	}
+.btnres  {
+	background-color: #ff0000;
+	}
+	
+.sumbox{
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 5px;
+	margin: 10px;
+	border: 1px solid #650084;
+	box-shadow: 5px 5px 5px #888888;
+	}
+.st {
+	color: #5A9FFF;
+	}
+.sc {
+	color: #E9ADF2;
+	}
+.sr {
+	color: #428200;
+	font-size: 1.5em;
+	text-shadow: 
+	  #777 1px 3px 2px
+	, #aaa 1px 7px 3px
+	;
+	}
+	
+.crtxt {
+	width: 100%;
+	font-size: 1rem;
+	text-align: center;
+	padding: 3px 3px;
+	margin: 40px 0px 0px 0px;
+	border-width: 1px 0px 0px 0px;
+	border-color: #777;
+	border-style: solid
+	}
+	
+</style>
+
+<script>
+// SYSTEM CONSTANTS
+const __comrate = 0.40;
+const __itemcount = 4;
+	
+// quick & dirty
+function processCart(){
+	// get dats
+	var vr = document.frmcart.ir;
+	var vl = document.frmcart.il;
+	var vb = document.frmcart.ib;
+	var vs = document.frmcart.im;
+		
+	// process line items
+	var _lsale = 0;
+	var _tsale = 0;
+	for (var i = 0; i < __itemcount; i++){
+		_lsale 
+			= vr[i].value 
+			* (vl[i].value - vb[i].value);
+		vs[i].value = _lsale;
+		_tsale += _lsale;
+		}
+			
+	// process summary
+	var _comsn = _tsale * __comrate;
+	var _remit = _tsale - _comsn;
+	var _sumry = ""
+		+ "<span class='st'>" 
+			+ Math.round(_tsale) 
+			+ "</span><span> - </span>"
+		+ "<span class='sc'>" 
+			+ Math.round(_comsn) 
+			+ "</span><span> = </span>"
+		+ "<span class='sr'>" 
+			+ Math.round(_remit) 
+			+ "</span>"
+		+ "";
+	
+	document
+		.getElementsByName("dvsum")[0]
+		.innerHTML 
+		= _sumry;
+	
+	// bring summary into focus
+	document
+		.getElementsByName("btnres")[0]
+		.focus();
+	}
+	
+// reset page to initial state
+function resetform(){
+	document.frmcart.reset();
+	document
+		.getElementsByName("dvsum")[0]
+		.innerHTML 
+		= "&nbsp";
+	}
+
+// add event handlers to select all text
+function selecttext(){
+	this.select();
+	return false;
+	}
+function setfocusEH(){
+	var vl = document.frmcart.il;
+	var vb = document.frmcart.ib;
+	for (var i = 0; i < __itemcount; i++){
+		vl[i].addEventListener(
+				  "focus"
+				, selecttext
+				, false
+				);
+		vb[i].addEventListener(
+					  "focus"
+					, selecttext
+					, false
+					);
+		}
+	}
+</script>
+</head>
+<body>
+
+<h1>લારી ગણકયંત્ર</h1>
+<form name="frmcart" lang="gu">
+		
+<!-- CART INFO -->
+<!--
+<div class="lbl">લારી ન઼વર</div>
+<input 
+	type="number" 
+	size="2" 
+	maxlength="2" 
+	placeholder="00" 
+	pattern="[0-9]{2}" 
+	lang="gu" 
+	autofocus/>
+	
+<div class="lbl">ફેરીયા નામ</div>
+-->
+<input type="text" class="pnam" 
+	placeholder="ફેરીયા નામ" 
+	/>
+
+
+<!-- PRODUCT LIST -->
+<table width="95%">
+<thead>
+<tr>
+<th width="15%">કેનડી</th>
+<th width="25%">લોડ</th>
+<th width="25%">રીટન</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+
+<tbody>
+<!-- line item 2  -->
+<tr>
+	<td>
+	<input type="text" name="ir" 
+		value="2" 
+		disabled /></td>
+	<td>
+	<input type="number" name="il" 
+		min="0" max="999" step="1" 
+		value="0" pattern="\d{1,3}"
+		required/> 2</td>
+	<td>
+	<input type="number" name="ib" 
+		min="0" max="999" step="1" 
+		value="0" 
+		required/> 2</td>
+	<td>
+	<input type="number" name="im" 
+		class="pltot" disabled/> 2</td>
+</tr>
+
+<!-- line item 3  -->
+<tr>
+	<td>
+	<input type="text" name="ir" 
+		value="3" 
+		disabled /></td>
+	<td>
+	<input type="number" name="il" 
+		min="0" max="999" step="1" 
+		value="0" pattern="\d{1,3}"
+		required/> 3</td>
+	<td>
+	<input type="number" name="ib" 
+		min="0" max="999" step="1" 
+		value="0" 
+		required/> 3</td>
+	<td>
+	<input type="number" name="im" 
+		class="pltot" disabled/> 3</td>
+</tr>
+
+<!-- line item 5  -->
+<tr>
+	<td>
+	<input type="text" name="ir" 
+		value="5" 
+		disabled /></td>
+	<td>
+	<input type="number" name="il" 
+		min="0" max="999" step="1" 
+		value="0" pattern="\d{1,3}"
+		required/> 5</td>
+	<td>
+	<input type="number" name="ib" 
+		min="0" max="999" step="1" 
+		value="0" 
+		required/> 5</td>
+	<td>
+	<input type="number" name="im" 
+		class="pltot" disabled/> 5</td>
+</tr>
+
+<!-- line item 10  -->
+<tr>
+	<td>
+	<input type="text" name="ir" 
+		value="10" 
+		disabled /></td>
+	<td>
+	<input type="number" name="il" 
+		min="0" max="999" step="1" 
+		value="0" pattern="\d{1,3}"
+		required/> 10</td>
+	<td>
+	<input type="number" name="ib" 
+		min="0" max="999" step="1" 
+		value="0" 
+		required/> 10</td>
+	<td>
+	<input type="number" name="im" 
+		class="pltot" disabled/> 10</td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="button" class="btncalc" 
+	onclick="processCart();"
+	>ગોઠવણી કરવી</button>
+
+</form>
+	
+<!-- SUMMARY -->
+<div class="sumbox" name="dvsum"
+	>&nbsp;</div>
+
+<button type="button" class="btnres" 
+	onclick="resetform();"
+	>ફરીથી સેટ કરો</button>
+
+<div 
+	class="crtxt"
+	>&#169; 2017-2018, લાજવાબ ગૃહ ઉઘોગ, બોરસદ
+    <br/>r2, 14-feb-2018</div>
+</body>
+<script>
+	setfocusEH();
+</script>
+</html>

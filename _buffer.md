@@ -16,6 +16,11 @@
 | 26  | 06  | 115,200 |
 
 
+## Date in DOS Batch
+```
+Timestamp = %date:~4,2%%date:~7,2%%date:~10,4%_%time:~0,2%%time:~3,2%%time:~6,2%
+```
+
 ## Induction Cooker
 - Flipkart
 	- Prestige PIC 24.0 Induction Cooktop

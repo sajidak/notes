@@ -1,7 +1,7 @@
 # Building Bootstrap 4.0 locally
 `07-Oct-2017 1224:10:43 +0530`
 
-> for version v4.1.2, updated on 2018 Jul 22
+> for version v4.3.0, updated on 2019 Feb 13
 ***
 
 ## Notes:
@@ -10,7 +10,7 @@
 	- https://popper.js.org/
 
 ***
-## v 4.1.2
+## v 4.3.0
 ### Pre-Requisites
 - [ ] `sudo apt-get install build-essential manpages-dev zlib1g-dev`
 	- To verify installation
@@ -27,11 +27,11 @@
 		```
 
 - [ ] nodejs
-	- `node -v` = v8.11.3
+	- `node -v` = v11.9.0
 
 - [ ] `npm install -g grunt-cli`
 	- `sudo ln -s /20-DEV/node/lib/node_modules/grunt-cli/bin/grunt /bin/grunt`
-	- `grunt -v` = grunt-cli: The grunt command line interface (v1.2.0)
+	- `grunt -v` = grunt-cli: The grunt command line interface (v1.3.2)
 
 - [ ] Ruby
 	- `sudo apt-get install ruby-full`
@@ -45,7 +45,7 @@
 
 ### Setup/Update Environment
 
-- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.1.2`
+- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0`
 	- **Important:** Set working folder before proceeding.
 
 - [ ] `npm install`
@@ -66,7 +66,7 @@
 - Update Source files
 `cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss scss/_custom.scss`
 
-- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.1.2`
+- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0`
 	- **Important:** Set working folder before proceeding.
 
 - `npm run dist`
@@ -114,8 +114,8 @@ bundler (1.16.0.pre.3, 1.15.4)
 **Commands executed, to make a shell script**
 > out of date, needs to be updated
 ```sh
-LOGROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0-beta/build-logs
-BS4ROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.0.0-beta/
+LOGROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0/build-logs
+BS4ROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0/
 
 pushd ${BS4ROOT}
 mkdir -p ${LOGROOT}
