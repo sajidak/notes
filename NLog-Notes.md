@@ -13,8 +13,131 @@ NLog.config
 - In the `<rules>` section, add:
 `<logger name="*" minlevel="Info" writeTo="logfile" />`
 
+***
+> Content added on Thu, 21-Feb-2019 13:44:31.389 +0530
+***
+
+## File Target
+- e.g.
+	```xml
+	<target name="file" xsi:type="File"
+	        layout="${longdate} ${logger} ${message}"
+	        fileName="${basedir}/logs/logfile.txt"
+	        archiveFileName="${basedir}/archives/log.{#}.txt"
+	        archiveEvery="Day"
+	        archiveNumbering="Rolling"
+	        maxArchiveFiles="7"
+	        concurrentWrites="true"
+	        keepFileOpen="false"
+	        encoding="iso-8859-2" />
+	<target name="file" xsi:type="File"
+			layout="${longdate} ${logger} ${message}"
+			fileName="${basedir}/logs/logfile.txt"
+			archiveFileName="${basedir}/archives/log.{#####}.txt"
+			archiveAboveSize="10240"
+			archiveNumbering="Sequence"
+			concurrentWrites="true"
+			keepFileOpen="false"
+			encoding="iso-8859-2" />
+	```
+- Configuration Syntax
+	```xml
+	<target xsi:type="File"
+			name="String"
+			layout="Layout"
+			header="Layout"
+			footer="Layout"
+			encoding="Encoding"
+			lineEnding="Enum"
+			archiveAboveSize="Long"
+			maxArchiveFiles="Integer"
+			archiveFileName="Layout"
+			archiveNumbering="Enum"
+			archiveDateFormat="String"
+			archiveEvery="Enum"
+			archiveOldFileOnStartup="Boolean"
+			replaceFileContentsOnEachWrite="Boolean"
+			fileAttributes="Enum"
+			fileName="Layout"
+			deleteOldFileOnStartup="Boolean"
+			enableFileDelete="Boolean"
+			createDirs="Boolean"
+			concurrentWrites="Boolean"
+			openFileFlushTimeout="Integer"
+			openFileCacheTimeout="Integer"
+			openFileCacheSize="Integer"
+			networkWrites="Boolean"
+			concurrentWriteAttemptDelay="Integer"
+			concurrentWriteAttempts="Integer"
+			bufferSize="Integer"
+			autoFlush="Boolean"
+			keepFileOpen="Boolean"
+			forceManaged="Boolean"
+			enableArchiveFileCompression="Boolean"
+			cleanupFileName="Boolean"
+			writeFooterOnArchivingOnly="Boolean"
+			writeBom="Boolean" />
+	```
+
+### Interesting parameters
+- **archiveAboveSize** - Size in bytes above which log files will be automatically archived.
+- **archiveFileName** - Name of the file to be used for an archive.
+- **archiveNumbering** - Way file archives are numbered.
+	- **DateAndSequence** - Combination of Date and Sequence
+- **archiveEvery** - Indicates whether to automatically archive log files every time the specified time passes.
+- **archiveDateFormat** - Specifies the date format used for archive numbering.
+- **autoFlush** - Indicates whether to automatically flush the file buffers after each log message. Disabling this will improve performance.
+
+### Interesting Layouts
+- **Exception** layout renderer
+	- `${exception:format=String:innerFormat=String:maxInnerExceptionLevel=Integer:innerExceptionSeparator=String:separator=String:exceptionDataSeparator=string}`
+	- **e.g.** Log full with inner exceptions `${exception:format=toString,Data:maxInnerExceptionLevel=10}`
+	- Rendering Options
+		- **format** - Format of the output. Must be a comma-separated list of exception properties: Message, Type, ShortType, ToString, Method, StackTrace, Data & @. This parameter value is case-insensitive. Default: message
+			- `@` means serialize all Exception-properties into Json-format. Introduced in NLog 4.5
+		- **innerFormat** - Format of the output of inner exceptions. Must be a comma-separated list of exception properties: Message, Type, ShortType, ToString, Method, StackTrace, Data & @. This parameter value is case-insensitive.
+		- **maxInnerExceptionLevel** - Maximum number of inner exceptions to include in the output. By default inner exceptions are not enabled for compatibility with NLog 1.0.Integer. Default: 0
+		- **separator** - Separator used to concatenate parts specified in the Format. Default: single space
+		- **innerExceptionSeparator** - Separator between inner exceptions. Default: new line
+		- **exceptionDataSeparator** - Separator used to concatenate the exception data parts. Default: ;. Introduced in NLog 4.3.9
 
 
+
+- **OnException** Layout Renderer
+	- `${onexception:inner=Layout}`
+	- Only outputs the inner layout when exception has been defined for log message.
+
+- **When** Layout Renderer
+	- `${when:when=Condition:inner=Layout:else=Layout}`
+	- **e.g.** `${when:when='${aspnet-request:serverVariable=HTTPS}' == 'on':inner=1:else=0}`
+	- Only outputs the inner layout when the specified condition has been met.
+	- `:` and `}` in a internal layout those characters need to be escaped
+
+- **When** Filter
+	- Single quotes should be escaped with another single quote.
+	- **action** - Action to be taken when filter matches.
+		- **Ignore** - The message should not be logged.
+		- **IgnoreFinal** - The message should not be logged and processing should be finished.
+		- **Log** - The message should be logged.
+		- **LogFinal** - The message should be logged and processing should be finished.
+		- **Neutral** - The filter doesn't want to decide whether to log or discard the message.
+	- **e.g.** Ignore all Microsoft.* logs but log Microsoft.AspNetCore.Hosting.Internal.WebHost. Log -> Ignore order is important.
+		```xml
+		<rules>
+		    <logger name="*" writeTo="file">
+		        <filters>
+		            <when condition="equals(logger, 'Microsoft.AspNetCore.Hosting.Internal.WebHost')" action="Log" />
+		            <when condition="starts-with(logger, 'Microsoft')" action="Ignore" />
+		        </filters>
+		    </logger>
+		</rules>
+		```
+- AspNetRequest Referrer Renderer
+	- `${aspnet-request-referrer}`
+
+***
+> Older Content
+***
 
 ## Layout renderers
 ### NLog.Web

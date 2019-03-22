@@ -1,6 +1,75 @@
 # Ubuntu Notes
 > Mon, 24-Sep-2018 13:46:16.372 +0530
 
+## dig
+> incomplete
+```sh
+dig @dns2.internic.ca berp.ca ANY +noall +answer
+```
+- Options
+    - A (Host address)
+    - AAAA (IPv6 host address)
+    - ALIAS (Auto resolved alias)
+    - CNAME (Canonical name for an alias)
+    - MX (Mail eXchange)
+    - NS (Name Server)
+    - PTR (Pointer)
+    - SOA (Start Of Authority)
+    - SRV (location of service)
+    - TXT (Descriptive text)
+
+
+## fsck
+```sh
+sudo umount /dev/sdc2
+sudo e2fsck -fpv /dev/sdc2
+```
+- Output
+	```
+	sudo e2fsck -fpv /dev/sdc2
+
+	      407357 inodes used (19.09%, out of 2133936)
+	         418 non-contiguous files (0.1%)
+	         347 non-contiguous directories (0.1%)
+	             # of inodes with ind/dind/tind blocks: 0/0/0
+	             Extent depth histogram: 376117/100
+	     7394433 blocks used (86.71%, out of 8527588)
+	           0 bad blocks
+	           3 large files
+
+	      311257 regular files
+	       62614 directories
+	           8 character device files
+	           0 block device files
+	           0 fifos
+	          31 links
+	       33466 symbolic links (31121 fast symbolic links)
+	           3 sockets
+	------------
+	      407379 files
+	```
+- Syntax (Redacted)
+	```
+	e2fsck [ -pacnyrdfkvtDFV ] [ -b superblock ] [ -B blocksize ] [ -l|-L bad_blocks_file ] [ -C fd ] [ -j external-journal ] [ -E extended_options ] device
+
+	-f     Force checking even if the file system seems clean.
+	-p     Automatically  repair  ("preen")  the  file system.  This option will cause e2fsck to automatically fix any filesystem problems that can be safely fixed without human intervention.  If e2fsck
+		   discovers a problem which may require the system administrator to take additional corrective action, e2fsck will print a description of the problem and then exit with the  value  4  logically
+		   or'ed into the exit code.  (See the EXIT CODE section.)  This option is normally used by the system's boot scripts.  It may not be specified at the same time as the -n or -y options.
+	-v     Verbose mode.
+	-y     Assume an answer of `yes' to all questions; allows e2fsck to be used non-interactively.  This option may not be specified at the same time as the -n or -p options.
+	```
+- Also see https://www.tecmint.com/manage-ext2-ext3-and-ext4-health-in-linux/
+		- `sudo dumpe2fs /dev/sda10`
+		- `dumpe2fs -b`
+		- `sudo fsck -Vt ext4 /dev/sda10`
+		- `sudo tune2fs -l /dev/sda10`
+		- `sudo tune2fs -l /dev/sda10`
+		- `sudo debugfs /dev/sda10`
+		- `debugfs: freefrag` (To show free space fragmentation)
+
+
+
 ## Mount folder on another folder
 - Command
 	```sh

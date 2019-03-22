@@ -1,5 +1,34 @@
 # git notes
 
+## Initialize and publish local folder to git repo
+```sh
+# Worked fine
+git init
+git config user.name "sak"
+git config user.email "sak@firament.com"
+git remote add origin https://firament@bitbucket.org/firament/mysql-triggers-lite.git
+git remote set-url --add --push origin https://firament@bitbucket.org/firament/mysql-triggers-lite.git
+git remote set-url --add --push origin https://sajidak@github.com/sajidak/MySQL-Triggers.git
+git push -u origin master
+```
+
+### Output
+- `git remote show origin`
+	```
+	* remote origin
+	  Fetch URL: https://firament@bitbucket.org/firament/mysql-triggers-lite.git
+	  Push  URL: https://firament@bitbucket.org/firament/mysql-triggers-lite.git
+	  Push  URL: https://sajidak@github.com/sajidak/MySQL-Triggers.git
+	  HEAD branch: master
+	  Remote branch:
+		master tracked
+	  Local branch configured for 'git pull':
+		master merges with remote master
+	  Local ref configured for 'git push':
+		master pushes to master (up to date)
+	```
+
+## Notes
 - git config
 	```
 	git config -l

@@ -1,13 +1,16 @@
 # Building Bootstrap 4.0 locally
 `07-Oct-2017 1224:10:43 +0530`
 
-> for version v4.3.0, updated on 2019 Feb 13
+> for version v4.3.1, updated on 2019 Mar 10
+
 ***
 
 ## Notes:
 - Bootstrap is dependent on jQuery and Popper
 	- https://jquery.com/
+    	- v3.3.1
 	- https://popper.js.org/
+    	- v1.14.7
 
 ***
 ## v 4.3.0
@@ -45,7 +48,7 @@
 
 ### Setup/Update Environment
 
-- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0`
+- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1`
 	- **Important:** Set working folder before proceeding.
 
 - [ ] `npm install`
@@ -53,6 +56,8 @@
 	- Run this on installed OS
 	- "Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info."
 	- "Update available 5.6.0 → 6.2.0, Run `npm i -g npm` to update"
+	- found 9 vulnerabilities (5 low, 2 moderate, 2 high)
+    	- run `npm audit fix` to fix them, or `npm audit` for details
 
 - [ ] `bundle install`
 	- Ruby dependencies, such as Jekyll and plugins
@@ -66,7 +71,7 @@
 - Update Source files
 `cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss scss/_custom.scss`
 
-- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0`
+- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1`
 	- **Important:** Set working folder before proceeding.
 
 - `npm run dist`
@@ -114,8 +119,8 @@ bundler (1.16.0.pre.3, 1.15.4)
 **Commands executed, to make a shell script**
 > out of date, needs to be updated
 ```sh
-LOGROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0/build-logs
-BS4ROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.0/
+LOGROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1/build-logs
+BS4ROOT=/media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1/
 
 pushd ${BS4ROOT}
 mkdir -p ${LOGROOT}

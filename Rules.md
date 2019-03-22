@@ -28,7 +28,7 @@
 ## Humility ##
 Humility is seeing everybody you meet as higher than you and thinking that they might be closer to Allah than yourself.
 
-If the disciple meets a person that is younger than him/her, he/she should say:
+- If the disciple meets a person that is younger than him/her, he/she should say:
 "*This person did not rebel against Allah; I did. I am sure he/she is better than me.*"
 
 - If the disciple meets a person who is older than himself, he/she should say:

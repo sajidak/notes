@@ -1,8 +1,19 @@
 # Notes 2018 Sep 16
 
+2019-Mar-22 11:03:01 
+## Ruby on Rails - Tutorial
+[REF:] https://www.tutorialspoint.com/ruby-on-rails/rails-references-guide.htm
+https://www.tutorialspoint.com/ruby-on-rails/rails-and-ajax.htm
+https://www.tutorialspoint.com/ruby-on-rails/rails-references-guide.htm
+
+[Ruby Docs](http://ruby-doc.org/)
+
+2019-Mar-15 17:33:22 
+https://www.naukri.com/job-listings-Technical-Fullstack-Architect-Dotnet-Platform-10-15-yrs-RGF-SELECT-INDIA-PRIVATE-LIMITED-Bengaluru-Bangalore-10-to-15-years-120219003762?xp=1
+
 Sun, 07-Oct-2018 00:12:35.788 +0530
 
-## Ubu8ntu Fonts
+## Ubuntu Fonts
 - fonts-liberation2
 	- Fonts with the same metrics as Times, Arial and Courier (v2)
 - fonts-liberation
