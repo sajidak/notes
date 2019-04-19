@@ -159,6 +159,9 @@ echo sudo tar -vx${CMP_TYPE} --strip-components=1 -C ${DIR_DEST} -f ${TAR_FILE};
 ***
 
 ## General, to classify
+### Folder size
+`du -sh foldername`
+
 ### Default applications
 - /usr/share/applications/defaults.list
 - ~/.local/share/applications/mimeapps.list
