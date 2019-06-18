@@ -7,6 +7,9 @@
 - https://dbmstools.com/data-modeling-tools/mysql
 
 ## Worked - get default secure DB accessible
+```sh
+sudo mysql -u root;
+```
 ```sql
 CREATE USER 'sak'@'localhost' IDENTIFIED BY 'some-password-text';
 GRANT ALL PRIVILEGES ON * . * TO 'sak'@'localhost';
@@ -67,8 +70,8 @@ sudo service mysql status
 ## MySQL
 
 ### MySQL Utilities
-- mysqldiff --server1=root:toor@localhost:3306 -d sql -q aapi_cloud_r2_0:aapi_cloud
-- mysqldbcompare --server1=root:toor@localhost:3306 --skip-row-count -d -t -q aapi_cloud_r2_0:aapi_cloud
+- `mysqldiff --server1=root:toor@localhost:3306 -d sql -q aapi_cloud_r2_0:aapi_cloud`
+- `mysqldbcompare --server1=root:toor@localhost:3306 --skip-row-count -d -t -q aapi_cloud_r2_0:aapi_cloud`
 
 ### System Variables
 https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html
@@ -330,7 +333,7 @@ SET PASSWORD FOR ''@'localhost' = PASSWORD('new_password');
 - https://www.devart.com/dbforge/mysql/querybuilder/
 - https://www.sqlmaestro.com/products/mysql/codefactory/
 - https://www.activedbsoft.com/overview-querytool.html
-	- sqlquerytool.zip
+	- `sqlquerytool.zip`
 
 
 ---

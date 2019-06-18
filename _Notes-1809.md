@@ -1,5 +1,21 @@
 # Notes 2018 Sep 16
 
+2019-Apr-21 21:16:45 
+## DIY links
+https://www.youtube.com/watch?v=fcE7kDpmzYM
+https://www.youtube.com/watch?v=Fuk7Lw_uV5s
+https://www.youtube.com/watch?v=W1d_NRO547k
+https://www.youtube.com/watch?v=unAYiL-DJOo
+
+Panasonic Lumix LX100 II
+https://www.popularmechanics.com/home/a26063857/diy-greenhouse/
+https://www.popularmechanics.com/home/a25748837/make-compost/
+
+
+2019-Mar-26 09:36:11 
+## Speed post tracking
+https://www.indiapost.gov.in/_layouts/15/DOP.Portal.Tracking/TrackConsignment.aspx
+
 2019-Mar-22 11:03:01 
 ## Ruby on Rails - Tutorial
 [REF:] https://www.tutorialspoint.com/ruby-on-rails/rails-references-guide.htm

@@ -28,6 +28,36 @@ git push -u origin master
 		master pushes to master (up to date)
 	```
 
+## Clone specific commit
+- Links
+  - https://www.git-tower.com/learn/git/faq/restore-repo-to-previous-revision
+
+- `git reset --hard 0ad5a7a6` This will rewind your HEAD branch to the specified version. All commits that came after this version are effectively undone; your project is exactly as it was at that point in time.
+- `git reset --soft 0ad5a7a6` will keep all the changes in those "undone" commits as local modifications:
+- `git checkout -b old-project-state 0ad5a7a6`
+  - create a new branch which starts at that old revision
+  - providing the -b parameter, you can also let it create a new branch (named "old-project-state" in this example).
+  - you now have a new branch named "old-project-state" reflecting the old version of your project 
+  - without touching or even removing any other commits or branches.
+- Go back to commit: `git revert 073791e7dd71b90daa853b2c5acc2c925f02dbc6`
+- Create a zip-archive: `git archive --format zip --output filename.zip master`
+
+### Option 1
+```sh
+git clone [remote_address_here] my_repo
+cd my_repo
+git reset --hard [ENTER HERE THE COMMIT HASH YOU WANT]
+```
+
+### Option 2
+```sh
+# If you plan to commit anything after that revision
+git checkout -b <new_branch_name> <hash>
+
+# If you don't plan to commit anything after that revision
+git checkout <hash>
+```
+
 ## Notes
 - git config
 	```

@@ -7,17 +7,18 @@
 
 ## Jul 01 2018
 ### Domain prices - 10 yrs
-.xyz	5670
-.rocks	5890
-.space	3960
-.name	6750
-.guru
-.today
-.info	860/
-.co.in	3,990
-.in		4,990
-.tech	5,490
-
+| TLD    |   INR |
+| ------ | -----:|
+| .xyz   |  5670 |
+| .rocks |  5890 |
+| .space |  3960 |
+| .name  |  6750 |
+| .guru  |     ? |
+| .today |     ? |
+| .info  |   860 |
+| .co.in | 3,990 |
+| .in    | 4,990 |
+| .tech  | 5,490 |
 
 ## 15 Jun 2018
 
@@ -27,17 +28,20 @@
 - 4MLinux is a miniature, 32-bit Linux distribution focusing on four capabilities: maintenance (as a system rescue live CD), multimedia (for playing video DVDs and other multimedia files), miniserver (using the inetd daemon), and mystery (providing several small Linux games). The distribution includes support for booting on UEFI-enabled machines.
 
 #### Linux Lite
-CrunchBang++
-Bodhi Linux
-SparkyLinux
-Tiny Core - CorePlus
-Modern X
-Elive
-wattOS
-Nanolinux
-TurnKey GNU/Linux
-ToriOS
-HD Scania
+- https://www.linuxliteos.com/
+- http://sparkylinux.org/
+- http://www.tinycorelinux.net/welcome.html
+- [CrunchBang++](https://crunchbangplusplus.org/)
+- Bodhi Linux
+- SparkyLinux
+- Tiny Core - CorePlus
+- Modern X
+- Elive
+- wattOS
+- Nanolinux
+- TurnKey GNU/Linux
+- ToriOS
+- HD Scania
 
 
 

@@ -6,17 +6,20 @@
 - https://www.xnview.com/en/xnconvert/
   - UI Tools
   - **XnConvert-linux-x64.tgz**
-  - XnConvert is a powerful and free cross-platform batch image processing, 
-  - allowing you to combine over 80 actions. Compatible with 500 formats. 
+  - XnConvert is a powerful and free cross-platform batch image processing,
+  - allowing you to combine over 80 actions. Compatible with 500 formats.
   - It uses the batch processing module of XnViewMP
   - **XnViewMP-linux-x64.tgz**
-  - XnView MP is a powerful picture viewer, browser and converter for Windows, Mac and Linux. 
+  - XnView MP is a powerful picture viewer, browser and converter for Windows, Mac and Linux.
   - This software can read more than 500 formats change picture size, reduce picture file size and much more!
   - **XnSketch**
 
-## Convert options
+## Convert Usage
+`convert [input-option] input-file [output-option] output-file`
+
+### Convert options
 	-resize geometry     resize the image
-	
+
 	-ping                efficiently determine image attributes
 	-identify            identify the format and characteristics of the image
 
@@ -82,11 +85,11 @@
 	```
   - Option 3
 	```sh
-	mkdir resize; 
-	IFS=$(echo -en "nb"); 
-	for i in *; do 
-		echo $i; convert $i -resize 600^ resize/$i; 
+	mkdir resize;
+	IFS=$(echo -en "nb");
+	for i in *; do
+		echo $i; convert $i -resize 600^ resize/$i;
 	done
-	# The line IFS=$(echo -en "nb") is a bash trick to 
+	# The line IFS=$(echo -en "nb") is a bash trick to
 	# handle situations where images file names have spaces
 	```
