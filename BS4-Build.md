@@ -45,6 +45,11 @@
 	- `sudo gem install bundler`
 	- `bundler -v` = Bundler version 1.16.3
 
+- [ ] node-sass
+	- `npm install node-sass`
+	- `npm list node-sass --depth=0` = `-- node-sass@4.12.0
+
+
 
 ### Setup/Update Environment
 
@@ -68,11 +73,11 @@
 ### Build
 > Each time the source file is updated.
 
+- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1`
+- **Important:** Set working folder before proceeding.
+
 - Update Source files
 `cp -vf /media/sak/70_Current/Work/fsap_utils/bootstrap-custom/_custom-ramazan-firament.scss scss/_custom.scss`
-
-- `pushd /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1`
-	- **Important:** Set working folder before proceeding.
 
 - `npm run dist`
 
@@ -177,6 +182,44 @@ see output log files in `${LOGROOT}`
 ## Build
 ### npm run dist
 ### npm run docs-serve
+```
+
+## Output for node-sass install
+```
+npm install node-sass
+
+> node-sass@4.12.0 install /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1/node_modules/node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.12.0/linux-x64-72_binding.node
+Download complete .] - :
+Binary saved to /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1/node_modules/node-sass/vendor/linux-x64-72/binding.node
+Caching binary to /home/sak/.npm/node-sass/4.12.0/linux-x64-72_binding.node
+
+> node-sass@4.12.0 postinstall /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /media/sak/70_Current/Work/bootstrap4/bootstrap-4.3.1/node_modules/node-sass/vendor/linux-x64-72/binding.node
+Testing binary
+Binary is fine
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.7 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.7: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ node-sass@4.12.0
+added 2 packages from 9 contributors, removed 3 packages, updated 2 packages and audited 15801 packages in 27.717s
+found 25 vulnerabilities (5 low, 10 moderate, 10 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+```
+
+## node-sass binaries
+Node-sass includes pre-compiled binaries for popular platforms, to add a binary for your platform follow these steps:
+```sh
+git clone --recursive https://github.com/sass/node-sass.git
+cd node-sass
+npm install
+node scripts/build -f  # use -d switch for debug release
+# if succeeded, it will generate and move
+# the binary in vendor directory.
 ```
 
 ***

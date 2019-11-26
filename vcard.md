@@ -2,19 +2,21 @@
 > Read from vcf 2.1 and process
 
 ## Links
+- https://en.wikipedia.org/wiki/VCard
 -
 
 
-## Libs and Apps
+## C#
 
 ### MixERP.Net.VCards
 - https://github.com/mixerp/MixERP.Net.VCards
 - vCard Serializer and Parser for C#
 
 ### Nugets
+- MixERP.Net.VCards
+	- `dotnet add package MixERP.Net.VCards --version 1.0.7`
 - EWSoftware.PDI.Data
 - Thought.vCards
-- MixERP.Net.VCards
 - VCardReader
 - hbehr.VCardGenerator
 - https://afterlogic.com/mailbee-net/icalvcard
@@ -47,3 +49,27 @@
 	+1-512-315-0280
 	+61 3 9896 7830
 	```
+
+
+## Python
+
+### Links
+- https://eventable.github.io/vobject/
+- https://pypi.org/project/vobject/#history
+- https://pypi.org/project/vcard/#history
+- https://github.com/pimutils/vdirsyncer
+
+## Nodejs
+- https://github.com/jhermsmeier/node-vcf
+
+
+## Java
+- https://github.com/mangstadt/ez-vcard
+
+## Ruby
+| VCard v3.0, Vcard v4.0, and Vcalendar v2.0
+- https://github.com/sticksnleaves/vcardio
+- https://github.com/riboseinc/ruby-vobject
+- https://www.rubydoc.info/gems/vcard_parser/0.0.6
+- https://www.rubydoc.info/gems/vobject
+	- v2.0

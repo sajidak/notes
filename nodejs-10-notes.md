@@ -1,3 +1,18 @@
+## 2019-Sep-05
+
+### Node.JS and Angular 7
+- Angular 7 CRUD Example | MEAN Stack Tutorial From Scratch
+	- https://appdividend.com/2018/11/04/angular-7-crud-example-mean-stack-tutorial/
+- Angular 7 CRUD With Node.JS API
+	- https://www.zeptobook.com/angular-7-crud-with-node-js-api/
+- Angular7 CRUD with nodejs and mysql example
+	- https://morioh.com/p/33d0377536a6/angular7-crud-with-nodejs-and-mysql-example
+
+
+
+
+
+## Older
 https://github.com/nodejitsu/node-http-proxy
 https://github.com/OptimalBits/redbird
 http-proxy

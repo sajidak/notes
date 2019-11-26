@@ -59,3 +59,23 @@ menuentry "Windows" {
 	chainloader +1
 }
 ```
+
+***
+
+## Sub Processes
+To detach a process from a bash script:
+```sh
+nohup ./process &
+```
+
+command & disown
+
+https://www.maketecheasier.com/run-bash-commands-background-linux/
+```sh
+command &>/dev/null &
+```
+
+# Best working option till now
+```sh
+nohup command &>/dev/null &
+```

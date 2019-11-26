@@ -99,6 +99,11 @@ sudo e2fsck -fpv /dev/sdc2
 	rm -vf ${OUT_ZIP_NAME};
 	zip -vr ${OUT_ZIP_NAME} ${SRC_ROOT};
 	echo -n  "created archive "; ls -1 ${OUT_ZIP_NAME};
+
+	# pack to .gz
+	tar cvzf web-publish.tar.gz R-20190903-1567489418
+
+
 	```
 - Silent Mode, do not print file names that are added.
 	```sh
