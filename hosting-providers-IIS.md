@@ -28,8 +28,8 @@
 # Preferred
 
 ## myasp.net
-- ASP.NET Core 1.0 Hosting
-- ASP.NET 4.5.1 / 4.6 / 4.6.1 Hosting
+- ASP.NET Core 3.0 Hosting
+- ASP.NET 4.8, 2.0-4.7.x Hosting
 - MVC 6, 5, 4 Hosting
 - PHP5 Hosting 5.x Hosting
 - Internet Information Services 8.0
@@ -73,6 +73,7 @@
 - Isolated Application Pool
 - 6 SQL Server
 - 6 MySQL
+- Free Let's Encrypt SSL
 - Mailing List Form Generator
 - Mailing List Webservice API
 ***
@@ -173,30 +174,30 @@ $0 Per Year
 With every account comes:
 We offer 99.9% uptime, unlimited bandwidth, unlimited cpu, unlimited memory, unlimited domains, and unlimited databases. We offer ASP.NET 4.6, Java/jsp/war, Python, Django, Flask, Perl, Ruby, Ruby on Rails, PHP 7.1, 1000 MB storage, MySQL, PostgreSQL, SQLite, and much more. You can create as many fully functional yourname@yourdomain.com email addresses as you want. We have Softaculous automatic script installer. We have the best control panel: cPanel. The list goes on and on, but the best part IT'S ALL FOR FREE!
 
-    Access to cPanel
-    Ability to edit A, CNAME, TXT, and MX records
-    500MB of Disk Space
-    Unlimited E-mail accounts
-    Unlimited Bandwidth
-    Unlimited Subdomains
-    Unlimited Parked Domains
-    Unlimited Addon Domains
-    Unlimited FTP Accounts
-    Unlimited Mailing Lists
-    Unlimited MySQL/PostgreSQL/SQLite Databases
-    Access to phpMyAdmin/phpPgAdmin
-    Ability to add Perl Modules
-    SSL ( Requires dedicated IP ,our provider of dedicated IPs is requesting $12 per dedicated IP. For more info about SSL)
-    Softaculous (Easy installation of popular software such as blogging and forum platforms.)
+- Access to cPanel
+- Ability to edit A, CNAME, TXT, and MX records
+- 500MB of Disk Space
+- Unlimited E-mail accounts
+- Unlimited Bandwidth
+- Unlimited Subdomains
+- Unlimited Parked Domains
+- Unlimited Addon Domains
+- Unlimited FTP Accounts
+- Unlimited Mailing Lists
+- Unlimited MySQL/PostgreSQL/SQLite Databases
+- Access to phpMyAdmin/phpPgAdmin
+- Ability to add Perl Modules
+- SSL ( Requires dedicated IP ,our provider of dedicated IPs is requesting $12 per dedicated IP. For more info about SSL)
+- Softaculous (Easy installation of popular software such as blogging and forum platforms.)
 
 HelioHost accounts can use the following scripting languages:
 
-    PHP
-    ASP.NET
-    Ruby/Ruby on Rails
-    Python & Django
-    Java/JSP
-    Perl
+- PHP
+- ASP.NET
+- Ruby/Ruby on Rails
+- Python & Django
+- Java/JSP
+- Perl
 
 - PHP 5 and PHP 7 hosting with safe-mode disabled. Installed libraries include cURL, GD, Sockets, XML RPC, and many more.
 - ASP.NET 4.6 scripting with our free hosting package. We use the Mono Project to provide this service.
@@ -205,7 +206,7 @@ HelioHost accounts can use the following scripting languages:
 - Django framework built on top of Python
 - Python
 - Perl
--
+
 
 
 ## ASP.NET Webhosting
@@ -250,7 +251,9 @@ SHARED > Free
 ***
 
 ## smarterasp.net
-*Appears to be reseller/partner of myasp.net*
+*Appears to be parent/partner of myasp.net*
+> same offering as mysap.net
+
 - domain name $12/yr
 - domain whois privacy $8/yr
 - Unlimited domain name hosted

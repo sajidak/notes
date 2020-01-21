@@ -86,13 +86,7 @@ https://msdn.microsoft.com/magazine/mt829707
 
 ### Git Repos
 ```
-sg27-53f7-gngf
 https://github.com/viaetruck
-https://github.com/viaetruck/vtrkAPI_prod/invitations
-https://github.com/viaetruck/vtrkUI_pro/invitations
-https://github.com/viaetruck/vtrkUI_dev/invitations
-https://github.com/viaetruck/vtrkAPI_dev/invitations
-
 https://firament@github.com/viaetruck/vtrkUI_dev.git
 https://firament@github.com/viaetruck/vtrkAPI_dev.git
 https://firament@github.com/viaetruck/vtrkUI_pro.git

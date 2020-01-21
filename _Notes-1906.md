@@ -8,6 +8,23 @@
 		- https://www.youtube.com/user/HyderabadDiaries/videos
 		- https://www.youtube.com/watch?v=CntkO21eXig
 
+## Monospace programming fonts
+> 02-01-2020
+
+Victor Mono
+	https://rubjo.github.io/victor-mono/
+	https://github.com/rubjo/victor-mono
+
+Iosevka
+	https://github.com/be5invis/Iosevka
+	https://be5invis.github.io/Iosevka/specimen.html
+
+Hack
+	https://github.com/source-foundry/Hack
+	https://github.com/source-foundry/Hack/blob/master/docs/WEBFONT_USAGE.md
+	
+
+
 ## .net porting
 > 29-08-2019
 

@@ -1,20 +1,73 @@
 # buffer file
 >for temporary editing
 
-## xfers
-|  D  |  M  |       A |
-|:---:|:---:| -------:|
-| 18  | 12  |  39,900 |
-| 08  | 01  | 108,000 |
-| 03  | 02  |  74,250 |
-| 08  | 03  |  91,800 |
-| --  | --  | ------- |
-| 04  | 04  | 101,340 |
-| 05  | 04  |  40,000 |
-| 09  | 05  |  72,000 |
-| 09  | 05  |   6,400 |
-| 26  | 06  | 115,200 |
+https://www.babycenter.in/c25004283/fetal-development
+https://www.parents.com/pregnancy/stages/ultrasound/ultrasound-guide-trimester-by-trimester/
+https://www.parents.com/pregnancy/stages/fetal-development/first-trimester-images-of-your-developing-baby/
+https://www.parents.com/pregnancy/stages/fetal-development/second-trimester-images-of-your-developing-baby/
+https://www.parents.com/pregnancy/stages/fetal-development/third-trimester-images-of-your-developing-baby/
 
+
+https://erail.in/train-running-status/19301?date=21-Jul-2019&from=DADN&time=636994149198850412
+8721622196
+Pyar Do Pyar Lo (Janbaaz)
+
+?? https://www.youtube.com/watch?v=qn9GDeIHioE
+
+## LibreOffice Selective Install
+> 2019-Aug-23 14:53:08
+
+```sh
+sudo apt-add-repository ppa:libreoffice/ppa
+sudo apt-get install libreoffice-calc libreoffice-writer
+
+# deb http://ppa.launchpad.net/libreoffice/libreoffice-6-3/ubuntu bionic main
+# deb-src http://ppa.launchpad.net/libreoffice/libreoffice-6-3/ubuntu bionic main
+
+
+# libreoffice-calc office productivity suite -- spreadsheet 
+# libreoffice-writer office productivity suite -- word processor
+
+```
+
+- https://github.com/antoniofaccioli/libreoffice-appimage
+- https://wiki.ubuntu.com/LibreOffice
+- https://launchpad.net/~libreoffice/+archive/ubuntu/libreoffice-6-3/+packages
+
+
+
+## xfers
+|  M  |  D  |        A |
+|:---:|:---:| --------:|
+| 12  | 18  |   39,900 |
+| 01  | 08  | 1,08,000 |
+| 02  | 03  |   74,250 |
+| 03  | 08  |   91,800 |
+|:---:|:---:| --------:|
+
+
+
+|   M   |   D   |         A |        |
+|:-----:|:-----:| ---------:| ------ |
+|  04   |  04   |  1,01,340 | y      |
+|  04   |  05   |    40,000 |        |
+|  05   |  09   |    72,000 | y      |
+|  05   |  09   |     6,400 | -      |
+|  06   |  26   |  1,15,200 | y      |
+|  10   |  05   |    10,820 | Refund |
+|  12   |  13   |    10,000 | y      |
+|  01   |  24   |    10,000 |        |
+|  03   |  18   |    25,000 | y      |
+|  03   |  04   |    30,000 | y      |
+|  03   |  04   |    -3,000 | y      |
+|  04   |  17   |    20,000 |        |
+| :---: | :---: | --------: | ---    |
+
+* 18th March 2019 - INF/021088763091/Sajid BERP amount - Rs.25,000
+* December 2018 - INF/020874309461/Sajid Consulting paym - Rs.10,000
+* 26th June 2018 - INF/020590728581/Sajid Consulting Char - Rs. 1,15,200
+* 09th May 2018 - INF/020529220941/Salary HSS Pvt Ltd - Rs.72,000
+* 04th April 2018 - INF/020485947461/Consulting Charges Ap - Rs.1,01,340
 
 ## Date in DOS Batch
 ```
@@ -134,5 +187,3 @@ SRC_DIR="XYZ";
 - https://msdn.microsoft.com/en-us/library/ms251784.aspx
 - https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.aspx
 - https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.objectdatasource?view=netframework-4.6.1
-
-9aba-4922-59b5
