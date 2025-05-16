@@ -3,7 +3,7 @@
 
 ## Links:
 - http://www.dofactory.com/net/design-patterns
--
+- https://sourcemaking.com/design_patterns
 
 > - patterns are solutions to software design problems you find again and again in real-world application development
 > - patterns are about reusable designs and interactions of objects
