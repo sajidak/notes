@@ -40,7 +40,7 @@ This squashed commit includes all changes from feature-xyz:
 ```
 ***
 
-- Using SurceTree
+- Using SourceTree
     - In SourceTree, double-click on main to check it out.
     - Fetch & pull the latest changes
     - Use the “Pull” button to make sure main is up-to-date.
@@ -60,7 +60,7 @@ This squashed commit includes all changes from feature-xyz:
 > Further reading
 > - https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging
 
-https://git-scm.com/docs/git-merge
+- https://git-scm.com/docs/git-merge
 ```
 git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
 	[--no-verify] [-s <strategy>] [-X <strategy-option>] [-S[<keyid>]]
@@ -114,7 +114,7 @@ git merge --verbose --ff-only --no-commit <branch-to-merge-from>
 ```
 
 ***
-https://git-scm.com/docs/git-commit
+- https://git-scm.com/docs/git-commit
 ```
 git commit [-a | --interactive | --patch] [-s] [-v] [-u[<mode>]] [--amend] [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>] [-F <file> | -m <msg>] [--reset-author] [--allow-empty] [--allow-empty-message] [--no-verify] [-e] [--author=<author>] [--date=<date>] [--cleanup=<mode>] [--[no-]status] [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]] [(--trailer <token>[(=|:)<value>])…​] [-S[<keyid>]] [--] [<pathspec>…​]
 
