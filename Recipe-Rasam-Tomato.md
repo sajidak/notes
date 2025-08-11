@@ -43,15 +43,15 @@
 `1 Cup`
 
 ## Ingredients
-| Ingredient | Qty |
-| :--- | :--- |
-| Coriander seeds | 3/4 cup |
-| Red chilli (long variety) | 20 |
-| Toor dal | 1/4 cup |
-| Channa dal | 1/4 cup |
-| Black pepper | 3 tblsp |
-| Cummin seeds (Jeera) | 3 tblsp |
-| Hing (Optional) | 1/2 tsp |
+| Ingredient                | Qty     |
+|:------------------------- |:------- |
+| Coriander seeds           | 3/4 cup |
+| Red chilli (long variety) | 20      |
+| Toor dal                  | 1/4 cup |
+| Channa dal                | 1/4 cup |
+| Black pepper              | 3 tblsp |
+| Cummin seeds (Jeera)      | 3 tblsp |
+| Hing (Optional)           | 1/2 tsp |
 
 ## Method
 1. Roast all ingredients individually, on medium flame with constant stirring.
